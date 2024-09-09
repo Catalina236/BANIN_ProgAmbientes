@@ -27,6 +27,7 @@
         <div class="info-container" id="infoContainer">
             <p><strong>Codigo BANIN:</strong> 32926</p>
             <p><strong>Codigo Contratación postulación APE:</strong> 29913</p>
+            <p><strong>Link APE:</strong> <a href="<?php echo'codigo para optener el link'?>">link</a></p>
             <p><strong>Proyecto / Coordinación:</strong> SER</p>
             <p><strong>Instructor Evaluador:</strong> Rodríguez Ruíz William Rolando</p>
             <p><strong>PROGRAMA DE FORMACION :</strong> EMPRENDEDOR EN ALTERNATIVAS AGROPECUARIAS PARA UNA PRODUCCION SOSTENIBLE</p>
@@ -36,7 +37,6 @@
             <div id="profileDescription" class="hidden" style="background-color: #f7f7f7;padding: 20px;border-radius: 8px;border: 1px solid #ccc;margin-bottom: 20px;grid-template-columns: 1fr;gap: 10px;">
                 <p><strong>Numero Documento:</strong> 32926</p>
                 <p><strong>Nombere:</strong> 29913</p>
-                <p><strong>Link Perfil APE:</strong> SER</p>
             </div>
         </div>
 
@@ -47,14 +47,11 @@
         <div id="profileModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <div class="Perfil">
-                    <h1 style="font-size: 1vw;">Opción 1: Título profesional como médico veterinario, médico veterinario y zootecnista, zootecnista. 
+                    <h1 class="perfil">Opción 1: Título profesional como médico veterinario, médico veterinario y zootecnista, zootecnista. 
                         Opción 2: Tecnólogo y/o técnico en producción animal, producción agropecuaria.</h1>
-                </div>
             </div>
         </div>
         
-        <!-- Modal para la Experiencia -->
         <div id="experienceModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -74,75 +71,86 @@
             </div>
         </div>
 
-        <form action="#" method="post">
-            <label for="observacion">Observación No Cumplimiento:</label>
-            <input type="text" id="observacion" name="observacion"><br><br>
-        
-            <label for="experiencia_tecnica">Experiencia Técnica (Expresada en años):</label>
-            <input type="number" id="experiencia_tecnica" name="experiencia_tecnica" min="0"><br><br>
-        
-            <label for="puntuacion_experiencia_tecnica">Puntuación Experiencia Técnica:</label>
-            <input type="number" id="puntuacion_experiencia_tecnica" name="puntuacion_experiencia_tecnica" min="0" max="100"><br><br>
-        
-            <label for="experiencia_docente">Experiencia Docente (Expresada en años):</label>
-            <input type="number" id="experiencia_docente" name="experiencia_docente" min="0"><br><br>
-        
-            <label for="puntuacion_experiencia_docente">Puntuación Experiencia Docente:</label>
-            <input type="number" id="puntuacion_experiencia_docente" name="puntuacion_experiencia_docente" min="0" max="100"><br><br>
-        
-            <label for="experiencia_instructor">Experiencia Instructor (Expresada en años):</label>
-            <input type="number" id="experiencia_instructor" name="experiencia_instructor" min="0"><br><br>
-        
-            <label for="puntuacion_experiencia_instructor">Puntuación Experiencia Instructor:</label>
-            <input type="number" id="puntuacion_experiencia_instructor" name="puntuacion_experiencia_instructor" min="0" max="100"><br><br>
-        
-            <label for="experiencia_formulacion">Experiencia en formulación de proyectos productivos rurales:</label>
-            <input type="text" id="experiencia_formulacion" name="experiencia_formulacion"><br><br>
-        
-            <label for="puntuacion_experiencia_formulacion">Puntuación Experiencia:</label>
-            <input type="number" id="puntuacion_experiencia_formulacion" name="puntuacion_experiencia_formulacion" min="0" max="100"><br><br>
-        
-            <label for="experiencia_comunidades">Experiencia trabajando con comunidades rurales en temáticas de emprendimiento y/o innovación rural:</label>
-            <input type="text" id="experiencia_comunidades" name="experiencia_comunidades"><br><br>
-        
-            <label for="puntuacion_experiencia_comunidades">Puntuación Experiencia:</label>
-            <input type="number" id="puntuacion_experiencia_comunidades" name="puntuacion_experiencia_comunidades" min="0" max="100"><br><br>
-        
-            <label for="sumatoria_experiencia">Sumatoria Experiencia:</label>
-            <input type="number" id="sumatoria_experiencia" name="sumatoria_experiencia" min="0"><br><br>
-        
-            <label for="poblacion_vulnerable">Pertenece a población vulnerable:</label>
-            <input type="text" id="poblacion_vulnerable" name="poblacion_vulnerable"><br><br>
-        
-            <label for="puntuacion_poblacion_vulnerable">Puntuación Población Vulnerable:</label>
-            <input type="number" id="puntuacion_poblacion_vulnerable" name="puntuacion_poblacion_vulnerable" min="0" max="100"><br><br>
-        
-            <label for="arraigo">Arraigo:</label>
-            <input type="text" id="arraigo" name="arraigo"><br><br>
-        
-            <label for="puntuacion_arraigo">Puntuación Arraigo:</label>
-            <input type="number" id="puntuacion_arraigo" name="puntuacion_arraigo" min="0" max="100"><br><br>
-        
-            <label for="certificacion_competencias">Acredita Certificación de Competencias:</label>
-            <input type="text" id="certificacion_competencias" name="certificacion_competencias"><br><br>
-        
-            <label for="puntuacion_certificacion">Puntuación Certificación Competencias:</label>
-            <input type="number" id="puntuacion_certificacion" name="puntuacion_certificacion" min="0" max="100"><br><br>
-        
-            <label for="formacion_trabajo">Presenta Formación para el Trabajo:</label>
-            <input type="text" id="formacion_trabajo" name="formacion_trabajo"><br><br>
-        
-            <label for="puntuacion_formacion_trabajo">Puntuación Formación para el Trabajo:</label>
-            <input type="number" id="puntuacion_formacion_trabajo" name="puntuacion_formacion_trabajo" min="0" max="100"><br><br>
-        
-            <label for="nivel_academico">Nivel Académico:</label>
-            <input type="text" id="nivel_academico" name="nivel_academico"><br><br>
-        
-            <label for="puntuacion_nivel_academico">Puntuación Nivel Académico:</label>
-            <input type="number" id="puntuacion_nivel_academico" name="puntuacion_nivel_academico" min="0" max="100"><br><br>
-        
-            <input type="submit" value="Enviar">
+        <h2>Formulario de Evaluación</h2>
+        <form id="evaluationForm">
+            <div class="form-group">
+                <label for="formacion">Formación:</label>
+                <input type="text" id="formacion" name="formacion">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaDocenteString">Experiencia Docente:</label>
+                <input type="text" id="experienciaDocenteString" name="experienciaDocenteString">
+            </div>
+
+            <div class="form-group">
+                <label for="requisitosAdicionales">Requisitos Adicionales:</label>
+                <input type="text" id="requisitosAdicionales" name="requisitosAdicionales">
+            </div>
+
+            <div class="form-group">
+                <label for="cumplePerfil">Cumple Perfil:</label>
+                <input type="text" id="cumplePerfil" name="cumplePerfil">
+            </div>
+
+            <div class="form-group">
+                <label for="observacionNoCumplimiento">Observación No Cumplimiento:</label>
+                <input type="text" id="observacionNoCumplimiento" name="observacionNoCumplimiento">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica" oninput="calculateScore('experienciaTecnica', 2.5)">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
+                <input type="number" id="experienciaDocente" name="experienciaDocente" oninput="calculateScore('experienciaDocente', 2.5)">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor" oninput="calculateScore('experienciaInstructor', 3.5)">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaProyectos">Experiencia en formulación de proyectos productivos rurales:</label>
+                <input type="number" id="experienciaProyectos" name="experienciaProyectos" oninput="calculateScore('experienciaProyectos', 3)">
+            </div>
+
+            <div class="form-group">
+                <label for="experienciaRural">Experiencia trabajando con comunidades rurales:</label>
+                <input type="number" id="experienciaRural" name="experienciaRural" oninput="calculateScore('experienciaRural', 3)">
+            </div>
+
+            <div class="form-group">
+                <label for="poblacionVulnerable">Pertenece a población vulnerable:</label>
+                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable" oninput="calculateScore('poblacionVulnerable', 5)">
+            </div>
+
+            <div class="form-group">
+                <label for="arraigo">Arraigo:</label>
+                <input type="number" id="arraigo" name="arraigo" oninput="calculateScore('arraigo', 2)">
+            </div>
+
+            <div class="form-group">
+                <label for="certificacionCompetencias">Acredita Certificación de Competencias:</label>
+                <input type="number" id="certificacionCompetencias" name="certificacionCompetencias" oninput="calculateScore('certificacionCompetencias', 7)">
+            </div>
+
+            <div class="form-group">
+                <label for="formacionTrabajo">Presenta Formación para el Trabajo:</label>
+                <input type="number" id="formacionTrabajo" name="formacionTrabajo" oninput="calculateScore('formacionTrabajo', 5)">
+            </div>
+
+            <div class="form-group">
+                <label for="nivelAcademico">Nivel Académico:</label>
+                <input type="number" id="nivelAcademico" name="nivelAcademico">
+            </div>
+
+            <button type="submit">Enviar</button>
         </form>
+
 
     </div>
 
@@ -154,5 +162,6 @@
     <script src="../../assets/js/ocultarInfo.js"></script>
     <script src="../../assets/js/mensajeEmergente.js"></script>
     <script src="../../assets/js/ventana.js"></script>
+    <script src="../../assets/js/form.js"></script>
 </body>
 </html>
