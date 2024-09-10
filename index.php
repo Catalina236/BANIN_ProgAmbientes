@@ -9,7 +9,6 @@
 </head>
 <body>
     <?php
-
         require './app/config.php';
 
         require './app/shareFolder/header.php';

@@ -22,11 +22,11 @@
             <form class="login-form" action="" method="post">
                 <label for="">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Usuario" required>
+                    <input type="text" placeholder="Usuario" name="numero_doc" required>
                 </label>
                 <label for="">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" placeholder="Contraseña" name="contraseña" required>
                 <i class="fa-solid fa-eye"></i>
                 </label>
                <input type="submit" value="Ingresar" name="Validar" class="boton">
@@ -36,8 +36,8 @@
 </body>
 </html>
 <?php
-   require_once('class.php');
-   session_start();
+   require_once '../../sql/class.php';
+   //session_start();
    if(isset($_SESSION['rol']) && isset($_SESSION['numero_documento'])){
        header("Location:vercuenta.php");
    }

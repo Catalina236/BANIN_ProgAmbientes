@@ -1,5 +1,5 @@
 <?php
-require_once("bd.php");
+require_once "bd.php";
 
 class Trabajo extends Conexion{
     private $conexion;
@@ -23,7 +23,7 @@ class Trabajo extends Conexion{
                 $_SESSION['numero_documento']=$row['numero_documento'];
                 $rol=$row['rol'];
                 $_SESSION['rol']=$rol;
-            switch($_SESSION['rol']){
+            switch($rol){
                 case 'Instructor evaluador':
                     header('Location:../evaluador/moduloConsulta.php');
                     break;

@@ -100,7 +100,7 @@ a .boton_ir:hover {
     outline: none;
     color: #333;
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
 }
 .formulario label:focus-within {
     border: 1px solid #39A900;

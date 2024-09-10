@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +23,21 @@
                 <li><a href="">Criterios</a></li>
                 <li><a href="">Seleccionados</a></li>
                 <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
+                
+                <!-- Mostrar "Salir" si el usuario está logueado -->
+                <?php if (isset($_SESSION['rol'])): ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php">Salir</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
+        
+        <!-- Si el usuario no está logueado, mostrar el botón de Iniciar Sesión -->
         <div class="actions">
-            <a href="<?php echo BASE_URL; ?>app/shareFolder/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
+            <?php if (!isset($_SESSION['rol'])): ?>
+                <a href="<?php echo BASE_URL; ?>app/shareFolder/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
+            <?php endif; ?>
+            
+            <!-- Botón del menú -->
             <button class="menu-toggle" id="menu-toggle">
                 <span></span>
                 <span></span>

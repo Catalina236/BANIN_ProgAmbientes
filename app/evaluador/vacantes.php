@@ -14,10 +14,7 @@
         require '../../app/config.php'; 
         require '../../app/shareFolder/header.php';
     ?>
-
-
     <div class="contenedor">
-
         <div class="container">
             <h2>VACANTES ASIGNADAS</h2>
             <div class="cards-container">

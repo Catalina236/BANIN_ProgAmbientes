@@ -1,8 +1,8 @@
 <?php
 define('DB_HOST','localhost');
-define('DB_HOST','root');
+define('DB_USER','root');
 define('DB_PASS','');
-define('DB_BASS','banin_pa');
+define('DB_NAME','banin_pa');
 class Conexion{
     private $pdo;
     
