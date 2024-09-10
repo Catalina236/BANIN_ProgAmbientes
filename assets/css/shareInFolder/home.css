@@ -28,38 +28,101 @@
     text-align: center;
     padding: 20px;
 }
-
-.boxes{
-    display: flex;
-    justify-content:space-evenly;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.desc{
-    margin-top: 55px;
-    margin-bottom: 45px;
-    width: 28%;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section_caja img {
+    max-width: 100%;
     height: auto;
-    background-color: white;
-    border: 1px solid #39A900;
-    padding: 15px 27px;
-    font-size: 17px;
+    border-radius: 8px;
 }
 
-.desc h2{
-    color: green;
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.desc button{
+
+.desc {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    flex: 1 1 30%; /* Para que ocupen el 30% del espacio disponible */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.desc h2 {
+    margin-bottom: 10px;
+}
+
+.desc p, .desc ul {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00ac00;
     border: none;
-    background-color: #39A900;
+    color: white;
+    cursor: pointer;
     border-radius: 5px;
-    font-weight: bold;
-    height: 23px;
-    width: 64px;
+    transition: background-color 0.3s ease;
 }
-.desc button a{
+
+button a {
     color: white;
     text-decoration: none;
 }
-.desc button a:hover{
-    text-decoration: underline;
+
+button:hover {
+    background-color: #008a31;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .boxes {
+        flex-direction: column;
+    }
+
+    .desc {
+        flex: 1 1 100%; /* Ocupa el 100% en pantallas más pequeñas */
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .desc h2 {
+        font-size: 18px;
+    }
+
+    .desc p, .desc ul {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
 }
