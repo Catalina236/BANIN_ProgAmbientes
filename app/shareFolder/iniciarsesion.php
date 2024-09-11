@@ -14,7 +14,8 @@
         require '../../app/config.php'; 
         require 'header.php';
     ?>
-    <div class="contenedor2">
+
+    <div class="contenedor">
         <div class="imagen-contenedor"></div>
         <div class="formulario">
             <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
@@ -24,22 +25,47 @@
                     <i class="fa-solid fa-user"></i>
                     <input type="text" placeholder="Usuario" name="numero_doc" required>
                 </label>
+
                 <label for="">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Contraseña" name="contraseña" required>
-                <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-lock"></i>
+                    <div class="input-container">
+                        <input type="password" id="password" placeholder="Contraseña" name="contraseña" required>
+                        <i class="fa-solid fa-eye" id="togglePassword"></i>
+                    </div>
                 </label>
+
                <input type="submit" value="Ingresar" name="Validar" class="boton">
             </form>
         </div>
     </div>
+    <footer>
+        <div>
+            <h1 class="tituloFooter">Nosotros</h1>
+        </div>
+    </footer>
+    <script src=>assets/js/header.js"></script>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            
+            // Toggle the icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+</script>
+
 </body>
 </html>
 <?php
    require_once '../../sql/class.php';
    //session_start();
    if(isset($_SESSION['rol']) && isset($_SESSION['numero_documento'])){
-       header("Location:vercuenta.php");
+       //header("Location:vercuenta.php");
    }
    else{
        header("../../index.php");

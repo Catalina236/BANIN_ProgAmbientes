@@ -16,7 +16,7 @@ class Trabajo extends Conexion{
         $consult->bindParam(':pass', $password);
         $consult->execute();
         $result=$consult->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
+        error_log(print_r($result, true));
         $num_filas=count($result);
         if($num_filas>0){
             foreach($result as $row){

@@ -16,27 +16,32 @@ session_start();
         <a href="<?php echo BASE_URL; ?>index.php" class="logo-container">
             <img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logo-sena-blanco.png" alt="">
         </a>
+
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                 <li><a href="">Criterios</a></li>
-                <li><a href="">Seleccionados</a></li>
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
-                
-                <!-- Mostrar "Salir" si el usuario está logueado -->
+                <li><a href="">Estado BANIN</a></li>
+
                 <?php if (isset($_SESSION['rol'])): ?>
-                    <li><a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php">Salir</a></li>
+                    <!-- Mostrar otros enlaces si el usuario está logueado -->
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
+                    <li><a href="">Criterios</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
                 <?php endif; ?>
             </ul>
         </nav>
-        
-        <!-- Si el usuario no está logueado, mostrar el botón de Iniciar Sesión -->
+
+        <!-- Sección de acciones: Botones fuera del menú de navegación -->
         <div class="actions">
-            <?php if (!isset($_SESSION['rol'])): ?>
+            <?php if (isset($_SESSION['rol'])): ?>
+                <!-- Botón de Salir cuando el usuario está logueado -->
+                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
+            <?php else: ?>
+                <!-- Botón de Iniciar Sesión cuando el usuario no está logueado -->
                 <a href="<?php echo BASE_URL; ?>app/shareFolder/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
             <?php endif; ?>
-            
+
             <!-- Botón del menú -->
             <button class="menu-toggle" id="menu-toggle">
                 <span></span>
