@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
-    <link rel="stylesheet" href="../../assets/css/agregarUsuario.css">
+    <link rel="stylesheet" href="../../assets/css/links/agregarUsuario.css">
 </head>
 <body>
 
@@ -26,9 +26,9 @@
             <label for="rol">Rol:</label>
             <select id="rol" name="rol" required>
                 <option value="">Seleccione un rol</option>
-                <option value="Instructor evaluador">Instructor evaluador</option>
-                <option value="Coordinador">Coordinador</option>
-                <option value="Administrador">Administrador</option>
+                <option clas="roloption" value="Instructor evaluador">Instructor evaluador</option>
+                <option clas="roloption" value="Coordinador">Coordinador</option>
+                <option clas="roloption" value="Administrador">Administrador</option>
             </select>
 
             <input type="submit" value="Crear Usuario">

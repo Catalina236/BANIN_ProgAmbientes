@@ -6,20 +6,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="../imagenes/logosena.png">
     <link rel="icon" href="../../assets/img/logos/logosena.png">
-    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="stylesheet" href="../../assets/css/links/login.css">
     <title>Inicio de Sesión SENA</title>
 </head>
 <body>
     <?php
         require '../../app/config.php'; 
-        require 'header.php';
+        require '../shareFolder/header.php';
     ?>
 
     <div class="contenedor">
         <div class="imagen-contenedor"></div>
         <div class="formulario">
             <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
-            <!--<h1>INICIO DE SESIÓN</h1>-->
             <form class="login-form" action="" method="post">
                 <label for="">
                     <i class="fa-solid fa-user"></i>
@@ -48,11 +47,9 @@
         const password = document.querySelector('#password');
 
         togglePassword.addEventListener('click', function () {
-            // Toggle the type attribute
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
             
-            // Toggle the icon
             this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');
         });
@@ -62,9 +59,7 @@
 </html>
 <?php
    require_once '../../sql/class.php';
-   //session_start();
    if(isset($_SESSION['rol']) && isset($_SESSION['numero_documento'])){
-       //header("Location:vercuenta.php");
    }
    else{
        header("../../index.php");

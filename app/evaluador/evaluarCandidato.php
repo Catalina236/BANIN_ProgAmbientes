@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Postulados</title>
     <link rel="icon" href="../../assets/img/logos/logosena.png">
-    <link rel="stylesheet" href="../../assets/css/evaluar.css">
+    <link rel="stylesheet" href="../../assets/css/links/evaluar.css">
 </head>
 <body>
     <?php

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
     <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="../../assets/css/moduloConsulta.css">
+    <link rel="stylesheet" href="../../assets/css/links/moduloConsulta.css">
 </head>
 <body>
 

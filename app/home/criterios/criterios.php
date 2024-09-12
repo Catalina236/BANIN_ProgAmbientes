@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
-    <link rel="stylesheet" href="../../assets/css/criterios.css">
+    <link rel="stylesheet" href="../../../assets/css/links/criterios.css">
 </head>
 <body>
 
     <?php
-        require '../../app/config.php'; 
-        require '../../app/shareFolder/header.php';
+        require '../../../app/config.php'; 
+        require '../../../app/shareFolder/header.php';
     ?>
 
     <div class="contenedor">
@@ -115,7 +115,7 @@
             <h1 class="tituloFooter">Nosotros</h1>
         </div>
     </footer>
-    <script src="../../assets/js/criterios.js"></script>
+    <script src="../../../assets/js/criterios.js"></script>
 
 </body>
 </html>

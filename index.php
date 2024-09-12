@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/links/styles.css">
     <title>BANIN</title>
-</head>
+</head> 
 <body>
     <?php
         require './app/config.php';

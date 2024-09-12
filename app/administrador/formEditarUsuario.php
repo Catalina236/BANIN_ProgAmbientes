@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
-    <link rel="stylesheet" href="../../assets/css/agregarUsuario.css">
+    <link rel="stylesheet" href="../../assets/css/links/agregarUsuario.css">
 </head>
 <body>
 

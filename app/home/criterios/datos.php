@@ -1,5 +1,4 @@
 <?php
-// datos.php
 $ponderaciones = [
     'experiencia' => 58,
     'poblacion' => 5,
