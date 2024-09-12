@@ -19,8 +19,8 @@ session_start();
 
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
-                <li><a href="">Criterios</a></li>
-                <li><a href="">Estado BANIN</a></li>
+                <li><a href="app/shareFolder/criterios.php">Criterios</a></li>
+                <li><a href="app/shareFolder/cunsultarEstadoBanin.php">Estado BANIN</a></li>
 
                 <?php if (isset($_SESSION['rol'])): ?>
 
