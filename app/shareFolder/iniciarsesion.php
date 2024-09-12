@@ -43,7 +43,6 @@
             <h1 class="tituloFooter">Nosotros</h1>
         </div>
     </footer>
-    <script src=>assets/js/header.js"></script>
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');

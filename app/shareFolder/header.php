@@ -23,11 +23,27 @@ session_start();
                 <li><a href="">Estado BANIN</a></li>
 
                 <?php if (isset($_SESSION['rol'])): ?>
-                    <!-- Mostrar otros enlaces si el usuario está logueado -->
-                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
-                    <li><a href="">Criterios</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
+
+                    <?php if ($_SESSION['rol'] == 'Evaluador'): ?>
+                        <!-- Mostrar enlaces comunes si el usuario está logueado -->
+                        <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
+                        <li><a href="">Criterios</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
+                    <?php endif; ?>
+                    
+                    <!-- Mostrar enlaces específicos para Administrador -->
+                    <?php if ($_SESSION['rol'] == 'Administrador'): ?>
+                        <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php">Agregar Usuario</a></li>
+                    <?php endif; ?>
+
+                    <!-- Mostrar enlaces específicos para otros roles -->
+                    <?php if ($_SESSION['rol'] == 'Coordinador'): ?>
+                        <li><a href="<?php echo BASE_URL; ?>app/coordinador/planificaciones.php">Planificaciones</a></li>
+                    <?php elseif ($_SESSION['rol'] == 'Instructor Evaluador'): ?>
+                        <li><a href="<?php echo BASE_URL; ?>app/evaluador/evaluaciones.php">Evaluaciones</a></li>
+                    <?php endif; ?>
                 <?php endif; ?>
             </ul>
         </nav>

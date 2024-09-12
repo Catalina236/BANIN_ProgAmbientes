@@ -44,10 +44,6 @@
             <button class="perfil-btn" type="submit" id="toggleButton">Mostrar</button>
         </p>
 
-        <p><strong>Perfil Vacante:</strong> 
-            <button class="rankingXvacante-btn" type="submit" id="toggleButton2">Mostrar</button>
-        </p>
-        
         <table>
             <thead>
                 <tr>

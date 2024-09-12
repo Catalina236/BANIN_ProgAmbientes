@@ -1,0 +1,221 @@
+/* Estilo del formulario */
+.buscador {
+    margin-bottom: 20px;
+}
+
+.buscador h2 {
+    color: #00ac00;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"].codigo {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Filtros por rol */
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    flex: 1 1 calc(25% - 10px);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filtro-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.filtro-btn.active {
+    background-color: #00ac00;
+    color: white;
+}
+
+/* Responsividad para filtros */
+@media (max-width: 768px) {
+    .filtro-btn {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .filtro-btn {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilo de la sección de información de consulta */
+.informacionDeconsulta {
+    margin-bottom: 20px;
+}
+
+.informacionDeconsulta p {
+    margin: 5px 0;
+}
+
+.informacionDeconsulta strong {
+    color: #00ac00;
+}
+
+/* Estilo de la tabla de resultados */
+.tablaGeneradaPorLaConsulta h2 {
+    color: #00ac00;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #00ac00;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos del botón */
+.perfil-btn {
+    background-color: #00ac00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.perfil-btn:hover {
+    background-color: #008a00;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Estilo del formulario */
+.buscador {
+    margin-bottom: 20px;
+}
+
+.buscador h2 {
+    color: #00ac00;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"].codigo{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo de la sección de información de consulta */
+.informacionDeconsulta {
+    margin-bottom: 20px;
+}
+
+.informacionDeconsulta p {
+    margin: 5px 0;
+}
+
+.informacionDeconsulta strong {
+    color: #00ac00;
+}
+
+/* Estilo de la tabla de resultados */
+.tablaGeneradaPorLaConsulta h2 {
+    color: #00ac00;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #00ac00;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo de los botones */
+.editar-btn {
+    background-color: #FFA500; /* Naranja-Amarillo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.editar-btn:hover {
+    background-color: #FFB732; /* Color más claro al pasar el cursor */
+}
+
+.eliminar-btn {
+    background-color: #FF6347; /* Rojo claro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.eliminar-btn:hover {
+    background-color: #FF7F7F; /* Color más claro al pasar el cursor */
+}
