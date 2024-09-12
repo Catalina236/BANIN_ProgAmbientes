@@ -1,4 +1,4 @@
-/* Estilo del formulario */
+
 .buscador {
     margin-bottom: 20px;
 }
@@ -21,7 +21,7 @@ input[type="text"].codigo {
     border-radius: 4px;
 }
 
-/* Filtros por rol */
+
 .filtros {
     display: flex;
     justify-content: space-between;
@@ -51,7 +51,7 @@ input[type="text"].codigo {
     color: white;
 }
 
-/* Responsividad para filtros */
+
 @media (max-width: 768px) {
     .filtro-btn {
         flex: 1 1 calc(50% - 10px);
@@ -64,7 +64,7 @@ input[type="text"].codigo {
     }
 }
 
-/* Estilo de la sección de información de consulta */
+
 .informacionDeconsulta {
     margin-bottom: 20px;
 }
@@ -77,7 +77,7 @@ input[type="text"].codigo {
     color: #00ac00;
 }
 
-/* Estilo de la tabla de resultados */
+
 .tablaGeneradaPorLaConsulta h2 {
     color: #00ac00;
 }
@@ -106,7 +106,7 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Estilos del botón */
+
 .perfil-btn {
     background-color: #00ac00;
     color: white;
@@ -128,7 +128,7 @@ footer {
 }
 
 
-/* Estilo del formulario */
+
 .buscador {
     margin-bottom: 20px;
 }
@@ -151,7 +151,7 @@ input[type="text"].codigo{
     border-radius: 4px;
 }
 
-/* Estilo de la sección de información de consulta */
+
 .informacionDeconsulta {
     margin-bottom: 20px;
 }
@@ -164,7 +164,7 @@ input[type="text"].codigo{
     color: #00ac00;
 }
 
-/* Estilo de la tabla de resultados */
+
 .tablaGeneradaPorLaConsulta h2 {
     color: #00ac00;
 }
@@ -193,9 +193,9 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Estilo de los botones */
+
 .editar-btn {
-    background-color: #FFA500; /* Naranja-Amarillo */
+    background-color: #FFA500; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -204,11 +204,11 @@ tr:nth-child(even) {
 }
 
 .editar-btn:hover {
-    background-color: #FFB732; /* Color más claro al pasar el cursor */
+    background-color: #FFB732; 
 }
 
 .eliminar-btn {
-    background-color: #FF6347; /* Rojo claro */
+    background-color: #FF6347; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -217,5 +217,60 @@ tr:nth-child(even) {
 }
 
 .eliminar-btn:hover {
-    background-color: #FF7F7F; /* Color más claro al pasar el cursor */
+    background-color: #FF7F7F; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal h2 {
+    color: #00ac00;
+}
+
+.modal p {
+    margin: 20px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmar-btn, .cancelar-btn {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancelar-btn {
+    background-color: #797979;
+}
+
+.confirmar-btn:hover {
+    background-color: #008f00;
+}
+
+.cancelar-btn:hover {
+    background-color: #3d3d3d;
 }
