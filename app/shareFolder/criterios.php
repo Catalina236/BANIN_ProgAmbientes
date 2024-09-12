@@ -25,13 +25,13 @@
                         <th>Observación</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody class="intenso">
+                    <tr class="intenso">
                         <td rowspan="3"  class="intenso">Experiencia</td>
                         <td>Técnica</td>
                         <td rowspan="3" id="ponderacion-experiencia"></td>
                         <td id="ponderacion-tecnica" style="background-color: #007bff;color: white;"></td>
-                        <td>Puntos por año (12 meses)</td>
+                        <td style="border:0px">Puntos por año (12 meses)</td>
                     </tr>
                     <tr>
                         <td>Docente</td>
@@ -69,7 +69,7 @@
                         <td>Técnico profesional</td>
                         <td rowspan="8" id="ponderacion-educacion"></td>
                         <td id="ponderacion-tecnico-profesional" style="background-color: #007bff;color: white;"></td>
-                        <td>Aplica al máximo nivel académico del aspirante</td>
+                        <td style="border:0px">Aplica al máximo nivel académico del aspirante</td>
                         
                     </tr>
                     <tr>
