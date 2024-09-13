@@ -22,35 +22,27 @@ session_start();
             <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
             <li><a href="<?php echo BASE_URL; ?>app/home/cunsultarEstadoBanin.php">Estado BANIN</a></li>
 
-            <?php if (isset($_SESSION['rol'])): ?>
-                <?php if ($_SESSION['rol'] == 'Evaluador'): ?>
+                <?php if (isset($_SESSION['rol']) && $_SESSION['rol']): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
-                <?php endif; ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/evaluaciones.php">Evaluaciones</a></li>
 
-                <?php if ($_SESSION['rol'] == 'Administrador'): ?>
+                <?php elseif (isset($_SESSION['rol']) && $_SESSION['rol'] == 'Administrador'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php">Agregar Usuario</a></li>
-                <?php endif; ?>
-
-                <?php if ($_SESSION['rol'] == 'Coordinador'): ?>
+                
+                <?php elseif (isset($_SESSION['rol']) &&$_SESSION['rol']== 'Coordinador'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/coordinador/planificaciones.php">Planificaciones</a></li>
-                <?php elseif ($_SESSION['rol'] == 'Instructor Evaluador'): ?>
-                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/evaluaciones.php">Evaluaciones</a></li>
-                <?php endif; ?>
-            <?php endif; ?>
-        </ul>
+            </ul>
+                <?php endif;?>
+            </nav>
 
-        </nav>
-
-        <div class="actions">
-            <?php if (isset($_SESSION['rol'])): ?>
-                
-                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
+            <div class="actions">
+            <?php if(isset($_SESSION['rol'])):?>
+            <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
             <?php else: ?>
-                
-                <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
+            <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
             <?php endif; ?>
 
             <button class="menu-toggle" id="menu-toggle">

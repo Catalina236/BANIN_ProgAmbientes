@@ -10,11 +10,8 @@
 <body>
     <?php
         require './app/config.php';
-
         require './app/shareFolder/header.php';
     ?>
-
-
 
     <div class="titulo">
         <h1>Sistema de Evaluación de Instructores</h1>
@@ -45,7 +42,7 @@
             <div class="desc 3">
                 <h2>Acceso al Sistema</h2>
                 <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
-                <button><a href="app/shareFolder/iniciarsesion.php">Acceder</a></button>
+                <button><a href="app/home/iniciarsesion.php">Acceder</a></button>
             </div>
         </section>
     </div>
