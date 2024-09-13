@@ -64,8 +64,8 @@
     margin-bottom: 45px;
     width: 28%;
     height: auto;
-    background-color: white;
-    border: 1px solid #39A900;
+    border-radius: 5px;
+    background-color: #defcd1; /* Fondo gris claro */
     padding: 15px 27px;
     font-size: 17px;
     box-sizing: border-box;

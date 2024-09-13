@@ -38,9 +38,7 @@
         </div>
     </div>
     <footer>
-        <div>
-            <h1 class="tituloFooter">Nosotros</h1>
-        </div>
+        <p class="tituloFooter">© 2024 BANIN - SENA. Todos los derechos reservados.</p>
     </footer>
     <script>
         const togglePassword = document.querySelector('#togglePassword');
