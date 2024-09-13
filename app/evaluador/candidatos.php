@@ -9,8 +9,8 @@
 </head>
 <body>
     <?php
-        require '../../app/config.php'; 
-        require '../../app/shareFolder/header.php';
+        require '../config.php'; 
+        require '../shareFolder/header.php';
     ?>
 
     <div class="contenedor1">
