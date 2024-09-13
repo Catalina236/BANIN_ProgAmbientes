@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="assets/css/links/styles.css">
+    <link rel="stylesheet" href="assets/css/links/styles.css">    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
     <title>BANIN</title>
 </head> 
 <body>
     <?php
-
         require './app/config.php';
 
         require './app/shareFolder/header.php';
@@ -25,7 +27,6 @@
         </section>
     </div>
 
-        <hr class="linea">
         
         <section class="boxes">
         <div class="desc 1">

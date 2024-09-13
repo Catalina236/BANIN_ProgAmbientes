@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch para obtener los datos desde datos.php
     fetch('datos.php')
         .then(response => response.json())
         .then(data => {
