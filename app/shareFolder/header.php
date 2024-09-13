@@ -16,28 +16,43 @@ session_start();
         <a href="<?php echo BASE_URL; ?>index.php" class="logo-container">
             <img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logo-sena-blanco.png" alt="">
         </a>
+
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
-                <li><a href="">Criterios</a></li>
-                <li><a href="">Seleccionados</a></li>
-                <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
-                
-                <!-- Mostrar "Salir" si el usuario está logueado -->
-                <?php if (isset($_SESSION['rol'])): ?>
-                    <li><a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php">Salir</a></li>
+            <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
+            <li><a href="<?php echo BASE_URL; ?>app/home/cunsultarEstadoBanin.php">Estado BANIN</a></li>
+
+            <?php if (isset($_SESSION['rol'])): ?>
+                <?php if ($_SESSION['rol'] == 'Evaluador'): ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
                 <?php endif; ?>
-            </ul>
-        </nav>
-        
-        <!-- Si el usuario no está logueado, mostrar el botón de Iniciar Sesión -->
-        <div class="actions">
-            <?php if (!isset($_SESSION['rol'])): ?>
-                <a href="<?php echo BASE_URL; ?>app/shareFolder/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
+
+                <?php if ($_SESSION['rol'] == 'Administrador'): ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php">Agregar Usuario</a></li>
+                <?php endif; ?>
+
+                <?php if ($_SESSION['rol'] == 'Coordinador'): ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/coordinador/planificaciones.php">Planificaciones</a></li>
+                <?php elseif ($_SESSION['rol'] == 'Instructor Evaluador'): ?>
+                    <li><a href="<?php echo BASE_URL; ?>app/evaluador/evaluaciones.php">Evaluaciones</a></li>
+                <?php endif; ?>
             <?php endif; ?>
-            
-            <!-- Botón del menú -->
+        </ul>
+
+        </nav>
+
+        <div class="actions">
+            <?php if (isset($_SESSION['rol'])): ?>
+                
+                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
+            <?php else: ?>
+                
+                <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
+            <?php endif; ?>
+
             <button class="menu-toggle" id="menu-toggle">
                 <span></span>
                 <span></span>

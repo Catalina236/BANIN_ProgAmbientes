@@ -43,7 +43,7 @@
         <p><strong>Perfil Vacante:</strong> 
             <button class="perfil-btn" type="submit" id="toggleButton">Mostrar</button>
         </p>
-
+        
         <table>
             <thead>
                 <tr>
@@ -98,43 +98,6 @@
                     <td style="text-align: center;">
                         <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table class="ranking">
-            <thead>
-                <tr>
-                    <th>NUMERO DE CEDULA</th>
-                    <th>Nombre</th>
-                    <th>Estado BANIN</th>
-                    <th style="text-align: center;">Pesto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>51964904</td>
-                    <td>MARTHA LILIANA ARANGO GUTIERREZ</td>
-                    <td>Si cumple</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>79207422</td>
-                    <td>JOSE ANTONIO CARRILLO CORREA</td>
-                    <td>Si cumple</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>79314342</td>
-                    <td>MANUEL EDUARDO ALEJO DIAZ</td>
-                    <td>Si cumple</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>52294893</td>
-                    <td>LUZ HELENA QUINTANA</td>
-                    <td>Si cumple</td>
-                    <td>4</td>
                 </tr>
             </tbody>
         </table>

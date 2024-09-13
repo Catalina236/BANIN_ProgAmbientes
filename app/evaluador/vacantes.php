@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="icon" href="../../assets/img/logos/logoSena_2.png">
-    <link rel="stylesheet" href="../../assets/css/vacantes.css">
+    <link rel="stylesheet" href="../../assets/css/links/vacantes.css">
     
     <title>BANIN</title>
 </head>
