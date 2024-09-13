@@ -1,4 +1,5 @@
 <?php
+
 $ponderaciones = [
     'experiencia' => 58,
     'poblacion' => 5,
@@ -22,3 +23,5 @@ $ponderaciones = [
 ];
 
 echo json_encode($ponderaciones);
+
+
