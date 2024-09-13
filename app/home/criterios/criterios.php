@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="icon" href="../../assets/img/logos/logoSena_2.png">
-    <link rel="stylesheet" href="../../../assets/css/links/vacantes.css">
+    <link rel="stylesheet" href="../../../assets/css/links/criterios.css">
     
     <title>BANIN</title>
 </head>
@@ -15,25 +15,23 @@
         require '../../../app/shareFolder/header.php';
     ?>
     <div class="contenedor">
-        <div class="container">
-            <h2>CREITERIOS DE EVALUACIÓN</h2>
+        <section class="criterios-evaluacion">
+            <h2>CRITERIOS DE EVALUACIÓN</h2>
             <div class="cards-container">
                 <div class="card">
-                    <p><strong>NOMBRE:</strong> FORMACIÓN PARA EL TRABAJO</p>
-                    <a href="criteriosFormacionT.php"><button>VER..</button></a>
-                    
+                    <h3 class="card-title">FORMACIÓN PARA EL TRABAJO</h3>
+                    <a href="criteriosFormacionT.php" class="card-button">VER MÁS</a>
                 </div>
                 <div class="card">
-                    <p><strong>NOMBRE:</strong> EDUCACIÓN FORMAL</p>
-                    <a href="criteriosEducacionF.php"><button>VER..</button></a>
-                    
+                    <h3 class="card-title">EDUCACIÓN FORMAL</h3>
+                    <a href="criteriosEducacionF.php" class="card-button">VER MÁS</a>
                 </div>
                 <div class="card">
-                    <p><strong>NOMBRE:</strong> SER</p>
-                    <a href="criteriosSER.PHP"><button>VER..</button></a>
+                    <h3 class="card-title">SER</h3>
+                    <a href="criteriosSER.PHP" class="card-button">VER MÁS</a>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <footer>
         <div>
