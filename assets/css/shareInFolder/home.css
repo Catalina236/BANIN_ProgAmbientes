@@ -17,7 +17,6 @@
     width: 100%; 
     height: 100%; 
     object-fit: cover;
-    
 }
 
 .titulo {
@@ -32,8 +31,6 @@
     background: rgba(138, 138, 138, 0.5); 
     border-radius: 10px; 
 }
-
-
 #banner::before {
     content: "";
     position: absolute;
@@ -41,7 +38,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(37, 37, 37, 0.39);
     z-index: 5;
 }
 
@@ -54,8 +51,7 @@
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
-    justify-content: space-between; 
-    
+    justify-content: space-between;  
 }
 
 .desc {
@@ -103,8 +99,6 @@ button a {
 button:hover {
     background-color: #008a31;
 }
-
-
 .linea {
     border: 0; 
     height: 1px; 
