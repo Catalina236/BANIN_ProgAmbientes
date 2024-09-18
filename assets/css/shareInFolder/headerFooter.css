@@ -9,7 +9,7 @@
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     background-color: #00Ac00;
     padding: 10px 5%;
@@ -17,12 +17,12 @@ header {
     z-index: 1000;
 }
 
-.logo-container {
-    margin-right: 20px;
-}
-
-.logo {
-    max-width: 50px;
+.logo{
+    position: absolute;
+    max-width: 45px;
+    left: 23px;
+    top: 9px;
+    z-index: 2;
 }
 
 .menu-principal {
@@ -129,7 +129,9 @@ footer {
     background-color: #39A900;
     color: white;
     padding: 40px 0;
+    margin-top: 45px;
     text-align: center;
+    font-size: 19px;
 }
 
 .social-buttons {
@@ -161,4 +163,3 @@ footer {
     font-size: 0.9em;
     opacity: 0.8;
 }
-

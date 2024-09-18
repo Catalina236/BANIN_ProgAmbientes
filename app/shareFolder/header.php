@@ -9,7 +9,8 @@ session_start();
     <script src="<?php echo BASE_URL; ?>assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="icon" href="<?php echo BASE_URL; ?>assets/img/logos/logoSena_2.png">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/shareInFolder/headerFooter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>BANIN</title>
 </head>
 <body>
@@ -21,13 +22,9 @@ session_start();
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
             <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
-            <li><a href="<?php echo BASE_URL; ?>app/home/cunsultarEstadoBanin.php">Estado BANIN</a></li>
+            <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Estado BANIN</a></li>
 
-<<<<<<< HEAD
                 <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'Instructor evaluador'): ?>
-=======
-                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'Evaluador'): ?>
->>>>>>> ec0220dc382b9314b51035dfd358219a5c9c0c3c
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>

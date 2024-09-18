@@ -24,7 +24,7 @@ class Trabajo extends Conexion{
                 $rol=$row['rol'];
                 $_SESSION['rol']=$rol;
             switch($rol){
-                case 'Evaluador':
+                case 'Instructor evaluador':
                     header('Location:../evaluador/moduloConsulta.php');
                     break;
                 case 'Coordinador':

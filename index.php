@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="assets/css/links/styles.css">    
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <title>BANIN</title>
-</head> 
 <body>
     <?php
         require './app/config.php';
 
         require './app/shareFolder/header.php';
     ?>
-    <hr class="linea">
     <div id="banner">
         <div class="titulo">
             <h1>Sistema de Evaluación de Instructores</h1>
@@ -26,8 +13,6 @@
             <img src="assets/img/corporativas/InstructorSENA.jpg" alt="Instructor SENA" class="img_caja">
         </section>
     </div>
-
-        
         <section class="boxes">
         <div class="desc 1">
             <h2>Descripción del sistema</h2>
@@ -48,23 +33,8 @@
         </div>
         </section>
     </div>
-    <footer>
-        <div class="social-buttons">
-            <a href="#" target="_blank" class="social-link">
-                <i class="fa-brands fa-facebook"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="#" target="_blank" class="social-link">
-                <i class="fa-brands fa-twitter"></i>
-                <span>Twitter</span>
-            </a>
-            <a href="#" target="_blank" class="social-link">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>LinkedIn</span>
-            </a>
-        </div>
-        <p class="tituloFooter">© 2024 BANIN - SENA. Todos los derechos reservados.</p>
-    </footer>
-
+    <?php 
+    require 'app/shareFolder/footer.php';
+    ?>
 </body>
 </html>

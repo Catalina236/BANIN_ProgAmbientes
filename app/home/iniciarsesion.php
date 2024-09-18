@@ -27,19 +27,13 @@
 
                 <label for="">
                     <i class="fa-solid fa-lock"></i>
-                    <div class="input-container">
                         <input type="password" id="password" placeholder="Contraseña" name="contraseña" required>
                         <i class="fa-solid fa-eye" id="togglePassword"></i>
-                    </div>
                 </label>
-
                <input type="submit" value="Ingresar" name="Validar" class="boton">
             </form>
         </div>
     </div>
-    <footer>
-        <p class="tituloFooter">© 2024 BANIN - SENA. Todos los derechos reservados.</p>
-    </footer>
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
