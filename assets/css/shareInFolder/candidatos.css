@@ -1,4 +1,5 @@
-@import url('../');
+@import url('../shareInFolder/bodyBoton.css');
+@import url('../shareInFolder/headerFooter.css');
 .contenedor1 {
     max-width: 1200px;
     margin: 20px auto;
@@ -55,9 +56,6 @@
 }
 
 .lista .datos .info {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
 }
 
 .lista .datos .info .label {

@@ -25,7 +25,7 @@
 .login-form {
     width: 100%;
     max-width: 300px;
-    margin-top: -203px;
+    margin-top: -190px;
 }
 .formulario label{
     border:solid 1px rgb(167,167,167);
@@ -70,4 +70,12 @@
 }
 h1 {
     margin-bottom: 20px;
+}
+.alerta{
+    background-color: rgb(233, 193, 193);
+    color: darkred;
+    border-radius: 5px;
+    margin: -25px 0px 10px 0px;
+    padding: 7px;
+    text-align: center;
 }

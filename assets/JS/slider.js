@@ -12,4 +12,4 @@ function changeSlide(direction) {
 }
 
 // Cambiar de imagen cada 3 segundos
-setInterval(() => changeSlide(1), 3000);
+setInterval(() => changeSlide(1), 5000);

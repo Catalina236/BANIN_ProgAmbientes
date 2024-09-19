@@ -40,7 +40,11 @@
     <div class="desc 3">
         <h2>Acceso al Sistema</h2>
         <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
-        <button><a href="app/shareFolder/iniciarsesion.php">Acceder</a></button>
+        <?php
+        if(!isset($_SESSION['id_rol']) && !isset($_SESSION['numero_documento'])):?>
+            <button><a href="app/home/iniciarsesion.php">Acceder</a></button>
+        <?php else:?>
+        <?php endif;?>
     </div>
     </section>
 </div>

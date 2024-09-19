@@ -18,30 +18,28 @@ session_start();
         <a href="<?php echo BASE_URL; ?>index.php" class="logo-container">
             <img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logo-sena-blanco.png" alt="">
         </a>
-
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
             <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
             <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Estado BANIN</a></li>
 
-                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'Instructor evaluador'): ?>
+                <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '2'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
-                    <!-- <li><a href="<?php echo BASE_URL; ?>app/evaluador/evaluaciones.php">Evaluaciones</a></li> -->
-
-                <?php elseif (isset($_SESSION['rol']) && $_SESSION['rol'] == 'Administrador'): ?>
+                    
+                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '3'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php">Agregar Usuario</a></li>
                 
-                <?php elseif (isset($_SESSION['rol']) &&$_SESSION['rol']== 'Coordinador'): ?>
-                    <li><a href="<?php echo BASE_URL; ?>app/coordinador/planificaciones.php">Planificaciones</a></li>
-            </ul>
+                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']== '1'): ?>
+                    <li><a href="<?php echo BASE_URL;?>app/coordinador/vacantes.php">Asignar evaluador</a></li>
+                    <li><a href="<?php echo BASE_URL;?>app/coordinador/listaCandidatos.php">Candidatos</a></li>
+                </ul>
                 <?php endif;?>
             </nav>
-
             <div class="actions">
-            <?php if(isset($_SESSION['rol'])):?>
+            <?php if(isset($_SESSION['id_rol'])):?>
                 <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
             <?php else: ?>
                 <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>

@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="../../assets/css/links/moduloConsulta.css">
 </head>
 <body>
-
     <?php
         require '../../app/config.php'; 
         require '../../app/shareFolder/header.php';
     ?>
-
     <div class="contenedor">
         <div class="buscador">
             <h2>Buscador</h2>

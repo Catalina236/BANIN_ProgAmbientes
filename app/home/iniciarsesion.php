@@ -15,14 +15,27 @@
         require '../shareFolder/header.php';
     ?>
 
-    <div class="contenedor">
+    <div class="contenedor">        
         <div class="imagen-contenedor"></div>
         <div class="formulario">
             <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
             <form class="login-form" action="" method="post">
-                <label for="">
+        <?php
+        require_once '../../sql/class.php';
+        if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
+                header("Location:cuenta.php");
+        }
+        
+        if (isset($_POST['Validar'])){
+            $numero=$_POST['numero_doc'];
+            $contraseña=$_POST['contraseña'];
+            $trabajo=new Trabajo();
+            $datos=$trabajo->iniciarSesion($numero, $contraseña);
+        }
+    ?>
+        <label for="">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Usuario" name="numero_doc" required>
+                    <input type="text" placeholder="Número de documento" name="numero_doc" required>
                 </label>
 
                 <label for="">
@@ -49,18 +62,3 @@
 
 </body>
 </html>
-<?php
-   require_once '../../sql/class.php';
-   if(isset($_SESSION['rol']) && isset($_SESSION['numero_documento'])){
-   }
-   else{
-       header("../../index.php");
-   }
-   
-   if (isset($_POST['Validar'])){
-       $numero=$_POST['numero_doc'];
-       $contraseña=$_POST['contraseña'];
-       $trabajo=new Trabajo();
-       $datos=$trabajo->iniciarSesion($numero, $contraseña);
-   }
-?>

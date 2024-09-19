@@ -13,8 +13,6 @@
     require '../../app/config.php'; 
     require '../../app/shareFolder/header.php';
 ?>
-
-
     <div class="contenedor">
         <div class="infoVacante">
             <div class="titulo">
@@ -25,7 +23,6 @@
                 <p><strong>Postulados:</strong> 7</p>
             </div>
         </div>
-
         <div class="info-container" id="infoContainer">
             <p><strong>Codigo BANIN:</strong> 32926</p>
             <p><strong>Codigo Contratación postulación APE:</strong> 29913</p>

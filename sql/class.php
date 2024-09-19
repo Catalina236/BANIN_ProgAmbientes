@@ -21,16 +21,16 @@ class Trabajo extends Conexion{
         if($num_filas>0){
             foreach($result as $row){
                 $_SESSION['numero_documento']=$row['numero_documento'];
-                $rol=$row['rol'];
-                $_SESSION['rol']=$rol;
+                $rol=$row['id_rol'];
+                $_SESSION['id_rol']=$rol;
             switch($rol){
-                case 'Instructor evaluador':
+                case '2':
                     header('Location:../evaluador/moduloConsulta.php');
                     break;
-                case 'Coordinador':
+                case '1':
                     header('Location:cuenta.php');
                 break;
-                case 'Administrador':
+                case '3':
                     header('Location:../administrador/usuario.php');
                 break;
                 default;
@@ -39,7 +39,7 @@ class Trabajo extends Conexion{
             //var_dump($result);
         }
         else{
-            echo 'Usuario o contraseña incorrectos';
+            echo "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
         }
     }
 }
