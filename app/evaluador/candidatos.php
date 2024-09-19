@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../assets/img/logos/logosena.png">
-    <link rel="stylesheet" href="app/evaluador/candidatos.php">
     <link rel="stylesheet" href="../../assets/css/links/cantidato.css">
     <title>Candidatos asignados</title>
 </head>
@@ -13,11 +12,8 @@
         require '../config.php'; 
         require '../shareFolder/header.php';
     ?>
-
     <div class="contenedor1">
         <h2>Candidatos asignados</h2>
-        
-
         <div class="lista">
             <div class="foto">
                 <img src="../../assets/img/corporativas/usuarios.png" alt="">

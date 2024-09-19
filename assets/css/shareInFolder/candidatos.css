@@ -30,6 +30,7 @@
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s, background-color 0.3s;
     flex: 1 1 calc(25% - 20px); /* Cuatro tarjetas en una fila, ajustable según el diseño */

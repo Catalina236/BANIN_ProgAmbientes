@@ -19,14 +19,17 @@
             <h2>CRITERIOS DE EVALUACIÓN</h2>
             <div class="cards-container">
                 <div class="card">
+                    <img src="../../../assets/img/corporativas/portafolio.png" alt="">
                     <h3 class="card-title">FORMACIÓN PARA EL TRABAJO</h3>
                     <a href="criteriosFormacionT.php" class="card-button">VER MÁS</a>
                 </div>
                 <div class="card">
+                    <img src="../../../assets/img/corporativas/libro-de-lectura.png" alt="">
                     <h3 class="card-title">EDUCACIÓN FORMAL</h3>
                     <a href="criteriosEducacionF.php" class="card-button">VER MÁS</a>
                 </div>
                 <div class="card">
+                    <img src="../../../assets/img/corporativas/complementario.png" alt="">
                     <h3 class="card-title">SER</h3>
                     <a href="criteriosSER.PHP" class="card-button">VER MÁS</a>
                 </div>
