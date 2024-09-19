@@ -35,6 +35,10 @@ session_start();
                 <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']== '1'): ?>
                     <li><a href="<?php echo BASE_URL;?>app/coordinador/vacantes.php">Asignar evaluador</a></li>
                     <li><a href="<?php echo BASE_URL;?>app/coordinador/listaCandidatos.php">Candidatos</a></li>
+
+                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']=='4'):?>
+                    <li><a href="<?php echo BASE_URL;?>app/control/PQRS.php">PQRS</a></li>
+                    <li><a href="<?php echo BASE_URL;?>app/control/Control_traslados.php">Control traslados</a></li>
                 </ul>
                 <?php endif;?>
             </nav>
@@ -52,7 +56,6 @@ session_start();
             </button>
         </div>
     </header>
-
     <script src="<?php echo BASE_URL; ?>assets/js/header.js"></script>
 </body>
 </html>
