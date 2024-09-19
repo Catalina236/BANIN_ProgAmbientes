@@ -15,49 +15,38 @@
         require './app/shareFolder/header.php';
     ?>
 <div class="contenedor">
-    <div id="banner">
-        <div id="slider" class="slider">
-            <section class="section_caja">
-                <div class="texto">
-                    <h1>Sistema de Evaluación de Instructores</h1>
-                    <p>Herramienta integral para evaluar y potenciar habilidades de nuestros instructores</p>
-                </div>
-                <img src="assets/img/corporativas/Imagen.jpg" alt="" class="img_caja">
-            </section>
-            <section class="section_caja">
-                <img src="assets/img/corporativas/imagenfondo.jpg" class="img_caja" alt="">
-            </section>
-            <section class="section_caja">
-                <img src="assets/img/corporativas/instructorSENA.jpg" class="img_caja" alt="">
-            </section>
-        </div>
+<div class="slider">
+    <div class="slides">
+        <img src="assets/img/banners/Imagen.jpg" alt="">
+        <img src="assets/img/banners/imagenfondo.jpg" alt="">
+        <img src="assets/img/banners/instructorSENA.jpg" alt="Imagen 3">
     </div>
-
-    <div id="btn_atras" class="btn_atras">&#60;</div>
-    <div id="btn_siguiente" class="btn_siguiente">&#62;</div>
-
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
     <section class="boxes">
-        <div class="desc 1">
-            <h2>Descripción del sistema</h2>
-            <p>BANIN(Banco de Instructores) es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
-        </div>
-        <div class="desc 2">
-            <h2>Características</h2>
-            <li>Evaluación de competencias pedagógicas</li>
-            <li>Análisis de habilidades técnicas</li>
-            <li>Revisión de experiencia y trayectoria</li>
-            <li>Informes personalizados</li>
-            <li>Seguimiento de progreso</li>
-        </div>
-        <div class="desc 3">
-            <h2>Acceso al Sistema</h2>
-            <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
-            <button><a href="app/shareFolder/iniciarsesion.php">Acceder</a></button>
-        </div>
+    <div class="desc 1">
+        <h2>Descripción del sistema</h2>
+        <p>BANIN(Banco de Instructores) es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
+    </div>
+    <div class="desc 2">
+        <h2>Características</h2>
+        <li>Evaluación de competencias pedagógicas</li>
+        <li>Análisis de habilidades técnicas</li>
+        <li>Revisión de experiencia y trayectoria</li>
+        <li>Informes personalizados</li>
+        <li>Seguimiento de progreso</li>
+    </div>
+    <div class="desc 3">
+        <h2>Acceso al Sistema</h2>
+        <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
+        <button><a href="app/shareFolder/iniciarsesion.php">Acceder</a></button>
+    </div>
     </section>
 </div>
 <?php 
-require 'app/shareFolder/footer.php';
+require 'app/shareFolder/footer.php'
 ?>
+<script src="assets/JS/slider.js"></script>
 </body>
 </html>

@@ -1,63 +1,70 @@
-/*.contenedor {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+:root {
+    --primary-color: #333;
+    --transition-duration: 0.5s;
 }
 
-#banner {
-    position: relative;
-    margin: auto;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.slider-container {
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    border-radius: 10px;
 }
 
 .slider {
-    margin: auto;
     position: relative;
-    height: 578px;
+    width: 100%;
+    height: 80vh;
     overflow: hidden;
-    max-width: 1300px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border: 10px solid white;
+    box-shadow: 0 10px 19px 8px #000000 ;
+}
+
+.slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    transition: transform var(--transition-duration) ease-in-out;
 }
 
-.section_caja {
+.slides img {
     width: 100%;
-    flex: 0 0 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-.img_caja {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.btn_atras, .btn_siguiente {
-    width: 50px;
-    height: 50px;
+button.prev, button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    line-height: 50px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(51, 51, 51, 0.7);
     color: white;
-    border-radius: 50%;
-    font-family: monospace;
+    border: none;
+    padding: 10px 15px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
+    border-radius: 5px;
 }
 
-.btn_atras {
-    left: 35px;
+.prev {
+    left: 10px;
 }
 
-.btn_siguiente {
-    right: 35px;
+.next {
+    right: 10px;
 }
 
 .texto {
@@ -74,31 +81,34 @@
 
 .boxes {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .desc {
-    margin-top: 55px;
-    margin-bottom: 45px;
-    width: 28%;
-    height: auto;
+    width: calc(33.33% - 20px);
+    min-width: 250px;
     background-color: white;
     border: 1px solid #39A900;
-    padding: 15px 27px;
+    padding: 15px 20px;
     font-size: 17px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .desc h2 {
-    color: green;
+    color: #287700;
 }
 
 .desc button {
     border: none;
-    background-color: #39A900;
+    background-color: #277500;
     border-radius: 5px;
     font-weight: bold;
-    height: 23px;
-    width: 64px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .desc button a {
@@ -108,95 +118,10 @@
 
 .desc button a:hover {
     text-decoration: underline;
-}*/
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
 }
 
-#banner {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider {
-    display: flex;
-    scroll-snap-type: x mandatory; /* Snap horizontal */
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
-}
-
-.slider::-webkit-scrollbar {
-    display: none; /* Ocultar scrollbars */
-}
-
-.section_caja {
-    scroll-snap-align: center; /* El slider encajará en el centro de la caja */
-    flex: none; /* No se expandirá */
-    width: 100%; /* Cada sección ocupará todo el ancho */
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-}
-
-.img_caja {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.texto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Estilos para las cajas inferiores */
-.boxes {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 20px 0;
-}
-
-.desc {
-    width: 28%;
-    padding: 15px 27px;
-    background-color: white;
-    border: 1px solid #39A900;
-    text-align: center;
-}
-
-.desc h2 {
-    color: green;
-}
-
-.desc button {
-    border: none;
-    background-color: #39A900;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.desc button:hover {
-    background-color: #2e7b00;
+@media (max-width: 768px) {
+    .desc {
+        width: 100%;
+    }
 }
