@@ -37,12 +37,6 @@
     </div>
 
 
-    <footer>
-        <div>
-            <h1 class="tituloFooter">Nosotros</h1>
-        </div>
-    </footer>
-
     <script>
         document.querySelectorAll('.filtro-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -50,8 +44,8 @@
             });
         });
     </script>
-<?php 
-    require '../shareFolder/footer.php';
-?>
+    <?php 
+        require '../shareFolder/footer.php';
+    ?>
 </body>
 </html>

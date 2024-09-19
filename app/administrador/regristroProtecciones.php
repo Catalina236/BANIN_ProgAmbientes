@@ -24,9 +24,9 @@
         </div>
         <div class="buscador">
             <h2>Filtros por roles</h2>
-            <button type="button" class="filtro-btn" data-role="Instructor">Instructor</button>
-            <button type="button" class="filtro-btn" data-role="Evaluador">Evaluador</button>
-            <button type="button" class="filtro-btn" data-role="Control">Control</button>
+            <button type="button" class="filtro-btn" data-role="Instructor">TITULADA</button>
+            <button type="button" class="filtro-btn" data-role="Evaluador">COMPLEMENTARIA</button>
+            <button type="button" class="filtro-btn" data-role="Control">SER</button>
         </div>
 
         <div class="buscador">
@@ -41,42 +41,33 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Documento</th>
                         <th>Nombre</th>
-                        <th>Número de documento</th>
-                        <th>Rol</th>
-                        <th style="text-align: center;">Editar</th>
-                        <th style="text-align: center;">Eliminar</th>
+                        <th>Estado BANIN</th>
+                        <th>Coordinación Final</th>
+                        <th>Traslado</th>
+                        <th>Reclamación</th>
+                        <th>Protección</th>
+                        <th>Editar Información</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>79314342</td>
                         <td>MANUEL EDUARDO ALEJO DIAZ</td>
-                        <td>1072645387</td>
-                        <td>Evaluador</td> 
-                        <td style="text-align: center;"><a href="../administrador/formEditarUsuario.php"><button class="editar-btn">Editar</button></a></td>
-                        <td style="text-align: center;"><button class="eliminar-btn" onclick="mostrarModal()">Eliminar</button></td>
+                        <td>Seleccionado</td>
+                        <td>COMPLEMENTARIA</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="text-align: center;"><a href="../administrador/forms.php"><button class="editar-btn">Editar</button></a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Modal personalizado -->
-    <div id="modalEliminar" class="modal">
-        <div class="modal-content">
-            <h2>Confirmar Eliminación</h2>
-            <p>¿Estás seguro de que deseas eliminar este usuario?</p>
-            <div class="modal-buttons">
-                <button id="confirmar" class="confirmar-btn">Sí, eliminar</button>
-                <button id="cancelar" class="cancelar-btn">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../../assets/js/mensajeEliminar.js"></script>
-
+    
     <script>
         document.querySelectorAll('.filtro-btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -84,6 +75,7 @@
             });
         });
     </script>
+
     <?php 
         require '../shareFolder/footer.php';
     ?>
