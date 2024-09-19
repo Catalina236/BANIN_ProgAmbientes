@@ -40,7 +40,7 @@ session_start();
             </nav>
             <div class="actions">
             <?php if(isset($_SESSION['id_rol'])):?>
-                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir">Salir</a>
+                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir" onclick="return salir()">Salir</a>
             <?php else: ?>
                 <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
             <?php endif; ?>
@@ -56,3 +56,14 @@ session_start();
     <script src="<?php echo BASE_URL; ?>assets/js/header.js"></script>
 </body>
 </html>
+<script>
+    function salir(){
+        var respuesta=confirm("¿Seguro desea salir?");
+        if(respuesta==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>
