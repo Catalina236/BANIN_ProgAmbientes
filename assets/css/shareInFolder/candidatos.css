@@ -1,3 +1,4 @@
+@import url('../');
 .contenedor1 {
     max-width: 1200px;
     margin: 20px auto;
@@ -22,7 +23,6 @@
     font-size: 1.5em;
     color: #333;
 }
-
 .lista {
     display: flex;
     flex-direction: column;

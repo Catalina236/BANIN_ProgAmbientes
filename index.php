@@ -1,19 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/links/styles.css">    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>BANIN</title>
+</head>
 <body>
     <?php
         require './app/config.php';
-
         require './app/shareFolder/header.php';
     ?>
+<div class="contenedor">
     <div id="banner">
-        <div class="titulo">
-            <h1>Sistema de Evaluación de Instructores</h1>
-            <p>Herramienta integral para evaluar y potenciar habilidades de nuestros instructores</p>
+        <div id="slider" class="slider">
+            <section class="section_caja">
+                <div class="texto">
+                    <h1>Sistema de Evaluación de Instructores</h1>
+                    <p>Herramienta integral para evaluar y potenciar habilidades de nuestros instructores</p>
+                </div>
+                <img src="assets/img/corporativas/Imagen.jpg" alt="" class="img_caja">
+            </section>
+            <section class="section_caja">
+                <img src="assets/img/corporativas/imagenfondo.jpg" class="img_caja" alt="">
+            </section>
+            <section class="section_caja">
+                <img src="assets/img/corporativas/instructorSENA.jpg" class="img_caja" alt="">
+            </section>
         </div>
-        <section class="section_caja">
-            <img src="assets/img/corporativas/InstructorSENA.jpg" alt="Instructor SENA" class="img_caja">
-        </section>
     </div>
-        <section class="boxes">
+
+    <div id="btn_atras" class="btn_atras">&#60;</div>
+    <div id="btn_siguiente" class="btn_siguiente">&#62;</div>
+
+    <section class="boxes">
         <div class="desc 1">
             <h2>Descripción del sistema</h2>
             <p>BANIN(Banco de Instructores) es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
@@ -29,12 +52,12 @@
         <div class="desc 3">
             <h2>Acceso al Sistema</h2>
             <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
-            <button><a href="app/home/iniciarsesion.php">Acceder</a></button>
+            <button><a href="app/shareFolder/iniciarsesion.php">Acceder</a></button>
         </div>
-        </section>
-    </div>
-    <?php 
-    require 'app/shareFolder/footer.php';
-    ?>
+    </section>
+</div>
+<?php 
+require 'app/shareFolder/footer.php';
+?>
 </body>
 </html>

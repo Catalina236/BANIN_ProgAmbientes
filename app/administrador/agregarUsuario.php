@@ -49,6 +49,8 @@
             });
         });
     </script>
-
+<?php 
+    require '../shareFolder/footer.php';
+?>
 </body>
 </html>

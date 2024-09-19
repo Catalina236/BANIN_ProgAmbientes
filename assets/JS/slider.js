@@ -1,53 +1,42 @@
-/*$(document).ready(function () {
-    var slide = $('#caja');
-    var siguiente = $('#btn_siguiente');
-    var atras = $('#btn_atras');
-    var interval;
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('slider');
+    const sections = document.querySelectorAll('.section_caja');
+    const totalSlides = sections.length;
+    let currentIndex = 0;
 
-    // Mueve la última imagen al principio
-    $('#caja .section_caja:last').insertBefore('#caja .section_caja:first');
-    slide.css('margin-left', '-100%');
-
-    function moverD() {
-        slide.animate({
-            marginLeft: '-200%'
-        }, 1000, function () {
-            // Mueve la primera imagen al final
-            $('#caja .section_caja:first').insertAfter('#caja .section_caja:last');
-            // Reinicia la posición del carrusel
-            slide.css('margin-left', '-100%');
-        });
-    }
-
-    function moverI() {
-        slide.animate({
-            marginLeft: '0%'
-        }, 1000, function () {
-            // Mueve la última imagen al principio
-            $('#caja .section_caja:last').insertBefore('#caja .section_caja:first');
-            // Reinicia la posición del carrusel
-            slide.css('margin-left', '-100%');
-        });
-    }
-
-    function autoplay() {
-        interval = setInterval(function () {
-            moverD();
-        }, 3000);
-    }
-
-    siguiente.on('click', function () {
-        moverD();
-        clearInterval(interval);
-        autoplay();
+    // Botón para mover a la siguiente imagen
+    document.getElementById('btn_siguiente').addEventListener('click', function () {
+        moveToNextSlide();
     });
 
-    atras.on('click', function () {
-        moverI();
-        clearInterval(interval);
-        autoplay();
+    // Botón para mover a la imagen anterior
+    document.getElementById('btn_atras').addEventListener('click', function () {
+        moveToPrevSlide();
     });
 
-    autoplay();
+    // Función para mover a la siguiente imagen
+    function moveToNextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateSliderPosition();
+    }
+
+    // Función para mover a la imagen anterior
+    function moveToPrevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalSlides - 1;
+        }
+        updateSliderPosition();
+    }
+
+    // Actualiza la posición del slider
+    function updateSliderPosition() {
+        const offset = -currentIndex * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+    }
 });
-*/

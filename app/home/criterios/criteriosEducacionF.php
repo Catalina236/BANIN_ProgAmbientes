@@ -96,11 +96,9 @@
         </table>
     </div>
 
-    <footer>
-        <div>
-            <h1 class="tituloFooter">Nosotros</h1>
-        </div>
-    </footer>
+    <?php 
+    require '../../shareFolder/footer.php';
+    ?>
     <script src="../../../assets/js/criteriosEducacionFormal.js"></script>
 </body>
 </html>

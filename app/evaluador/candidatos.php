@@ -230,8 +230,8 @@
         </div>
 
     </div>
-    <footer>
-        <p>&copy; 2024 BANIN - SENA. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
+<?php 
+    require '../shareFolder/footer.php';
+?>

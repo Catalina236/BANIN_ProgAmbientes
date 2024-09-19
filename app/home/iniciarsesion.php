@@ -63,5 +63,4 @@
        $trabajo=new Trabajo();
        $datos=$trabajo->iniciarSesion($numero, $contraseña);
    }
-   
 ?>
