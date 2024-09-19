@@ -28,7 +28,7 @@ class Trabajo extends Conexion{
                     header('Location:../evaluador/moduloConsulta.php');
                     break;
                 case '1':
-                    header('Location:cuenta.php');
+                    header('Location:../coordinador/vacantes.php');
                 break;
                 case '3':
                     header('Location:../administrador/usuario.php');
