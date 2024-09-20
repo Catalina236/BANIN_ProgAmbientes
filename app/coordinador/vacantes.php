@@ -10,9 +10,11 @@
 </head>
 <body>
     <?php
-        require_once '../../app/config.php';
-        // La verificación de acceso ya se ha realizado en config.php
-        require_once '../../app/shareFolder/header.php';
+        require '../../app/config.php';
+        require '../../app/shareFolder/header.php';
+    ?>
+    <?php
+        require '../../app/shareFolder/navbar.php';
     ?>
     <div class="contenedor">
         <div class="container">

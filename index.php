@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script> 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/links/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>BANIN</title>
 </head>
@@ -12,6 +13,9 @@
     <?php
         require './app/config.php';
         require './app/shareFolder/header.php';
+    ?>
+    <?php
+        require './app/shareFolder/navbar.php';
     ?>
 <div class="contenedor">
 <div class="slider">
@@ -26,7 +30,7 @@
     <section class="boxes">
     <div class="desc 1">
         <h2>Descripción del sistema</h2>
-        <p>BANIN(Banco de Instructores) es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
+        <p> es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
     </div>
     <div class="desc 2">
         <h2>Características</h2>

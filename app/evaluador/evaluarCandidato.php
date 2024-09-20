@@ -9,10 +9,13 @@
 <link rel="stylesheet" href="../../assets/css/links/evaluar.css">
 </head>
 <body>
-<?php
-    require '../../app/config.php'; 
-    require '../../app/shareFolder/header.php';
-?>
+    <?php
+        require '../../app/config.php';
+        require '../../app/shareFolder/header.php';
+    ?>
+    <?php
+        require '../../app/shareFolder/navbar.php';
+    ?>
     <div class="contenedor">
         <div class="infoVacante">
             <div class="titulo">

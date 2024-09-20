@@ -10,9 +10,12 @@
     <title>Inicio de Sesión SENA</title>
 </head>
 <body>
+<?php
+        require '../../app/config.php';
+        require '../../app/shareFolder/header.php';
+    ?>
     <?php
-        require '../../app/config.php'; 
-        require '../shareFolder/header.php';
+        require '../../app/shareFolder/navbar.php';
     ?>
 
     <div class="contenedor">        

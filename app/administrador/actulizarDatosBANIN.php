@@ -6,20 +6,7 @@
     <title>Consulta</title>
     <link rel="stylesheet" href="../../assets/css/links/agregarUsuario.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .contenedor {
-            max-width: 600px;
-            margin: 30px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+
         h1 {
             color: #333;
             border-bottom: 2px solid #4CAF50;
@@ -66,10 +53,12 @@
     </style>
 </head>
 <body>
-
     <?php
-        require '../../app/config.php'; 
+        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
+    ?>
+    <?php
+        require '../../app/shareFolder/navbar.php';
     ?>
 
     <div class="contenedor">
