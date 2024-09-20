@@ -54,7 +54,7 @@ h2 {
 .card button {
     align-self: flex-end;
     padding: 10px 20px;
-    background-color: #29A329;
+    background-color:#671C34;
     color: white;
     border: none;
     margin-top: 10px;
@@ -64,7 +64,7 @@ h2 {
 }
 
 .card button:hover {
-    background-color: #248f24;
+    background-color: #FBAD20;
 }
 
 body {

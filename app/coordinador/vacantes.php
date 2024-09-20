@@ -11,7 +11,6 @@
 <body>
     <?php
         require_once '../../app/config.php';
-        // La verificación de acceso ya se ha realizado en config.php
         require_once '../../app/shareFolder/header.php';
     ?>
     <div class="contenedor">
@@ -89,10 +88,8 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div>
-            <h1 class="tituloFooter">Nosotros</h1>
-        </div>
-    </footer>
+    <?php
+    require '../shareFolder/footer.php';
+    ?>
 </body>
 </html>

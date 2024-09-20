@@ -74,7 +74,7 @@ button.prev, button.next {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000080;
     padding: 20px;
     border-radius: 10px;
 }
@@ -90,7 +90,7 @@ button.prev, button.next {
     width: calc(33.33% - 20px);
     min-width: 250px;
     background-color: white;
-    border: 1px solid #39A900;
+    border: 1px solid #671C34;
     padding: 15px 20px;
     font-size: 17px;
     box-sizing: border-box;
@@ -99,12 +99,12 @@ button.prev, button.next {
 }
 
 .desc h2 {
-    color: #287700;
+    color: #330715;
 }
 
 .desc button {
     border: none;
-    background-color: #277500;
+    background-color: #671C34;
     border-radius: 5px;
     font-weight: bold;
     padding: 10px 20px;
