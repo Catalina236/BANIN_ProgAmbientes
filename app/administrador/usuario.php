@@ -28,14 +28,14 @@
             <button type="button" class="filtro-btn" data-role="Evaluador">Evaluador</button>
             <button type="button" class="filtro-btn" data-role="Control">Control</button>
         </div>
-
+        
         <div class="buscador">
             <h2>Información de la Consulta</h2>
             <p><strong>Número de documento:</strong> 1072645387</p>
             <p><strong>Nombre:</strong> No especificado</p>
             <p><strong>Rol:</strong> No especificado</p>
         </div>
-
+        <a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php"><button class="perfil-btn" type="submit">Agregar Usuario</button></a>
         <div class="tablaGeneradaPorLaConsulta">
             <h2>Resultados de la Consulta</h2>
             <table>

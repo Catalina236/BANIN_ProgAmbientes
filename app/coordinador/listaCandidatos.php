@@ -111,7 +111,7 @@
                     <th>NUMERO DE CEDULA</th>
                     <th>Nombre</th>
                     <th>Estado BANIN</th>
-                    <th style="text-align: center;">Pesto</th>
+                    <th style="text-align: center;">Puesto</th>
                 </tr>
             </thead>
             <tbody>

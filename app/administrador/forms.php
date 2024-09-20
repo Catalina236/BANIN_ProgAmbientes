@@ -84,6 +84,7 @@
             
             <button type="submit">Guardar Reclamación</button>
         </form>
+        
 
         <h2>Editar Protección</h2>
         <form id="formProteccion">

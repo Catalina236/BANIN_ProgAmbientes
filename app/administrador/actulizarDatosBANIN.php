@@ -84,8 +84,8 @@
         </div>
         <div class="estado">
             <p>Estado: Datos actualizados</p>
-            <p>Candidatos postulados: 150</p>
-            <p>Nuevos candidatos desde la última actualización: 5</p>
+            <p>Vacantes: 150</p>
+            <p>Nuevas Vacantes desde la última actualización: 5</p>
         </div>
     </div>
 
