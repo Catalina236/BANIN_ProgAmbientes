@@ -39,8 +39,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`numero_documento`, `contraseña`, `rol`, `id_rol`) VALUES
-('1007345867', '123456', 'Instructor evaluador', '2'),
-('12333', '1222222', 'Coordinador', '1');
+('1073', '123', 'evaluador', '2'),
+('1234', '1234', 'coordinador', '1');
+('123', '123', 'administrador', '3');
 
 --
 -- Índices para tablas volcadas
