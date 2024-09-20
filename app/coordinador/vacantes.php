@@ -10,8 +10,16 @@
 </head>
 <body>
     <?php
+<<<<<<< HEAD
         require_once '../../app/config.php';
         require_once '../../app/shareFolder/header.php';
+=======
+        require '../../app/config.php';
+        require '../../app/shareFolder/header.php';
+    ?>
+    <?php
+        require '../../app/shareFolder/navbar.php';
+>>>>>>> 7326906556bb4406ea3e86820325cdfd924d1e7e
     ?>
     <div class="contenedor">
         <div class="container">

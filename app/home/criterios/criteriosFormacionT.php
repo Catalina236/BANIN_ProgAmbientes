@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="../../../assets/css/links/criterios.css">
 </head>
 <body>
-
     <?php
-        require '../../../app/config.php'; 
+        require '../../../app/config.php';
         require '../../../app/shareFolder/header.php';
+    ?>
+    <?php
+        require '../../../app/shareFolder/navbar.php';
     ?>
 
     <div class="contenedor">
