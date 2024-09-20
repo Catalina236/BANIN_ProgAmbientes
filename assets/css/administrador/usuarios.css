@@ -4,7 +4,7 @@
 }
 
 .buscador h2 {
-    color: #00ac00;
+    color: #671C34;
 }
 
 label {
@@ -47,7 +47,7 @@ input[type="text"].codigo {
 }
 
 .filtro-btn.active {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
 }
 
@@ -74,12 +74,12 @@ input[type="text"].codigo {
 }
 
 .informacionDeconsulta strong {
-    color: #00ac00;
+    color: #671C34;
 }
 
 
 .tablaGeneradaPorLaConsulta h2 {
-    color: #00ac00;
+    color: #671C34;
 }
 
 table {
@@ -98,7 +98,7 @@ th, td {
 }
 
 th {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
 }
 
@@ -108,7 +108,7 @@ tr:nth-child(even) {
 
 
 .perfil-btn {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
     border: none;
     cursor: pointer;
@@ -119,7 +119,7 @@ tr:nth-child(even) {
 }
 
 .perfil-btn:hover {
-    background-color: #008a00;
+    background-color: #FBAD20;
 }
 
 footer {
@@ -134,7 +134,7 @@ footer {
 }
 
 .buscador h2 {
-    color: #00ac00;
+    color: #671C34;
 }
 
 label {
@@ -161,12 +161,12 @@ input[type="text"].codigo{
 }
 
 .informacionDeconsulta strong {
-    color: #00ac00;
+    color: #671C34;
 }
 
 
 .tablaGeneradaPorLaConsulta h2 {
-    color: #00ac00;
+    color: #671C34;
 }
 
 table {
@@ -185,7 +185,7 @@ th, td {
 }
 
 th {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
 }
 
@@ -242,7 +242,7 @@ tr:nth-child(even) {
 }
 
 .modal h2 {
-    color: #00ac00;
+    color: #671C34;
 }
 
 .modal p {
@@ -268,7 +268,7 @@ tr:nth-child(even) {
 }
 
 .confirmar-btn:hover {
-    background-color: #008f00;
+    background-color: #FBAD20;
 }
 
 .cancelar-btn:hover {

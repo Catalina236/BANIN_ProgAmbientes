@@ -1,41 +1,41 @@
- form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
 
-    label {
-        font-size: 1.1rem;
-        font-weight: bold;
-        color: #333;
-    }
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
 
-    input[type="text"], select {
-        padding: 10px;
-        font-size: 1rem;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        width: 100%;
-        box-sizing: border-box;
-    }
+input[type="text"], select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    input[type="submit"] {
-        background-color: #00ac00;
-        color: white;
-        padding: 12px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+input[type="submit"] {
+    background-color: #671C34;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    input[type="submit"]:hover {
-        background-color: #008f00;
-    }
-    #rol {
-        background-color: #ffffff;
-    }
+input[type="submit"]:hover {
+    background-color: #FBAD20;
+}
+#rol {
+    background-color: #ffffff;
+}

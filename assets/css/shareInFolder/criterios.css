@@ -83,7 +83,7 @@ td:nth-child(3), td:nth-child(4), td:nth-child(5) {
     width:103px;
 }
 .card-button {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -94,7 +94,7 @@ td:nth-child(3), td:nth-child(4), td:nth-child(5) {
 }
 
 .card-button:hover {
-    background-color: #2980b9;
+    background-color: #FBAD20;
 }
 
 @media (max-width: 768px) {

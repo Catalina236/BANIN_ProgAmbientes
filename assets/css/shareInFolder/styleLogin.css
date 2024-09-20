@@ -49,15 +49,15 @@
     font-size: 14px;
 }
 .formulario label:focus-within {
-    border: 1px solid #39A900; /* Cambia el borde del label */
-    box-shadow: 0 0 5px rgba(57, 169, 0, 0.5); /* Agrega un efecto de sombra si lo deseas */
+    border: 1px solid #671C34; /* Cambia el borde del label */
+    box-shadow: 0 0 5px rgba(63, 3, 18, 0.5); /* Agrega un efecto de sombra si lo deseas */
 }
 .formulario label i{
     color: #4b4b4b;
 }
 .formulario input[type="submit"] {
     width: 100%;
-    background-color: #39A900;
+    background-color: #671C34;
     color: white;
     border: none;
     outline: none;
@@ -72,8 +72,8 @@ h1 {
     margin-bottom: 20px;
 }
 .alerta{
-    background-color: rgb(233, 193, 193);
     color: darkred;
+    font-weight: bold;
     border-radius: 5px;
     margin: -25px 0px 10px 0px;
     padding: 7px;

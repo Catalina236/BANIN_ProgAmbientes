@@ -17,7 +17,7 @@ body {
 }
 
 .perfil-btn[type="submit"] {
-    background-color: #00ac00;
+    background-color: #671C34;
     color: white;
     padding: 6px 20px;
     border: none;
@@ -28,7 +28,7 @@ body {
 }
 
 .perfil-btn[type="submit"]:hover {
-    background-color: #008a31;
+    background-color: #FBAD20;
 }
 
 
