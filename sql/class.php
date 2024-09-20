@@ -33,9 +33,6 @@ class Trabajo extends Conexion{
                 case '3':
                     header('Location:../administrador/usuario.php');
                 break;
-                case '4':
-                    header('Location: ../control/PQRS.php');
-                    break;
                 default;
                 }
             }
