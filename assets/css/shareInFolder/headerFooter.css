@@ -20,7 +20,7 @@
     list-style: none;
     display: flex;
     justify-content:right;
-    gap: 30px;
+
 }
 
 .menu-principal > li > a {
@@ -33,6 +33,7 @@
     padding-bottom: 10px;
     font-size: 18px;
     transition: background-color 0.3s ease;
+    padding: 15px;
 }
 
 .menu-principal > li > a:hover {
@@ -153,4 +154,117 @@ footer {
 .tituloFooter {
     font-size: 0.9em;
     opacity: 0.8;
+}
+
+.header-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos para el logo */
+.logo_sena {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.logo {
+    max-height: 100px;
+    width: auto;
+    margin-left: 1fr;
+}
+
+/* Estilos para el texto BANIN */
+.header-item span {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 20px;
+    white-space: nowrap;
+}
+
+/* Estilos para la sección del ministerio */
+.ministerio {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.ministerio img {
+    max-height: 40px;
+    width: 100%;
+    margin-left: 10px;
+    max-height: 100px;
+}
+
+.contBANIN{
+    background-color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+    width: 2px;
+}
+
+/* Media queries para ajustar el diseño responsivo */
+@media (max-width: 1024px) {
+    .header-item {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .header-item span {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+    .ministerio img {
+        max-height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-item span {
+        font-size: 18px;
+        margin: 0 5px;
+    }
+
+    .ministerio img {
+        max-height: 50px;
+        margin-left: 5px;
+    }
+}
+
+/* Para pantallas muy pequeñas, mantener solo el logo */
+@media (max-width: 480px) {
+    .header-item {
+        justify-content: center;
+    }
+    
+    .header-item span,.contBANIN,
+    .ministerio {
+        display: none;
+    }
+}
+
+/* Para pantallas grandes, los elementos se despegan de los laterales */
+@media (min-width: 1025px) {
+    .header-item {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.indicadorRol {
+    position: absolute; 
+    top: 10px; 
+    left: 20px; 
+    color: white; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px; 
+    border-radius: 5px; 
 }
