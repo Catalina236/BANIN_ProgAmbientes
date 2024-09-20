@@ -35,7 +35,7 @@
             <p><strong>Nombre:</strong> No especificado</p>
             <p><strong>Rol:</strong> No especificado</p>
         </div>
-        <a href="<?php echo BASE_URL; ?>app/administrador/agregarUsuario.php"><button class="perfil-btn" type="submit">Agregar Usuario</button></a>
+        <a href="<?php echo BASE_URL; ?>app/administrador/formAgregarUsuario.php"><button class="perfil-btn" type="submit">Agregar Usuario</button></a>
         <div class="tablaGeneradaPorLaConsulta">
             <h2>Resultados de la Consulta</h2>
             <table>
