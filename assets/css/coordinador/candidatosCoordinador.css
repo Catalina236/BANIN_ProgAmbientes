@@ -10,11 +10,12 @@
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fff;
+    padding: 5px;
     margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
     max-width: 500px;
     z-index: 0;
 }
@@ -45,14 +46,14 @@ label, input, select {
 
 button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #671C34;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    opacity: 0.9;
 }
 
 /* Estilos para la tabla */
