@@ -26,7 +26,7 @@ requireRole(['1']);
             <p><strong>Traslado:</strong>Confirmado En 29331</p>
             <p><strong>Reclamación:</strong>7-2023-313747</p>
             <p><strong>Protección:</strong>7-2023-287082 - NO APROBADA</p>
-            <a href=""><button type="button">Respuestas</button></a>
+            <a href=""><button>Respuestas</button></a>
         </div>
         <div class="contenedor">
 
