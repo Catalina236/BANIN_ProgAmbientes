@@ -62,8 +62,36 @@ requireRole(['1']);
                         <td>Seleccionado</td>
                         <td>COMPLEMENTARIA</td>
                         <td>COMPLEMENTARIA</td>
-                        <td>Confirmado En 29331<br>
-                            <button id="btnTrasladar" class="trasladar">Trasladar</button>    
+                        <td>Confirmado En 29331
+                            <div class="icons">
+                                <svg class="btnTrasladar trasladar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shuffle">
+                                    <polyline points="16 3 21 3 21 8"></polyline>
+                                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                                    <polyline points="21 16 21 21 16 21"></polyline>
+                                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                                </svg>
+                            </div>
+                        </td>
+                        <td>7-2023-313747</td>
+                        <td>7-2023-287082 - NO APROBADA</td>
+                        <td style="text-align: center;"><a href="../coordinador/forms.php" ><button class="perfil-btn" type="submit">Editar</button></a></td>
+                    </tr>
+                    <tr>
+                        <td>20847</td>
+                        <td>79314342</td>
+                        <td>MANUEL EDUARDO ALEJO DIAZ</td>
+                        <td>Seleccionado</td>
+                        <td>COMPLEMENTARIA</td>
+                        <td>COMPLEMENTARIA</td>
+                        <td>Confirmado En 29331
+                            <div class="icons">
+                                <svg class="btnTrasladar trasladar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shuffle">
+                                    <polyline points="16 3 21 3 21 8"></polyline>
+                                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                                    <polyline points="21 16 21 21 16 21"></polyline>
+                                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                                </svg>
+                            </div>
                         </td>
                         <td>7-2023-313747</td>
                         <td>7-2023-287082 - NO APROBADA</td>
@@ -78,16 +106,13 @@ requireRole(['1']);
                 <h2>Formulario de Traslado</h2>
                 <form id="formTraslado">
                     <label for="codigo">Código:</label>
+                    <textarea id="detallesTraslado" name="detallesTraslado" readonly>20847</textarea>
+
+                    <label for="codigo">Código de Traslado:</label>
                     <input type="text" id="codigo" name="codigo" required>
 
-                    <label for="documento">Documento:</label>
-                    <input type="text" id="documento" name="documento" required>
-
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
                     <label for="coordinacionInicial">Coordinación Inicial:</label>
-                    <input type="text" id="coordinacionInicial" name="coordinacionInicial" required>
+                    <textarea id="detallesTraslado" name="detallesTraslado" readonly>COMPLEMENTARIA</textarea>
 
                     <label for="coordinacionFinal">Coordinación Final:</label>
                     <select id="coordinacionFinal" name="coordinacionFinal" required>
@@ -96,52 +121,43 @@ requireRole(['1']);
                         <option value="COMPLEMENTARIA">COMPLEMENTARIA</option>
                         <!-- Añade más opciones según sea necesario -->
                     </select>
-
-                    <label for="motivoTraslado">Motivo de Traslado:</label>
-                    <textarea id="motivoTraslado" name="motivoTraslado" required></textarea>
-
                     <button type="submit">Enviar Solicitud de Traslado</button>
                 </form>
             </div>
         </div>
+        
     </div>
     <?php 
     require '../shareFolder/footer.php';
     ?>
     <script>
-    // Obtener el modal
-    var modal = document.getElementById("modalTraslado");
+        // Obtener todos los botones que abren el modal
+        var btns = document.querySelectorAll(".btnTrasladar");
 
-    // Obtener el botón que abre el modal
-    var btn = document.getElementById("btnTrasladar");
+        // Obtener el modal
+        var modal = document.getElementById("modalTraslado");
 
-    // Obtener el elemento <span> que cierra el modal
-    var span = document.getElementsByClassName("close")[0];
+        // Obtener el elemento <span> que cierra el modal
+        var span = document.getElementsByClassName("close")[0];
 
-    // Cuando el usuario hace clic en el botón, abrir el modal 
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
+        // Asignar evento onclick a cada botón
+        btns.forEach(function(btn) {
+            btn.onclick = function() {
+                modal.style.display = "block";
+            };
+        });
 
-    // Cuando el usuario hace clic en <span> (x), cerrar el modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Cuando el usuario hace clic fuera del modal, cerrarlo
-    window.onclick = function(event) {
-        if (event.target == modal) {
+        // Cuando el usuario hace clic en <span> (x), cerrar el modal
+        span.onclick = function() {
             modal.style.display = "none";
         }
-    }
 
-    // Manejar el envío del formulario
-    document.getElementById("formTraslado").onsubmit = function(e) {
-        e.preventDefault();
-        // Aquí puedes agregar la lógica para procesar el formulario
-        console.log("Formulario enviado");
-        modal.style.display = "none";
-    }
-</script>
+        // Cuando el usuario hace clic fuera del modal, cerrarlo
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
