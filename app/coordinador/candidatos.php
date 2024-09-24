@@ -1,6 +1,6 @@
 <?php
 require_once '../../app/config.php';
-requireRole(['3']);
+requireRole(['1']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ requireRole(['3']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
-    <link rel="stylesheet" href="../../assets/css/links/usuariosAdmin.css">
+    <link rel="stylesheet" href="../../assets/css/links/moduloConsulta.css">
 </head>
 <body>
     <?php
@@ -18,25 +18,23 @@ requireRole(['3']);
 
     <div class="contenedor">
         <div class="buscador">
-            <h2>Buscar</h2>
+            <h2>Buscador</h2>
             <form>
-                <label for="buscar"></label>
-                <input type="text" id="buscar" name="buscar" class="codigo" placeholder="Buscar por documento, nombre o rol">
+                <label for="codigo">Buscar por código:</label>
+                <input type="text" id="codigo" class="codigo" name="codigo" placeholder="Ejemplo: 3453"><br><br>
+
+                <label for="documento">Buscar por número de documento:</label>
+                <input type="text" id="documento" name="documento" class="codigo" placeholder="Ejemplo: 1073672380"><br><br>
+
                 <button class="perfil-btn" type="submit">Buscar</button>
             </form>
         </div>
-        <div class="buscador">
-            <h2>Filtros por roles</h2>
-            <button type="button" class="filtro-btn" data-role="Instructor">TITULADA</button>
-            <button type="button" class="filtro-btn" data-role="Evaluador">COMPLEMENTARIA</button>
-            <button type="button" class="filtro-btn" data-role="Control">SER</button>
-        </div>
 
-        <div class="buscador">
+        <div class="informacionDeconsulta">
             <h2>Información de la Consulta</h2>
-            <p><strong>Número de documento:</strong> 1072645387</p>
-            <p><strong>Nombre:</strong> No especificado</p>
-            <p><strong>Rol:</strong> No especificado</p>
+            <p><strong>Código:</strong>26378</p>
+            <p><strong>Coordinación Inicial:</strong>ARTICULACIÓN</p>
+            <p><strong>Programa:</strong>CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS.</p>
         </div>
 
         <div class="tablaGeneradaPorLaConsulta">
@@ -44,43 +42,38 @@ requireRole(['3']);
             <table>
                 <thead>
                     <tr>
+                        <th>Codigo</th>
                         <th>Documento</th>
                         <th>Nombre</th>
                         <th>Estado BANIN</th>
+                        <th>Coordinación Inicial</th>
                         <th>Coordinación Final</th>
                         <th>Traslado</th>
                         <th>Reclamación</th>
                         <th>Protección</th>
-                        <th>Editar Información</th>
+                        <th>Solicitud</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>20847</td>
                         <td>79314342</td>
                         <td>MANUEL EDUARDO ALEJO DIAZ</td>
                         <td>Seleccionado</td>
                         <td>COMPLEMENTARIA</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td style="text-align: center;"><a href="../administrador/forms.php"><button class="editar-btn">Editar</button></a></td>
+                        <td>COMPLEMENTARIA</td>
+                        <td>Confirmado En 29331</td>
+                        <td>7-2023-313747</td>
+                        <td>7-2023-287082 - NO APROBADA</td>
+                        <td style="text-align: center;"><a href="../coordinador/forms.php"><button class="editar-btn">Editar</button></a></td>
                     </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
-
-    
-    <script>
-        document.querySelectorAll('.filtro-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-            });
-        });
-    </script>
-
     <?php 
-        require '../shareFolder/footer.php';
+    require '../shareFolder/footer.php';
     ?>
 </body>
 </html>

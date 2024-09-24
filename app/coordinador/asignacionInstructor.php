@@ -1,21 +1,20 @@
+<?php
+require_once '../../app/config.php';
+requireRole(['1']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asignar Instructor</title>
-    <link rel="stylesheet" href="../../assets/css/links/asignarInstructor.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/links/asignarInstructor.css">
 </head>
 <body>
-
     <?php
-        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
-
     <div class="modalS">
         <a href="./vacantes.php"><button class="perfil-btn" type="submit" style="margin-top:30px">Regresar</button></a>
     </div>

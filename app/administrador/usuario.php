@@ -1,3 +1,7 @@
+<?php
+require_once '../../app/config.php';
+requireRole(['3']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +11,8 @@
     <link rel="stylesheet" href="../../assets/css/links/usuariosAdmin.css">
 </head>
 <body>
-
     <?php
-        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
 
