@@ -18,7 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <header>
     <div class="header-item">
         <div class="logo_sena">
-            <img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logosena.png" alt="SENA logo">
+            <a href="../../index.php"><img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logosena.png" alt="SENA logo"></a>
         </div>
         <div class="contBANIN">
         <span class="banin">BANIN</span>

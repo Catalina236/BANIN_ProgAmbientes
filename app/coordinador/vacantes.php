@@ -1,6 +1,6 @@
 <?php
 require_once '../../app/config.php';
-requireRole(['1']);
+requireRole(['2']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
