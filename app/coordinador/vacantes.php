@@ -14,10 +14,6 @@ requireRole(['2']);
 </head>
 <body>
     <?php
-<<<<<<< HEAD
-        require '../../app/config.php';
-=======
->>>>>>> 4d963703fa8a7e305e00ec87ba90b22c67290b4e
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
     ?>
