@@ -18,13 +18,13 @@ ob_start();
                 <?php 
                     // Aquí puedes mostrar el nombre del rol dependiendo del id_rol
                     switch ($_SESSION['id_rol']) {
-                        case '1':
+                        case '2':
                             echo "Coordinador";
                             break;
-                        case '2':
+                        case '3':
                             echo "Evaluador";
                             break;
-                        case '3':
+                        case '1':
                             echo "Administrador";
                             break;
                         default:
@@ -37,19 +37,19 @@ ob_start();
             <ul class="menu-principal" id="menu-principal">
             <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
             <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Estado BANIN</a></li>
-                <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '2'): ?>
+                <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '3'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/moduloConsulta.php">Consulta</a></li>
                    
-                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '3'): ?>
+                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '1'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/gestionarCandidato.php">Gestionar Candidatos</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>app/administrador/actulizarDatosBANIN.php">Actulizar Datos BANIN</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>app/administrador/actualizarDatosBANIN.php">Actualizar Datos BANIN</a></li>
                
-                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']== '1'): ?>
+                <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']== '2'): ?>
                     <li><a href="<?php echo BASE_URL;?>app/coordinador/vacantes.php">Asignar evaluador</a></li>
-                    <li><a href="<?php echo BASE_URL;?>app/coordinador/listaCandidatos.php">Candidatos</a></li>
+                    <li><a href="<?php echo BASE_URL;?>app/coordinador/candidatos.php">Candidatos</a></li>
                 <?php endif;?>
             </nav>
             <div class="actions">

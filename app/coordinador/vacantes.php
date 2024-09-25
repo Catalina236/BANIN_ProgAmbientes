@@ -1,3 +1,7 @@
+<?php
+require_once '../../app/config.php';
+requireRole(['2']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +14,11 @@
 </head>
 <body>
     <?php
+<<<<<<< HEAD
         require '../../app/config.php';
+=======
+>>>>>>> 4d963703fa8a7e305e00ec87ba90b22c67290b4e
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
     <div class="contenedor">

@@ -1,3 +1,7 @@
+<?php
+require_once '../../app/config.php';
+requireRole(['1']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,13 +58,9 @@
 </head>
 <body>
     <?php
-        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
-
     <div class="contenedor">
         <h1>Actualizar Datos BANIN</h1>
         <div class="info">
@@ -69,7 +69,7 @@
         </div>
         <div class="botones">
             <button class="boton actualizar">ACTUALIZAR</button>
-            <button class="boton descargar">DESCARGAR EN DATOS BANIN</button>
+            <button class="boton descargar">DESCARGAR DATOS BANIN</button>
         </div>
         <div class="estado">
             <p>Estado: Datos actualizados</p>

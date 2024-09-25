@@ -1,3 +1,10 @@
+<?php
+require_once '../../sql/class.php';
+require_once '../../app/config.php';
+requireRole(['1']);
+$trabajo=new Trabajo();
+$datos=$trabajo->ver_usuarios();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +14,8 @@
     <link rel="stylesheet" href="../../assets/css/links/usuariosAdmin.css">
 </head>
 <body>
-
     <?php
-        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
 
@@ -44,30 +47,50 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
+                        <th>Id rol</th>
                         <th>Número de documento</th>
+                        <th>Tipo de documento</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
                         <th>Rol</th>
                         <th style="text-align: center;">Editar</th>
                         <th style="text-align: center;">Eliminar</th>
                     </tr>
                 </thead>
+                <?php foreach($datos as $row){?>
                 <tbody>
                     <tr>
-                        <td>79314342</td>
-                        <td>MANUEL EDUARDO ALEJO DIAZ</td>
-                        <td>1072645387</td>
-                        <td>Evaluador</td> 
-                        <td style="text-align: center;"><a href="../administrador/formEditarUsuario.php"><button class="editar-btn">Editar</button></a></td>
-                        <td style="text-align: center;"><button class="eliminar-btn" onclick="mostrarModal()">Eliminar</button></td>
+                        <td><?php echo $row['id_rol'];?></td>
+                        <td><?php echo $row['numero_documento'];?></td>
+                        <td><?php echo $row['tipo_doc'];?></td>
+                        <td><?php echo $row['nombres'];?></td>
+                        <td><?php echo $row['apellidos'];?></td>
+                        <td><?php echo $row['telefono'];?></td>
+                        <td><?php echo $row['email'];?></td>
+                        <td><?php echo $row['nombre_rol'];?></td> 
+                        <td style="text-align: center;"><a href="../administrador/formEditarUsuario.php?numero=<?php echo $row['numero_documento'];?>"><button class="editar-btn">Editar</button></a></td>
+                        <td style="text-align: center;"><a onclick="return confirmacion()" href="../administrador/eliminar.php?numero=<?php echo $row['numero_documento'];?>"><button class="eliminar-btn">Eliminar</button></a></td>
                     </tr>
                 </tbody>
+                <?php }?>
             </table>
         </div>
     </div>
-
+    <script>
+        function confirmacion(){
+            var respuesta=confirm('¿Desea borrar el registro?');
+            if(respuesta==true){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
     <!-- Modal personalizado -->
-    <div id="modalEliminar" class="modal">
+    <!--<div id="modalEliminar" class="modal">
         <div class="modal-content">
             <h2>Confirmar Eliminación</h2>
             <p>¿Estás seguro de que deseas eliminar este usuario?</p>
@@ -77,8 +100,7 @@
             </div>
         </div>
     </div>
-
-    <script src="../../assets/js/mensajeEliminar.js"></script>
+    <script src="../../assets/js/mensajeEliminar.js"></script>---->
 
     <script>
         document.querySelectorAll('.filtro-btn').forEach(button => {
@@ -87,7 +109,7 @@
             });
         });
     </script>
-    <?php 
+    <?php
         require '../shareFolder/footer.php';
     ?>
 </body>

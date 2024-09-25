@@ -1,5 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@
 <header>
     <div class="header-item">
         <div class="logo_sena">
-            <a href="<?php echo BASE_URL; ?>index.php"><img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logoSenaN.png" alt="SENA logo"></a>
+            <a href="../../index.php"><img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logosena.png" alt="SENA logo"></a>
         </div>
 
         <div class="contBANIN">

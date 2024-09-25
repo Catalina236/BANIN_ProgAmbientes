@@ -7,5 +7,5 @@ document.getElementById("cancelar").addEventListener("click", function() {
 });
 
 document.getElementById("confirmar").addEventListener("click", function() {
-    window.location.href = 'eliminarUsuario.php';
+    window.location.href = 'eliminar.php';
 });

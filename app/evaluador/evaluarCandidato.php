@@ -1,8 +1,8 @@
 <?php
 require_once '../../app/config.php';
 
-// Asigna el valor de la coordinación (puede ser de una base de datos o de un formulario)
-$coordinacion = 'SER'; // Este valor debe venir de tu lógica
+$coordinacion = 'Formación para el Trabajo'; 
+requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="es">

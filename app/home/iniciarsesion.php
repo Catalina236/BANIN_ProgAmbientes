@@ -26,7 +26,7 @@
         <?php
         require_once '../../sql/class.php';
         if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
-                header("Location:cuenta.php");
+            /*header("Location:cuenta.php");*/
         }
         
         if (isset($_POST['Validar'])){

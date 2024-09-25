@@ -9,40 +9,129 @@ class Trabajo extends Conexion{
         $this->conexion=$this->conexion->obtenerConexion();
     }
 
-    public function iniciarSesion(string $num_doc, string $password){
-        $sql="SELECT * FROM usuarios WHERE numero_documento=:nro_doc AND contraseña=:pass";
+    public function crearUsuario(string $num_doc, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $id_rol, string $nom_usu, string $contraseña){
+        $contraseña=PASSWORD_HASH($contraseña, PASSWORD_DEFAULT, array("cost"=>16));
+        $sql="INSERT INTO persona VALUES (:num, :tipo, :nom, :ape, :email, :tel, :id)";
+        $sql2="INSERT INTO usuario VALUES (:nom_usu, :num, :pass)"; 
         $consult=$this->conexion->prepare($sql);
-        $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
-        $consult->bindParam(':pass', $password);
-        $consult->execute();
-        $result=$consult->fetchAll(PDO::FETCH_ASSOC);
-        error_log(print_r($result, true));
-        $num_filas=count($result);
-        if($num_filas>0){
-            foreach($result as $row){
-                $_SESSION['numero_documento']=$row['numero_documento'];
-                $rol=$row['id_rol'];
-                $_SESSION['id_rol']=$rol;
-            switch($rol){
-                case '2':
-                    header('Location:../evaluador/moduloConsulta.php');
-                    break;
-                case '1':
-                    header('Location:../coordinador/vacantes.php');
-                break;
-                case '3':
-                    header('Location:../administrador/usuario.php');
-                break;
-                default;
-                }
+        $consult2=$this->conexion->prepare($sql2);
+        $consult->bindValue(":num",$num_doc);
+        $consult->bindValue(":tipo", $tipo_doc);
+        $consult->bindValue(":nom", $nombres);
+        $consult->bindValue(":ape", $apellidos);
+        $consult->bindValue(":email", $email);
+        $consult->bindValue(":tel", $telefono);
+        $consult->bindValue(":id", $id_rol);
+        $consult2->bindValue(":num", $num_doc);
+        $consult2->bindValue(":nom_usu", $nom_usu);
+        $consult2->bindValue(":pass", $contraseña);
+        $resultado=$consult->execute();
+        $resultado2=$consult2->execute();
+
+        if($resultado>0){
+            if($resultado2>0){
+                echo "<script type='text/javascript'>
+            alert('Usuario adicionado correctamente...');
+            window.location='usuario.php';
+            </script>";
             }
-            //var_dump($result);
         }
         else{
-            echo "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
+            echo "<script type='text/javascript'>
+                echo ('error En la asignacion del registro.....');
+                window.location='usuario.php';
+                </script>";
         }
     }
-    public function obtenerDatosPostulacion($codigoBANIN) {
-}
 
-}
+
+    public function iniciarSesion(string $num_doc, string $password){
+        $sql="SELECT * FROM usuario JOIN persona ON persona.numero_documento=usuario.numero_documento WHERE usuario.numero_documento=:nro_doc";
+        $consult=$this->conexion->prepare($sql);
+        $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
+        //$consult->bindParam(':pass', $password);
+        $consult->execute();
+        $result=$consult->fetch(PDO::FETCH_ASSOC);
+        //error_log(print_r($result, true));
+        //$num_filas=count($result);
+        //var_dump($result);
+        if($result){    
+            if(password_verify($password, $result['contraseña'])){
+            //if($num_filas>0){
+                $_SESSION['numero_documento']=$result['numero_documento'];
+                $rol=$result['id_rol'];
+                $_SESSION['id_rol']=$rol;
+            switch($rol){
+                    case '3':
+                        header('Location:../evaluador/moduloConsulta.php');
+                        break;
+                    case '2':
+                        header('Location:../coordinador/vacantes.php');
+                        break;
+                    case '1':
+                        header('Location:../administrador/usuario.php');
+                        break;
+                    default;
+                    }
+                }
+            }
+            else{
+            echo "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
+        }   
+    }
+    public function ver_usuarios(){
+        $sql="SELECT * FROM persona JOIN usuario ON persona.numero_documento=usuario.numero_documento JOIN rol ON persona.id_rol=rol.id_rol";
+        $consult=$this->conexion->prepare($sql);
+        $consult->execute();
+        $result=$consult->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    public function ver_un_usuario($numero_doc){
+        $sql="SELECT * FROM persona JOIN usuario ON persona.numero_documento=usuario.numero_documento JOIN rol ON persona.id_rol=rol.id_rol WHERE persona.numero_documento=:numero";
+        $consult=$this->conexion->prepare($sql);
+        $consult->bindParam(":numero", $numero_doc, PDO::PARAM_STR);
+        $consult->execute();
+        $result=$consult->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } 
+    public function eliminarUsuario(string $numero)  {
+        $sql="DELETE FROM persona WHERE numero_documento=:num";
+        $consult=$this->conexion->prepare($sql);
+        $consult->bindValue(":num",$numero);
+        $resultado=$consult->execute();
+        if($resultado){
+            echo "<script type='text/javascript'>
+            alert ('Usuario eliminado coon éxito...');
+            window.location='usuario.php';
+            </script>";
+        }
+        else{
+            echo "Error al eliminar el usuario";
+        }
+    }
+    public function actualizar_usuario(string $numero, string $nombre_usuario, string $tipo_doc, string $contraseña, string $nombres, string $apellidos, string $email, string $telefono, string $rol){
+        $sql="UPDATE persona SET numero_documento=:num, tipo_doc=:tipo,     nombres=:nomb, apellidos=:ape, email=:em, telefono=:tel, id_rol=:id WHERE numero_documento=:num";
+        $sql2="UPDATE usuario SET nombre_usuario=:nom, contraseña=:pass WHERE nombre_usuario=:nom";
+        $consult=$this->conexion->prepare($sql);
+        $consult2=$this->conexion->prepare($sql2);
+        $consult->bindParam(":num",$numero);
+        $consult->bindParam(":tipo", $tipo_doc);
+        $consult->bindParam(":nomb", $nombres);
+        $consult->bindParam(":ape",$apellidos);
+        $consult->bindParam(":em",$email);
+        $consult->bindParam(":tel",$telefono);
+        $consult->bindParam(":id",$rol);
+        $consult2->bindParam(":nom",$nombre_usuario);
+        $consult2->bindParam(":pass",$contraseña);
+        $resultado=$consult->execute();
+        $resultado2=$consult2->execute();
+        if($resultado>0){
+            if($resultado2>0){
+                echo "<script type='text/javascript'>
+                alert ('Usuario Actualizado Correctamente...');
+                window.location='usuario.php';
+                </script>";
+            }
+        }
+    }
+    }
