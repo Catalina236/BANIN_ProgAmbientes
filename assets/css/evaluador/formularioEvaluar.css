@@ -94,7 +94,6 @@
     }
 }
 h2 {
-    margin-top: 40px;
     text-align: center;
     color: #333;
 }
@@ -176,4 +175,30 @@ form button[type="submit"]:hover {
     form button[type="submit"] {
         grid-column: span 1; /* El botón ocupará solo 1 columna */
     }
+}body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
 }

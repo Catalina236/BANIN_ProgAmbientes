@@ -38,13 +38,6 @@
         </form>
     </div>
 
-
-    <footer>
-        <div>
-            <h1 class="tituloFooter">Nosotros</h1>
-        </div>
-    </footer>
-
     <script>
         document.querySelectorAll('.filtro-btn').forEach(button => {
             button.addEventListener('click', () => {

@@ -8,7 +8,3 @@ function calculateScore(inputId, multiplier) {
     }
 }
 
-document.getElementById("evaluationForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Formulario enviado con éxito");
-});

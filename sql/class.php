@@ -42,4 +42,7 @@ class Trabajo extends Conexion{
             echo "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
         }
     }
+    public function obtenerDatosPostulacion($codigoBANIN) {
+}
+
 }

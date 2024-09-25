@@ -54,7 +54,7 @@ ob_start();
             </nav>
             <div class="actions">
             <?php if(isset($_SESSION['id_rol'])):?>
-                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir" onclick="return salir()">Salir</a>
+                <a href="<?php echo BASE_URL; ?>app/shareFolder/salir.php" class="boton_ir" onclick="return salir()">Cerrar sesion</a>
             <?php else: ?>
                 <a href="<?php echo BASE_URL; ?>app/home/iniciarsesion.php" class="boton_ir">Iniciar sesión</a>
             <?php endif; ?>

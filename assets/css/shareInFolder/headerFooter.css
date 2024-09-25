@@ -9,9 +9,9 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    background-color: #671C34;
+    background-color: #0056A1;
     padding: 10px 5%;
-    position: relative;
+    position: relative; 
     z-index: 1000;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .menu-principal > li > a:hover {
-    background-color:#3d0919;
+    background-color:#7b868a;
 }
 
 .actions {
@@ -190,6 +190,7 @@ footer {
     display: flex;
     align-items: center;
     margin-left: auto;
+    
 }
 
 .ministerio img {
@@ -200,12 +201,15 @@ footer {
 }
 
 .contBANIN{
-    background-color: black;
+    background-color: #0056A1;
     display: flex;
     justify-content: start;
     align-items: center;
     height: 80px;
     width: 2px;
+}
+.banin{
+    color: #0056A1;
 }
 
 /* Media queries para ajustar el diseño responsivo */
