@@ -25,7 +25,7 @@
                 <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
                 <form class="login-form" action="" method="post">
             <?php
-            require_once '../../sql/class.php';
+            require_once "../../sql/class.php";
             if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
                 /*header("Location:cuenta.php");*/
             }
