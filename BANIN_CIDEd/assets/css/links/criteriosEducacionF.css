@@ -1,0 +1,9 @@
+@import url("../shareInFolder/headerFooter.css");
+@import url("../shareInFolder/bodyBoton.css");
+@import url("../shareInFolder/criterios.css");
+
+td:nth-child(1), td:nth-child(2) {
+    background-color: #92d050;
+    color: white;
+    font-size: 20px;
+}

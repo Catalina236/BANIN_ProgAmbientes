@@ -1,0 +1,122 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.459);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 5px;
+    margin: 100px auto;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    max-width: 500px;
+    z-index: 0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, select {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #671C34;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Estilos para la tabla */
+table {
+width: 100%;
+border-collapse: collapse;
+font-size: 14px;
+}
+
+table th,
+table td {
+padding: 12px 15px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+table th {
+background-color: #f2f2f2;
+font-weight: bold;
+}
+
+table tr:hover {
+background-color: #f5f5f5;
+}
+
+table td .icons {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+table td .icons svg {
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+table td .icons svg:hover {
+color: #FBAD20;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+table {
+    font-size: 12px;
+}
+
+table th,
+table td {
+    padding: 8px 10px;
+}
+}
+.transfer-icon {
+display: flex;
+align-items: center;
+gap: 8px;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.transfer-icon:hover {
+color: #FBAD20;
+}
+
+.transfer-icon svg {
+stroke: #671C34;
+}

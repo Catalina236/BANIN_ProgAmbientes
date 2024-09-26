@@ -1,0 +1,105 @@
+@import url('../shareInFolder/bodyBoton.css');
+@import url('../shareInFolder/headerFooter.css');
+.contenedor1 {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.linea {
+    border: 0; 
+    height: 1px; 
+    background: #39A900;
+    margin: 20px 0; 
+}
+.contenedor1 h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+.lista {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    flex: 1 1 calc(25% - 20px); /* Cuatro tarjetas en una fila, ajustable según el diseño */
+    min-width: 200px; /* Ajustar el ancho mínimo según el diseño deseado */
+    box-sizing: border-box;
+}
+
+.lista:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.foto {
+    margin-bottom: 15px;
+}
+
+.foto img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.lista .datos .info .label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.lista .datos .info .value {
+    margin: 0;
+    color: #666;
+}
+
+.lista h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.boton {
+    background-color: #671C34;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.boton a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .lista {
+        flex: 1 1 calc(50% - 20px); /* Dos tarjetas en una fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .lista {
+        flex: 1 1 100%; /* Una tarjeta en una fila en pantallas pequeñas */
+    }
+}

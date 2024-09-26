@@ -1,0 +1,65 @@
+/*estilo del formulario*/
+.buscador {
+    margin-bottom: 20px;
+}
+
+.buscador h2 {
+    color: #000000;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"].codigo{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/*estilo de la sección de información de consulta*/
+.informacionDeconsulta {
+    margin-bottom: 20px;
+}
+
+.informacionDeconsulta p {
+    margin: 5px 0;
+}
+
+.informacionDeconsulta strong {
+    color: #671C34;
+}
+
+/*estilo de la tabla de resultados*/
+.tablaGeneradaPorLaConsulta h2 {
+    color: #671C34;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #d4d4d4;
+    color: rgb(0, 0, 0);
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

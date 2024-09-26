@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #333;
+    --transition-duration: 0.5s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.slider-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    border: 10px solid white;
+    box-shadow: 1px 2px 10px #000000 ;
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform var(--transition-duration) ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(51, 51, 51, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: #00000080;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.desc {
+    width: calc(33.33% - 20px);
+    min-width: 250px;
+    background-color: white;
+    border: 1px solid #671C34;
+    padding: 15px 20px;
+    font-size: 17px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.desc h2 {
+    color: #330715;
+}
+
+.desc button {
+    border: none;
+    background-color: #671C34;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.desc button a {
+    color: white;
+    text-decoration: none;
+}
+
+.desc button a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .desc {
+        width: 100%;
+    }
+}
