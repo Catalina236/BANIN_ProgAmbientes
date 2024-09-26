@@ -108,7 +108,8 @@ class Trabajo extends Conexion{
         }
     }
     public function actualizar_usuario(string $numero, string $nombre_usuario, string $tipo_doc, string $contraseña, string $nombres, string $apellidos, string $email, string $telefono, string $rol){
-        $sql="UPDATE persona SET numero_documento=:num, tipo_doc=:tipo,     nombres=:nomb, apellidos=:ape, email=:em, telefono=:tel, id_rol=:id WHERE numero_documento=:num";
+        $contraseña=PASSWORD_HASH($contraseña, PASSWORD_DEFAULT, array("cost"=>16));
+        $sql="UPDATE persona SET numero_documento=:num, tipo_doc=:tipo,nombres=:nomb, apellidos=:ape, email=:em, telefono=:tel, id_rol=:id WHERE numero_documento=:num";
         $sql2="UPDATE usuario SET nombre_usuario=:nom, contraseña=:pass WHERE nombre_usuario=:nom";
         $consult=$this->conexion->prepare($sql);
         $consult2=$this->conexion->prepare($sql2);
