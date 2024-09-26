@@ -10,7 +10,7 @@
     justify-content: right;
     align-items: center;
     background-color: #0056A1;
-    padding: 10px 5%;
+    padding: 7px 5%;
     position: relative; 
     z-index: 1000;
 }
@@ -37,7 +37,7 @@
 }
 
 .menu-principal > li > a:hover {
-    background-color:#0056A1;
+    background-color:#5f86a8;
     border-radius: 0.3rem;
 }
 
@@ -266,7 +266,7 @@ footer {
 
 .indicadorRol {
     position: absolute; 
-    top: 10px; 
+    top: 5px; 
     left: 20px; 
     color: white; 
     font-size: 18px; 
