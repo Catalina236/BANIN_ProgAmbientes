@@ -1,11 +1,11 @@
 <?php
 class Conexion {
     private $host = 'localhost';
-    private $dbname = 'cidesafc_banin_pa';  // Nombre de la base de datos
-    private $user = 'cidesafc_banin';    // Nombre de usuario
-    private $password = '_@*Syth34ve#95AEd1C'; // Contraseña
-    private $port = 3306;  // Puerto MySQL
-    private $charset = 'utf8'; // Codificación
+    private $dbname = 'cidesafc_banin_pa';  
+    private $user = 'cidesafc_banin';    
+    private $password = '_@*Syth34ve#95AEd1C'; 
+    private $port = 3306;  
+    private $charset = 'utf8'; 
     private $conexion;
 
     public function __construct() {
@@ -22,4 +22,3 @@ class Conexion {
         return $this->conexion;
     }
 }
-?>

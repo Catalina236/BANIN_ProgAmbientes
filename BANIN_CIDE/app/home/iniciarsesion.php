@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,19 +29,44 @@
             <div class="formulario">
                 <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
                 <form class="login-form" action="" method="post">
-            <?php
-            require_once '../../sql/class.php';
-            if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
-                /*header("Location:cuenta.php");*/
-            }
-            
-            if (isset($_POST['Validar'])){
-                $numero=$_POST['numero_doc'];
-                $contraseña=$_POST['contraseña'];
-                $trabajo=new Trabajo();
-                $datos=$trabajo->iniciarSesion($numero, $contraseña);
-            }
-        ?>
+                <?php
+                    require_once '../../sql/class.php';
+                    
+                    // Iniciar la sesión si aún no está iniciada
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    
+                    // Verificar si el usuario ya está logueado
+                    if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
+                        header("Location:../../index.php");
+                        exit();
+                    }
+                    
+                    $error_message = '';
+                    
+                    if (isset($_POST['Validar'])){
+                        $numero = $_POST['numero_doc'];
+                        $contraseña = $_POST['contraseña'];
+                        
+                        try {
+                            $trabajo = new Trabajo();
+                            $resultado = $trabajo->iniciarSesion($numero, $contraseña);
+                            
+                            // Si llegamos aquí, significa que no se redirigió, por lo que hubo un error
+                            $error_message = "Error al iniciar sesión. Por favor, verifica tus credenciales.";
+                        } catch (Exception $e) {
+                            // Capturar cualquier excepción y mostrar el mensaje de error
+                            $error_message = "Error: " . $e->getMessage();
+                        }
+                    }
+                    
+                    // Mostrar el mensaje de error si existe
+                    if (!empty($error_message)) {
+                        echo "<div class='error-message'>$error_message</div>";
+                    }
+                ?>
+
             <label for="">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" placeholder="Número de documento" name="numero_doc" required>

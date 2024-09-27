@@ -1,15 +1,20 @@
 <?php
 require_once "bd.php";
 
-class Trabajo extends Conexion{
+class Trabajo extends Conexion {
     private $conexion;
 
     public function __construct() {
         $this->conexion = new Conexion();
-        $this->conexion=$this->conexion->obtenerConexion();
+        $this->conexion = $this->conexion->obtenerConexion();
     }
 
-    public function crearUsuario(string $num_doc, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $id_rol, string $nom_usu, string $contraseña){
+    // Método de depuración
+    private function debug($message) {
+        error_log(print_r($message, true));
+    }
+
+    public function crearUsuario($num_doc, $tipo_doc, $nombres, $apellidos, $email, $telefono, $id_rol, $nom_usu, $contraseña){
         $contraseña=PASSWORD_HASH($contraseña, PASSWORD_DEFAULT, array("cost"=>16));
         $sql="INSERT INTO persona VALUES (:num, :tipo, :nom, :ape, :email, :tel, :id)";
         $sql2="INSERT INTO usuario VALUES (:nom_usu, :num, :pass)"; 
@@ -45,40 +50,47 @@ class Trabajo extends Conexion{
     }
 
 
-    public function iniciarSesion(string $num_doc, string $password){
-        $sql="SELECT * FROM usuario JOIN persona ON persona.numero_documento=usuario.numero_documento WHERE usuario.numero_documento=:nro_doc";
-        $consult=$this->conexion->prepare($sql);
-        $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
-        //$consult->bindParam(':pass', $password);
-        $consult->execute();
-        $result=$consult->fetch(PDO::FETCH_ASSOC);
-        //error_log(print_r($result, true));
-        //$num_filas=count($result);
-        //var_dump($result);
-        if($result){    
-            if(password_verify($password, $result['contraseña'])){
-            //if($num_filas>0){
-                $_SESSION['numero_documento']=$result['numero_documento'];
-                $rol=$result['id_rol'];
-                $_SESSION['id_rol']=$rol;
-            switch($rol){
-                    case '3':
-                        header('Location:../evaluador/moduloConsulta.php');
-                        break;
-                    case '2':
-                        header('Location:../coordinador/vacantes.php');
-                        break;
-                    case '1':
-                        header('Location:../administrador/usuario.php');
-                        break;
-                    default;
+
+    
+        public function iniciarSesion($num_doc, $password) {
+            $this->debug("Iniciando sesión con num_doc: " . gettype($num_doc) . ", password: " . gettype($password));
+    
+            // Asegurarnos de que los parámetros son strings
+            $num_doc = (string)$num_doc;
+            $password = (string)$password;
+    
+            $sql = "SELECT * FROM usuario JOIN persona ON persona.numero_documento=usuario.numero_documento WHERE usuario.numero_documento=:nro_doc";
+            $consult = $this->conexion->prepare($sql);
+            $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
+            $consult->execute();
+            $result = $consult->fetch(PDO::FETCH_ASSOC);
+    
+            $this->debug("Resultado de la consulta: " . print_r($result, true));
+    
+            if ($result) {    
+                if (password_verify($password, $result['contraseña'])) {
+                    session_start();
+                    $_SESSION['numero_documento'] = $result['numero_documento'];
+                    $_SESSION['id_rol'] = $result['id_rol'];
+                    $rol = $result['id_rol'];
+                    switch ($rol) {
+                        case '3':
+                            header('Location: /BANIN_CIDE/app/evaluador/moduloConsulta.php');
+                            exit();
+                        case '2':
+                            header('Location: /BANIN_CIDE/app/coordinador/vacantes.php');
+                            exit();
+                        case '1':
+                            header('Location: /BANIN_CIDE/app/administrador/usuario.php');
+                            exit();
+                        default:
+                            return "<div class='alerta text-center'>Rol no válido.</div>";
                     }
                 }
             }
-            else{
-            echo "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
-        }   
-    }
+            return "<div class='alerta text-center'>Documento o contraseña incorrectos</div>";
+        }
+
     public function ver_usuarios(){
         $sql="SELECT * FROM persona JOIN usuario ON persona.numero_documento=usuario.numero_documento JOIN rol ON persona.id_rol=rol.id_rol";
         $consult=$this->conexion->prepare($sql);
@@ -94,7 +106,7 @@ class Trabajo extends Conexion{
         $result=$consult->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     } 
-    public function eliminarUsuario(string $numero)  {
+    public function eliminarUsuario($numero)  {
         $sql="DELETE FROM persona WHERE numero_documento=:num";
         $consult=$this->conexion->prepare($sql);
         $consult->bindValue(":num",$numero);
@@ -109,7 +121,7 @@ class Trabajo extends Conexion{
             echo "Error al eliminar el usuario";
         }
     }
-    public function actualizar_usuario(string $numero, string $nombre_usuario, string $tipo_doc, string $contraseña, string $nombres, string $apellidos, string $email, string $telefono, string $rol){
+    public function actualizar_usuario($numero, $nombre_usuario, $tipo_doc, $contraseña, $nombres, $apellidos, $email, $telefono, $rol){
         $sql="UPDATE persona SET numero_documento=:num, tipo_doc=:tipo,     nombres=:nomb, apellidos=:ape, email=:em, telefono=:tel, id_rol=:id WHERE numero_documento=:num";
         $sql2="UPDATE usuario SET nombre_usuario=:nom, contraseña=:pass WHERE nombre_usuario=:nom";
         $consult=$this->conexion->prepare($sql);

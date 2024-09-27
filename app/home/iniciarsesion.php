@@ -24,31 +24,32 @@
             <div class="formulario">
                 <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
                 <form class="login-form" action="" method="post">
-            <?php
-            require_once "../../sql/class.php";
-            if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
-                /*header("Location:cuenta.php");*/
-            }
-            
-            if (isset($_POST['Validar'])){
-                $numero=$_POST['numero_doc'];
-                $contraseña=$_POST['contraseña'];
-                $trabajo=new Trabajo();
-                $datos=$trabajo->iniciarSesion($numero, $contraseña);
-            }
-        ?>
-            <label for="">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Número de documento" name="numero_doc" required>
-                    </label>
-
+                    <?php
+                        require_once "../../sql/class.php";
+                    
+                        if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
+                            header("Location:../../index.php");
+                        }
+                        
+                        if (isset($_POST['Validar'])){
+                            $numero=$_POST['numero_doc'];
+                            $contraseña=$_POST['contraseña'];
+                            $trabajo=new Trabajo();
+                            $datos=$trabajo->iniciarSesion($numero, $contraseña);
+                    }
+                    ?>
                     <label for="">
-                        <i class="fa-solid fa-lock"></i>
-                            <input type="password" id="password" placeholder="Contraseña" name="contraseña" required>
-                            <i class="fa-solid fa-eye" id="togglePassword"></i>
-                    </label>
-                <input type="submit" value="Ingresar" name="Validar" class="boton">
-                </form>
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" placeholder="Número de documento" name="numero_doc" required>
+                            </label>
+
+                            <label for="">
+                                <i class="fa-solid fa-lock"></i>
+                                    <input type="password" id="password" placeholder="Contraseña" name="contraseña" required>
+                                    <i class="fa-solid fa-eye" id="togglePassword"></i>
+                            </label>
+                        <input type="submit" value="Ingresar" name="Validar" class="boton">
+                    </form>
             </div>
         </div>
         <?php 

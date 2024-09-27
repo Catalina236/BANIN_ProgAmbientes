@@ -21,3 +21,14 @@ function requireRole($roles) {
         exit();
     }
 }
+
+function requireNotRole($roles) {
+    $userRole = $_SESSION['role']; // Asumiendo que el rol del usuario está almacenado en la sesión
+
+    if (in_array($userRole, $roles)) {
+        // Si el usuario tiene uno de los roles restringidos, redirigir o mostrar error
+        header('Location: ' . BASE_URL . 'index.php'); // Cambiar a la página que desees
+        exit();
+    }
+}
+// requireNotRole(['']);
