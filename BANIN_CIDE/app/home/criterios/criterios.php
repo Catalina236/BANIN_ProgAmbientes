@@ -34,7 +34,7 @@
                 <div class="card">
                     <img src="../../../assets/img/corporativas/complementario.png" alt="">
                     <h3 class="card-title">SER</h3>
-                    <a href="criteriosSER.PHP" class="card-button">VER MÁS</a>
+                    <a href="criteriosSER.php" class="card-button">VER MÁS</a>
                 </div>
             </div>
         </section>

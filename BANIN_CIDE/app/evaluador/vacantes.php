@@ -1,6 +1,6 @@
 <?php
-require_once '../../app/config.php';
-requireRole(['3']);
+    require_once '../../app/config.php';
+    requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -39,7 +39,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="./listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -49,7 +49,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/evaluarCandidato.html"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -59,7 +59,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -69,7 +69,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -79,7 +79,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -89,7 +89,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -99,7 +99,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -109,7 +109,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 <div class="card">
@@ -119,7 +119,7 @@ requireRole(['3']);
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="/app/evaluador/listaCantidatos.php"><button>VER..</button></a>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
                     
                 </div>
                 

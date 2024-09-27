@@ -21,7 +21,7 @@ requireRole(['3']);
     <div class="contenedor">
         <div class="infoVacante">
             <div class="titulo">
-                <h1>Lista de Postulados</h1>
+                <h1>Evaluar Postulado</h1>
             </div>
             <div class="info">
                 <p class="ps"><strong>Vacantes:</strong> 2</p>

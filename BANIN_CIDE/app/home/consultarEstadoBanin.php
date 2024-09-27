@@ -1,3 +1,6 @@
+<?php
+    require '../../app/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +12,7 @@
 </head>
 <body>
     <?php
-        require '../../app/config.php';
         require '../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../app/shareFolder/navbar.php';
     ?>
     <div class="contenedor">

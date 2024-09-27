@@ -1,12 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
-<?php
 require_once('../../sql/class.php');
 require_once '../../app/config.php';
-//requireRole(['1']);
+requireRole(['1']);
 $dato=new Trabajo();
 if(isset($_POST['Registrar'])){
     $num_doc=$_POST['num_doc'];

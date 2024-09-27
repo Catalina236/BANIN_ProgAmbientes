@@ -9,7 +9,7 @@ class Trabajo extends Conexion{
         $this->conexion=$this->conexion->obtenerConexion();
     }
 
-    public function crearUsuario(string $num_doc, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $id_rol, string $nom_usu, string $contraseña){
+    public function crearUsuario($num_doc, $tipo_doc, $nombres, $apellidos, $email, $telefono, $id_rol, $nom_usu, $contraseña){
         $contraseña=PASSWORD_HASH($contraseña, PASSWORD_DEFAULT, array("cost"=>16));
         $sql="INSERT INTO persona VALUES (:num, :tipo, :nom, :ape, :email, :tel, :id)";
         $sql2="INSERT INTO usuario VALUES (:nom_usu, :num, :pass)"; 
@@ -44,7 +44,7 @@ class Trabajo extends Conexion{
         }
     }
 
-    public function iniciarSesion(string $num_doc, string $password){
+    public function iniciarSesion($num_doc, $password){
         $sql="SELECT * FROM usuario JOIN persona ON persona.numero_documento=usuario.numero_documento WHERE usuario.numero_documento=:nro_doc";
         $consult=$this->conexion->prepare($sql);
         $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
@@ -63,13 +63,13 @@ class Trabajo extends Conexion{
                 $rol = $result['id_rol'];
             switch($rol){
                     case '3':
-                        header('Location: /BANIN/app/evaluador/moduloConsulta.php');
+                        header('Location: /BANIN_CIDE/app/evaluador/moduloConsulta.php');
                         exit();
                     case '2':
-                        header('Location: /BANIN/app/coordinador/vacantes.php');
+                        header('Location: /BANIN_CIDE/app/coordinador/vacantes.php');
                         exit();
                     case '1':
-                        header('Location: /BANIN/app/administrador/usuario.php');
+                        header('Location: /BANIN_CIDE/app/administrador/usuario.php');
                         exit();
                     default:
                         echo "<div class='alerta text-center'>Rol no válido.</div>";
@@ -96,7 +96,7 @@ class Trabajo extends Conexion{
         $result=$consult->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     } 
-    public function eliminarUsuario(string $numero)  {
+    public function eliminarUsuario($numero)  {
         $sql="DELETE FROM persona WHERE numero_documento=:num";
         $consult=$this->conexion->prepare($sql);
         $consult->bindValue(":num",$numero);
@@ -111,7 +111,7 @@ class Trabajo extends Conexion{
             echo "Error al eliminar el usuario";
         }
     }
-    public function actualizar_usuario(string $numero, string $nombre_usuario, string $tipo_doc, string $contraseña, string $nombres, string $apellidos, string $email, string $telefono, string $rol){
+    public function actualizar_usuario($numero, $nombre_usuario, $tipo_doc, $contraseña, $nombres, $apellidos, $email, $telefono, $rol){
         $sql="UPDATE persona SET numero_documento=:num, tipo_doc=:tipo,     nombres=:nomb, apellidos=:ape, email=:em, telefono=:tel, id_rol=:id WHERE numero_documento=:num";
         $sql2="UPDATE usuario SET nombre_usuario=:nom, contraseña=:pass WHERE nombre_usuario=:nom";
         $consult=$this->conexion->prepare($sql);

@@ -19,8 +19,6 @@ error_reporting(E_ALL);
         <?php
             require '../../app/config.php';
             require '../../app/shareFolder/header.php';
-        ?>
-        <?php
             require '../../app/shareFolder/navbar.php';
         ?>
 
@@ -32,12 +30,11 @@ error_reporting(E_ALL);
                 <?php
                     require_once '../../sql/class.php';
                     
-                    // Iniciar la sesión si aún no está iniciada
+                   
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
                     }
-                    
-                    // Verificar si el usuario ya está logueado
+                   
                     if(isset($_SESSION['id_rol']) && isset($_SESSION['numero_documento'])){
                         header("Location:../../index.php");
                         exit();
@@ -52,16 +49,14 @@ error_reporting(E_ALL);
                         try {
                             $trabajo = new Trabajo();
                             $resultado = $trabajo->iniciarSesion($numero, $contraseña);
-                            
-                            // Si llegamos aquí, significa que no se redirigió, por lo que hubo un error
+                           
                             $error_message = "Error al iniciar sesión. Por favor, verifica tus credenciales.";
                         } catch (Exception $e) {
-                            // Capturar cualquier excepción y mostrar el mensaje de error
+                           
                             $error_message = "Error: " . $e->getMessage();
                         }
                     }
                     
-                    // Mostrar el mensaje de error si existe
                     if (!empty($error_message)) {
                         echo "<div class='error-message'>$error_message</div>";
                     }

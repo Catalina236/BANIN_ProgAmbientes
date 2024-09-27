@@ -70,7 +70,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -81,7 +81,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -92,7 +92,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +103,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
             </tbody>
