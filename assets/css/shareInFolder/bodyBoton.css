@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f3f4f6;
     color: #333;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 .perfil-btn[type="submit"] {
-    background-color: #671C34;
+    background-color: #0d5a74;
     color: white;
     padding: 6px 20px;
     border: none;

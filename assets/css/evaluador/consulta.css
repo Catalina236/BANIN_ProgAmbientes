@@ -4,7 +4,7 @@
 }
 
 .buscador h2 {
-    color: #671C34;
+    color: #000000;
 }
 
 label {
@@ -32,12 +32,12 @@ input[type="text"].codigo{
 }
 
 .informacionDeconsulta strong {
-    color: #671C34;
+    color: #0d5a74;
 }
 
 /*estilo de la tabla de resultados*/
 .tablaGeneradaPorLaConsulta h2 {
-    color: #671C34;
+    color: #0d5a74;
 }
 
 table {
@@ -56,8 +56,8 @@ th, td {
 }
 
 th {
-    background-color: #671C34;
-    color: white;
+    background-color: #d4d4d4;
+    color: rgb(0, 0, 0);
 }
 
 tr:nth-child(even) {

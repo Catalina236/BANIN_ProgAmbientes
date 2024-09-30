@@ -42,7 +42,12 @@
                         <th>Nombre</th>
                         <th>Estado BANIN</th>
                         <th>Coordinación Final</th>
+                        <?php if(!isset($_SESSION['id_rol']) || $_SESSION['id_rol']!='3'):?>
+                        <?php else:?>
                         <th>Traslado</th>
+                        <th>Reclamación</th>
+                        <th>Protección</th>
+                        <?php endif;?>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,7 +56,12 @@
                         <td>MANUEL EDUARDO ALEJO DIAZ</td>
                         <td>Seleccionado</td>
                         <td>COMPLEMENTARIA</td>
+                        <?php if(!isset($_SESSION['id_rol']) || $_SESSION['id_rol']!='3'):?>
+                        <?php else:?>
                         <td>Confirmado En 29331</td>
+                        <td>7-2023-313747</td>
+                        <td>7-2023-287082 - NO APROBADA</td>
+                        <?php endif;?>
                     </tr>
                 </tbody>
             </table>

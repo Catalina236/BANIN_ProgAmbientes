@@ -1,7 +1,7 @@
 <?php
 require_once('../../sql/class.php');
 require_once '../../app/config.php';
-//requireRole(['1']);
+requireRole(['1']);
 $dato=new Trabajo();
 if(isset($_POST['Registrar'])){
     $num_doc=$_POST['num_doc'];
@@ -32,7 +32,7 @@ if(isset($_POST['Registrar'])){
     <div class="contenedor">
         <form action="" method="POST">
             <label for="documento">Número de documento:</label>
-            <input type="text" id="documento" name="num_doc" placeholder="Ingrese el número de documento" required>
+            <input type="number" id="documento" name="num_doc" placeholder="Ingrese el número de documento" required>
             <label for="documento">Nombre de usuario</label>
             <input type="text" id="documento" name="nom_usuario" placeholder="Ingrese su nombre de usuario" required>
             <label for="">Tipo de documento
@@ -52,7 +52,7 @@ if(isset($_POST['Registrar'])){
             <label for="">Email</label>
             <input type="email" name="email" id="email" required placeholder="Ingrese su correo">
             <label for="">Teléfono</label>
-            <input type="tel" name="telefono" id="telefono" placeholder="Ingrese un número de teléfono" required>
+            <input type="number" name="telefono" id="telefono" placeholder="Ingrese un número de teléfono" required>
             <label for="rol">Rol:</label>
             <select id="rol" name="id_rol" required>
                 <option value="">Seleccione un rol</option>

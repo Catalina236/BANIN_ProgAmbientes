@@ -1,20 +1,20 @@
+<?php
+    require '../../../app/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
-    <link rel="icon" href="../../assets/img/logos/logoSena_2.png">
+    <link rel="icon" href="assets/img/logos/logoSena_2.png">
     <link rel="stylesheet" href="../../../assets/css/links/criterios.css">
     
     <title>BANIN</title>
 </head>
 <body>
     <?php
-        require '../../../app/config.php';
         require '../../../app/shareFolder/header.php';
-    ?>
-    <?php
         require '../../../app/shareFolder/navbar.php';
     ?>
     <div class="contenedor">

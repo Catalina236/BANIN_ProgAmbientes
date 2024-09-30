@@ -53,7 +53,7 @@ if(isset($_GET['numero'])){
     <div class="contenedor">
     <form action="" method="POST">
         <label for="">Número de documento:</label>
-        <input type="text" id="documento" name="num_doc" value="<?php echo $d1;?>" required>
+        <input type="number" id="documento" name="num_doc" value="<?php echo $d1;?>" required>
         <label for="">Nombre de usuario</label>
         <input type="text" id="documento" name="nom_usuario" placeholder="Ingrese su nombre de usuario" value="<?php echo $d2;?>" required>
         <label for="">Tipo de documento
@@ -73,7 +73,7 @@ if(isset($_GET['numero'])){
         <label for="">Email</label>
         <input type="email" name="email" id="email" required placeholder="Ingrese su correo" value="<?php echo $d7;?>">
         <label for="">Teléfono</label>
-        <input type="tel" name="telefono" id="telefono" placeholder="Ingrese un número de teléfono" required value="<?php echo $d8;?>">
+        <input type="number" name="telefono" id="telefono" placeholder="Ingrese un número de teléfono" required value="<?php echo $d8;?>">
         <label for="rol">Rol:</label>
         <select id="rol" name="id_rol" required value="<?php echo $d9;?>">
             <option value="">Seleccione un rol</option>
