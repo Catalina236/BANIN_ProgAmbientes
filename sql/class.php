@@ -59,7 +59,7 @@ class Trabajo extends Conexion{
             $_SESSION['id_rol']=$rol;
             switch($rol){
                 case '3':
-                    header('Location:../evaluador/moduloConsulta.php');
+                    header('Location:../home/consultarEstadoBanin.php');
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');

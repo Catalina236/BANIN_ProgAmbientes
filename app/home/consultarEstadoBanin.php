@@ -42,11 +42,11 @@
                         <th>Nombre</th>
                         <th>Estado BANIN</th>
                         <th>Coordinación Final</th>
-                        <?php if(!isset($_SESSION['id_rol']) || $_SESSION['id_rol']!='3'):?>
+                        <?php if(isset($_SESSION['id_rol']) || $_SESSION['id_rol']=='3' || $_SESSION['id_rol']=='2'):?>
+                            <th>Traslado</th>
+                            <th>Reclamación</th>
+                            <th>Protección</th>
                         <?php else:?>
-                        <th>Traslado</th>
-                        <th>Reclamación</th>
-                        <th>Protección</th>
                         <?php endif;?>
                     </tr>
                 </thead>

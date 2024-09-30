@@ -7,7 +7,6 @@ if(isset($_GET['numero'])){
     $numero_doc=$_GET['numero'];
     $datos=$trabajo->ver_un_usuario($numero_doc);
     $d1=$datos[0]['numero_documento'];
-    $d2=$datos[0]['nombre_usuario'];
     $d3=$datos[0]['tipo_doc'];
     $d4=$datos[0]['contraseña'];
     $d5=$datos[0]['nombres'];
@@ -18,7 +17,6 @@ if(isset($_GET['numero'])){
 
     if(isset($_POST['Actualizar'])){
         $numero_doc=$_POST['num_doc'];
-        $nombre_usuario=$_POST['nom_usuario'];
         $tipo_doc=$_POST['tipo_doc'];
         $contraseña=$_POST['contraseña'];
         $nombres=$_POST['nombres'];
@@ -31,7 +29,7 @@ if(isset($_GET['numero'])){
         }else{
             $contraseña=$d4;
         }
-        $trabajo->actualizar_usuario($numero_doc, $nombre_usuario, $tipo_doc, $contraseña,$nombres, $apellidos,$email, $telefono, $rol);
+        $trabajo->actualizar_usuario($numero_doc, $tipo_doc, $contraseña, $nombres, $apellidos,$email, $telefono, $rol);
 }
 }
 ?>
@@ -54,8 +52,6 @@ if(isset($_GET['numero'])){
     <form action="" method="POST">
         <label for="">Número de documento:</label>
         <input type="number" id="documento" name="num_doc" value="<?php echo $d1;?>" required>
-        <label for="">Nombre de usuario</label>
-        <input type="text" id="documento" name="nom_usuario" placeholder="Ingrese su nombre de usuario" value="<?php echo $d2;?>" required>
         <label for="">Tipo de documento
         <select name="tipo_doc" id="" value="<?php echo $d3;?>">
             <option <?php echo $d3==='Cédula de ciudadanía'? "selected='selected'":""?> value="Cédula de ciudadanía">Cédula de ciudadanía</option>
