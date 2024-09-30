@@ -36,7 +36,7 @@ ob_start();
         <nav class="menu">
             <ul class="menu-principal" id="menu-principal">
             <li><a href="<?php echo BASE_URL; ?>app/home/criterios/criterios.php">Criterios</a></li>
-            <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Estado BANIN</a></li>
+            <!-- <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Estado BANIN</a></li> -->
                 <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '3'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/vacantes.php">Vacantes</a></li>
                     <li><a href="<?php echo BASE_URL; ?>app/evaluador/candidatos.php">Candidatos</a></li>

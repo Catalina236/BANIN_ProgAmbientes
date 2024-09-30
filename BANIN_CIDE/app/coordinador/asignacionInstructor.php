@@ -3,7 +3,7 @@ require_once '../../app/config.php';
 requireRole(['2']);
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@ requireRole(['2']);
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="modalS">
         <a href="./vacantes.php"><button class="perfil-btn" type="submit" style="margin-top:30px">Regresar</button></a>

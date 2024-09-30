@@ -17,11 +17,12 @@ requireRole(['3']);
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="infoVacante">
             <div class="titulo">
-                <h1>Evaluar Postulado</h1>
+                <h1>Lista de Postulados</h1>
             </div>
             <div class="info">
                 <p class="ps"><strong>Vacantes:</strong> 2</p>

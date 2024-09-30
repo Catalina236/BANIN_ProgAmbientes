@@ -9,10 +9,11 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    background-color: #1a7f64;
+    background-color: #253f56;
     padding: 6px 5%;
     position: relative; 
     z-index: 1000;
+    height: 55px;
 }
 
 
@@ -31,14 +32,15 @@
     padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 18px;
+    font-size: 17px;
     transition: background-color 0.3s ease;
-    padding: 15px;
+    padding-top: 16px;
+    padding-bottom: 15.5px;
+    background-color: #253f56;
 }
 
 .menu-principal > li > a:hover {
     background-color:#5f86a8;
-    border-radius: 0.3rem;
 }
 
 .actions {
@@ -95,13 +97,14 @@
         position: absolute;
         top: 65px;
         right: 5%;
-        background-color: #3474ada9;
-        backdrop-filter: blur(10px);
+        background-color: #0000;
+        backdrop-filter: blur(1px);
         border-radius: 8px;
         width: 250px;
         max-width: 100%;
         flex-direction: column;
         gap: 10px;
+        padding: 12px;
     }
 
     .menu-principal.show {
@@ -120,12 +123,10 @@
 }
 
 footer {
-    background-color: #671C34;
+    background-color: #121e28;
     color: white;
     padding: 40px 0;
-    margin-top: 45px;
     text-align: center;
-    font-size: 19px;
 }
 
 .social-buttons {

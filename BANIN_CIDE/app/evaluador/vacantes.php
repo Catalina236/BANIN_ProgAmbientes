@@ -1,6 +1,6 @@
 <?php
-    require_once '../../app/config.php';
-    requireRole(['3']);
+require_once '../../app/config.php';
+requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,7 @@
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="container">
