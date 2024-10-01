@@ -31,14 +31,14 @@ $datos=$trabajo->ver_usuarios();
             </div>
             </form>
         </div>
-        <aside class="menu">
+        <!--<aside class="menu">
             <ul>
                 <li><a href="usuario.php">Gestionar usuarios</a></li>
                 <li><a href="gestionarCandidato.php">Gestionar candidatos</a></li>
                 <li><a href="actualizarDatoBANIN.php">Actualizar Datos BANIN
                 </a></li>
             </ul>
-        </aside>
+        </aside>-->
     </div>
     <div class="buscador">
         <h2>Filtros por roles</h2>

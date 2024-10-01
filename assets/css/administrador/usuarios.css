@@ -10,10 +10,11 @@ aside{
     margin-left: 94px;
     margin-top: -15px;
 }
-aside ul li a{
+aside ul li{
     color: #007ea7;
     font-weight: bold;
     font-size: 19px;
+    list-style: none;
 }
 aside ul li a:hover{
     text-decoration: none;
@@ -108,8 +109,6 @@ th, td {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-
-
 .perfil-btn {
     background-color: #0d5a74;
     color: white;
@@ -161,8 +160,6 @@ input[type="text"].codigo{
 .informacionDeconsulta strong {
     color: #0d5a74;
 }
-
-
 .tablaGeneradaPorLaConsulta h2 {
     color: #0d5a74;
 }

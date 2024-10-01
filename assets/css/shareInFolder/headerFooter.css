@@ -11,14 +11,21 @@
     align-items: center;
     background-color: #0056A1;
     padding: 7px 5%;
-    position: relative; 
+    position: relative; /* Aseguramos que los elementos hijos lo tomen como referencia */
     z-index: 1000;
 }
+
 .menu-principal {
     list-style: none;
     display: flex;
-    justify-content:right;
+    justify-content: right;
+    position: relative; /* Esto es importante para que el submenu se posicione bien */
 }
+
+.menu-principal > li {
+    position: relative; /* Asegura que el submenu se posicione relativo al padre */
+}
+
 .menu-principal > li > a {
     color: white;
     text-decoration: none;
@@ -31,40 +38,45 @@
     transition: background-color 0.3s ease;
     padding: 15px;
 }
-.menu-principal li:hover .submenu{
-    display: block;
+
+.menu-principal > li:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
 }
-.menu-principal > li > a:hover {
-    background-color:#5f86a8;
-    border-radius: 0.3rem;
-}
-.submenu{
+
+.submenu {
     position: absolute;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     list-style: none;
-    top: 63px;
+    top: 43px;
+    left: 0;
     background-color: #3474ada9;
     backdrop-filter: blur(10px);
     border-radius: 8px;
     width: 225px;
-    max-width: 100%;
+    /* max-width: 100%; */
     gap: 10px;
     font-size: 16px;
     font-weight: bold;
-    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Aseguramos que esté por encima de otros elementos */
 }
-.submenu li a{
+
+.submenu li a {
     display: block;
     color: white;
     text-decoration: none;
     padding: 15px 15px 15px 20px;
 }
-.submenu li a:hover{
+
+.submenu li a:hover {
     background-color: #0056A1;
     border-radius: 8px;
     text-decoration: none;
 }
-.submenu li:hover{
+
+.submenu li:hover {
     text-decoration: none;
     color: white;
 }
@@ -100,6 +112,7 @@
     padding: 0;
     z-index: 1001;
 }
+
 .menu-toggle span {
     display: block;
     width: 100%;
@@ -108,7 +121,6 @@
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 @media (max-width: 968px) {
     .menu-toggle {
         display: flex;
@@ -163,7 +175,6 @@ footer {
     align-items: center;
     transition: transform 0.3s ease;
 }
-
 .social-link:hover {
     transform: translateY(-5px);
 }
@@ -286,7 +297,7 @@ footer {
     top: 5px; 
     left: 20px; 
     color: white; 
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: bold; 
     background-color: rgba(0, 0, 0, 0.5); 
     padding: 10px; 
