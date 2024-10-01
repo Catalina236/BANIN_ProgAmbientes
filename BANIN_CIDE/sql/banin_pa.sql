@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2024 a las 16:52:01
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Tiempo de generación: 01-10-2024 a las 15:37:45
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,33 +72,6 @@ CREATE TABLE `criterio_evaluacion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `persona`
---
-
-CREATE TABLE `persona` (
-  `numero_documento` varchar(79) NOT NULL,
-  `tipo_doc` varchar(100) NOT NULL,
-  `nombres` varchar(100) NOT NULL,
-  `apellidos` varchar(100) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `telefono` varchar(50) NOT NULL,
-  `id_rol` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `persona`
---
-
-INSERT INTO `persona` (`numero_documento`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `id_rol`) VALUES
-('10736', 'Cédula de ciudadanía', 'alexander', 'romero', 'melquiveru@gmail.com', '3222535433', '3'),
-('1073672380', 'Cédula de ciudadanía', 'melqui alexander', 'romero veru', 'melqui16rv@gmail.com', '3026074008', '2'),
-('19220321', 'Cédula de ciudadanía', 'Miguel Antonio', 'Morales Sánchez', 'migue2333@gmail.com', '344444444', '1'),
-('52294893', 'Cédula de ciudadanía', 'Luz Helena', 'Quintana', 'luz67@gmail.com', '33467897890', '1'),
-('79431471', 'Cédula de ciudadanía', 'Fabio', 'Sánchez', 'fabio89@gmail.com', '3222222222', '2');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `rol`
 --
 
@@ -127,6 +100,15 @@ CREATE TABLE `tipo_formacion` (
   `Descripcion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `tipo_formacion`
+--
+
+INSERT INTO `tipo_formacion` (`Id_tipoF`, `Descripcion`) VALUES
+('1', 'Formación para el trabajo'),
+('2', 'Educación Formal'),
+('3', 'SER');
+
 -- --------------------------------------------------------
 
 --
@@ -134,21 +116,25 @@ CREATE TABLE `tipo_formacion` (
 --
 
 CREATE TABLE `usuario` (
-  `nombre_usuario` varchar(100) NOT NULL,
   `numero_documento` varchar(79) NOT NULL,
-  `contraseña` varchar(200) NOT NULL
+  `tipo_doc` varchar(100) NOT NULL,
+  `nombre_completo` varchar(300) DEFAULT NULL,
+  `contraseña` varchar(200) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
+  `id_rol` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`nombre_usuario`, `numero_documento`, `contraseña`) VALUES
-('alexander', '10736', '$2y$16$O774bc3RXbtpfwv/wu1iMuFM7C2FVivbLKpXsn79YbhEp0Su7B89W'),
-('Fabio Ernesto', '79431471', '$2y$16$t4m85ckYBdlAF3TQUfvQ7OxfEnNyQ5t2IuPkZ5y1Le/Xwp0As5TVy'),
-('Luz34', '52294893', '$2y$16$pDx4sxIoXRmgg8BPAIsHg.e/ZH6guSQ.c9ZQ8mwpVpfV6Kai8tlAy'),
-('melqui', '1073672380', '$2y$16$hlXMfs1huRiw45eMA760oOGDMgTnZUdw8al/DR9JsZx672qxsIBMG'),
-('Miguel', '19220321', '$2y$16$jmpSd89/TKjNEBjTPftnR.17vDaETZcEDTMrhm1IkY.lXNYDgKOJ2');
+INSERT INTO `usuario` (`numero_documento`, `tipo_doc`, `nombre_completo`, `contraseña`, `email`, `telefono`, `id_rol`) VALUES
+('19220321', 'Cédula de ciudadanía', 'Miguel Antonio Morales Sánchez', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'migue2333@gmail.com', '344444444', '1'),
+('52294893', 'Cédula de ciudadanía', 'Luz Helena Quintana', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'luz67@gmail.com', '33467897890', '1'),
+('79408514', 'Cédula de ciudadanía', 'Héctor Eliseo Menjura Saavedra', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'hectore34@gmail.com', '4333333333', '3'),
+('79431471', 'Cédula de ciudadanía', 'Fabio Ernesto Sánchez', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'fabio89@gmail.com', '3222222222', '2'),
+('79965721', 'Cédula de ciudadanía', 'Mauricio Cañas López', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'mauricio54@gmail.com', '31111111111', '3');
 
 -- --------------------------------------------------------
 
@@ -163,8 +149,18 @@ CREATE TABLE `vacante` (
   `estado_BANIN` varchar(50) NOT NULL,
   `num_doc_evaluador` varchar(79) DEFAULT NULL,
   `nro_instr_req` int(11) DEFAULT NULL,
-  `num_doc_candidato` varchar(79) DEFAULT NULL
+  `num_doc_candidato` varchar(79) DEFAULT NULL,
+  `Id_tipoF` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `vacante`
+--
+
+INSERT INTO `vacante` (`cod_vacante`, `nombre_vacante`, `perfil_vacante`, `estado_BANIN`, `num_doc_evaluador`, `nro_instr_req`, `num_doc_candidato`, `Id_tipoF`) VALUES
+('26378', 'CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS.		', 'Requisitos académicos: opción 1titulo de profesional comomédico veterinario, médico veterinario y zootecnista, zootecnista. Opción 2tecnólogo y/o técnico enproducción animal, producción agropecuaria. Experiencia laboral: experiencia comprobada en producción animal, sanidad animal, agroecología y/o desarrollo rural como mínimo 6 meses en docencia y un año en el área', 'Por evaluar', '79408514', 2, '19220321', '1'),
+('32900', 'EMPRENDEDOR EN PRODUCCION DE DERIVADOS CARNICOS		\r\n', '\"Requisitos academicos: Técnico O Tecnólogo Con Formación Específica En Áreas De Negocios, Mercadeo, Administrativas Y Afines. Profesionales En Áreas De Negocios, Mercadeo, Administrativas Y Afines. Experiencia Laboral Doce (12) Meses Con Experiencia Demostrada En Elaboración De Planes De Comercialización, Planes De Negocio, Conformación De Microempresas Y En Mercadeo De Productos Agrícolas, Pecuarios, Artesanales, Agroindustriales O De Servicios, Y Mínimo Seis (6) Meses De Experiencia Pedagógic', 'Por evaluar', '52294893', 3, '79431471', '3'),
+('32926', 'EMPRENDEDOR EN ALTERNATIVAS AGROPECUARIAS PARA UNA PRODUCCION SOSTENIBLE		\r\n		\r\n', 'Requisitos académicos: opción 1titulo de profesional comomédico veterinario, médico veterinario y zootecnista, zootecnista. Opción 2tecnólogo y/o técnico enproducción animal, producción agropecuaria. Experiencia laboral: experiencia comprobada en producción animal, sanidad animal, agroecología y/o desarrollo rural como mínimo 6 meses en docencia y un año en el area', 'Por evaluar', '19220321', 2, '79965721', '2');
 
 --
 -- Índices para tablas volcadas
@@ -193,13 +189,6 @@ ALTER TABLE `criterio_evaluacion`
   ADD KEY `Id_tipo` (`Id_tipo`);
 
 --
--- Indices de la tabla `persona`
---
-ALTER TABLE `persona`
-  ADD PRIMARY KEY (`numero_documento`),
-  ADD KEY `id_rol` (`id_rol`);
-
---
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
@@ -215,8 +204,8 @@ ALTER TABLE `tipo_formacion`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`nombre_usuario`),
-  ADD KEY `lfc` (`numero_documento`);
+  ADD PRIMARY KEY (`numero_documento`),
+  ADD KEY `id_rol` (`id_rol`);
 
 --
 -- Indices de la tabla `vacante`
@@ -224,7 +213,8 @@ ALTER TABLE `usuario`
 ALTER TABLE `vacante`
   ADD PRIMARY KEY (`cod_vacante`),
   ADD KEY `num_doc_evaluador` (`num_doc_evaluador`),
-  ADD KEY `num_doc_candidato` (`num_doc_candidato`);
+  ADD KEY `num_doc_candidato` (`num_doc_candidato`),
+  ADD KEY `foranea` (`Id_tipoF`);
 
 --
 -- Restricciones para tablas volcadas
@@ -235,7 +225,7 @@ ALTER TABLE `vacante`
 --
 ALTER TABLE `contrato`
   ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`cod_vacante`) REFERENCES `vacante` (`cod_vacante`),
-  ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`numero_documento`) REFERENCES `persona` (`numero_documento`);
+  ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`numero_documento`) REFERENCES `usuario` (`numero_documento`);
 
 --
 -- Filtros para la tabla `coordinacion`
@@ -251,23 +241,18 @@ ALTER TABLE `criterio_evaluacion`
   ADD CONSTRAINT `criterio_evaluacion_ibfk_2` FOREIGN KEY (`Id_tipo`) REFERENCES `tipo_formacion` (`Id_tipoF`);
 
 --
--- Filtros para la tabla `persona`
---
-ALTER TABLE `persona`
-  ADD CONSTRAINT `persona_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`);
-
---
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `lfc` FOREIGN KEY (`numero_documento`) REFERENCES `persona` (`numero_documento`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`);
 
 --
 -- Filtros para la tabla `vacante`
 --
 ALTER TABLE `vacante`
-  ADD CONSTRAINT `vacante_ibfk_1` FOREIGN KEY (`num_doc_evaluador`) REFERENCES `persona` (`numero_documento`),
-  ADD CONSTRAINT `vacante_ibfk_2` FOREIGN KEY (`num_doc_candidato`) REFERENCES `persona` (`numero_documento`);
+  ADD CONSTRAINT `foranea` FOREIGN KEY (`Id_tipoF`) REFERENCES `tipo_formacion` (`Id_tipoF`),
+  ADD CONSTRAINT `vacante_ibfk_1` FOREIGN KEY (`num_doc_evaluador`) REFERENCES `usuario` (`numero_documento`),
+  ADD CONSTRAINT `vacante_ibfk_2` FOREIGN KEY (`num_doc_candidato`) REFERENCES `usuario` (`numero_documento`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
