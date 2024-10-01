@@ -60,6 +60,7 @@ class Trabajo extends Conexion{
             switch($rol){
                 case '3':
                     header('Location:../home/consultarEstadoBanin.php');
+
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');
@@ -124,4 +125,36 @@ class Trabajo extends Conexion{
                 </script>";
         }
     }
+
+
+    public function obtenerCodigos($cod_vacante) {
+        $sql = "SELECT * FROM tipo_formacion 
+                LEFT JOIN vacante ON tipo_formacion.Id_tipoF = vacante.Id_tipoF
+                LEFT JOIN usuario ON usuario.numero_documento = vacante.num_doc_evaluador
+                WHERE usuario.id_rol = 3 AND vacante.cod_vacante = :cod_vacante";
+        
+        $consult = $this->conexion->prepare($sql); 
+        $consult->bindParam(':cod_vacante', $cod_vacante); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function obtenerCodigo() {
+        $sql = "SELECT * FROM vacante";
+        $consult = $this->conexion->prepare($sql); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function actualizarNumDocEvaluador($cod_vacante, $nuevo_num_doc_evaluador) {
+        $sql = "UPDATE vacante SET num_doc_evaluador = :nuevo_num_doc_evaluador WHERE cod_vacante = :cod_vacante";
+        $consult = $this->conexion->prepare($sql);
+        $consult->bindParam(':nuevo_num_doc_evaluador', $nuevo_num_doc_evaluador);
+        $consult->bindParam(':cod_vacante', $cod_vacante);
+        return $consult->execute();
+    }
+    
+    
+    
+
 }
