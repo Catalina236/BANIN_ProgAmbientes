@@ -96,15 +96,15 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <div class="form-group">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
             </div>
             <div class="form-group">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente">
+                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
             </div>
             <div class="form-group">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
             </div>
             <div class="form-group">
                 <label for="poblacionVulnerable">Población Vulnerable:</label>
@@ -112,15 +112,18 @@ if (isset($_GET['cod_vacante'])) {
             </div>
             <div class="form-group">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion">
+                <input type="number" id="certificacion" name="certificacion" disabled>
             </div>
+
             <div class="form-group">
                 <label for="formacionL">Formacion laboral:</label>
                 <input type="number" id="formacionL" name="formacionL">
+
             </div>
             <div class="form-group">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
                 <select id="coordinacionSelect">
+
                     <option value="">Selecciona</option>
                     <option value="especializacionPr">Técnico profesional</option>
                     <option value="especializaciontn">Especialización técnica</option>
@@ -138,31 +141,36 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <div class="form-group">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
             </div>
             <div class="form-group">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente">
+                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
             </div>
             <div class="form-group">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
             </div>
+
             <div class="form-group">
                 <label for="poblacionVulnerable">Población Vulnerable:</label>
                 <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
+
             </div>
             <div class="form-group">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion">
+                <input type="number" id="certificacion" name="certificacion" disabled>
             </div>
+
             <div class="form-group">
                 <label for="formacionL">Formacion laboral:</label>
                 <input type="number" id="formacionL" name="formacionL">
+
             </div>
             <div class="form-group">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
                 <select id="coordinacionSelect">
+
                     <option value="">Selecciona</option>
                     <option value="especializacionPr">Técnico profesional</option>
                     <option value="especializaciontn">Especialización técnica</option>
@@ -189,34 +197,35 @@ if (isset($_GET['cod_vacante'])) {
             <div class="form-group">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
                 <input type="number" id="experienciaInstructor" name="experienciaInstructor">
+
             </div>
             <div class="form-group">
                 <label for="experienciaProyecto">Experiencia formación de proyectos:</label>
-                <input type="number" id="experienciaProyecto" name="experienciaProyecto">
+                <input type="number" id="experienciaProyecto" name="experienciaProyecto" disabled>
             </div>
             <div class="form-group">
                 <label for="experienciacomunidad">Experiencia trabajo con comunidades rurales:</label>
-                <input type="number" id="experienciacomunidad" name="experienciacomunidad">
+                <input type="number" id="experienciacomunidad" name="experienciacomunidad" disabled>
             </div>
             <div class="form-group">
                 <label for="poblacionVul">Población Vulnerable:</label>
-                <input type="number" id="poblacionVul" name="poblacionVul">
+                <input type="number" id="poblacionVul" name="poblacionVul" disabled>
             </div>
             <div class="form-group">
                 <label for="arraigo">Arraigo:</label>
-                <input type="number" id="arraigo" name="arraigo">
+                <input type="number" id="arraigo" name="arraigo" disabled>
             </div>
             <div class="form-group">
                 <label for="certificacionCon">Certificación competencias</label>
-                <input type="number" id="certificacionCon" name="certificacionCon">
+                <input type="number" id="certificacionCon" name="certificacionCon" disabled>
             </div>
             <div class="form-group">
                 <label for="formacionLaboral">Formación Laboral</label>
-                <input type="number" id="formacionLaboral" name="formacionLaboral">
+                <input type="number" id="formacionLaboral" name="formacionLaboral" disabled>
             </div>
             <div class="form-group">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()">
+                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
                     <option value="">Selecciona</option>
                     <option value="especializaciontn">Especialización técnica</option>
                     <option value="tecnologia">Tecnologo</option>
@@ -232,11 +241,7 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <button type="submit">Enviar</button>
         </form>
-
-    </div>
-
-
-    
+    </div>    
     <script src="../../assets/js/ocultarInfo.js"></script>
     <script src="../../assets/js/mensajeEmergente.js"></script>
     <script src="../../assets/js/ventana.js"></script>

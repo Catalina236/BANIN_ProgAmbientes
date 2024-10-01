@@ -50,7 +50,7 @@ requireRole(['1']);
             </form>
         </div>
     </div>
-    <div id="confirmModal" class="modal">--
+    <div id="confirmModal" class="modal">
         <div class="modal-content">
             <p id="modalMessage"></p>
             <div class="modal-buttons">

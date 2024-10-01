@@ -1,0 +1,26 @@
+<?php
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Cuenta</h1>
+    </header>
+    <main>
+        <section class="user-info">
+            </section>
+        <section class="settings">
+            </section>
+        <section class="activity">
+            </section>
+    </main>
+    <footer>
+        </footer>
+</body>
+</html>

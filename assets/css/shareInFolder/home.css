@@ -90,7 +90,7 @@ button.prev, button.next {
     width: calc(33.33% - 20px);
     min-width: 250px;
     background-color: white;
-    border: 1px solid #671C34;
+    border: 1px solid #0d5a74;
     padding: 15px 20px;
     font-size: 17px;
     box-sizing: border-box;
@@ -99,12 +99,12 @@ button.prev, button.next {
 }
 
 .desc h2 {
-    color: #330715;
+    color: #002741;
 }
 
 .desc button {
     border: none;
-    background-color: #671C34;
+    background-color: #0d5a74;
     border-radius: 5px;
     font-weight: bold;
     padding: 10px 20px;

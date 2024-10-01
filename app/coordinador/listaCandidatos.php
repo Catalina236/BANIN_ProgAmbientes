@@ -1,6 +1,6 @@
 <?php
-    require_once '../../app/config.php';
-    requireRole(['3']);
+require_once '../../app/config.php';
+requireRole(['2']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,8 +15,11 @@
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
-        require '../../app/shareFolder/backButton.php';
     ?>
+
+    <div class="modalS">
+        <a href="./vacantes.php"><button class="perfil-btn" type="submit" style="margin-top:30px">Regresar</button></a>
+    </div>
     <div class="contenedor">
         <div class="infoVacante">
             <div class="titulo">
@@ -67,7 +70,7 @@
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +81,7 @@
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +92,7 @@
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +103,7 @@
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
             </tbody>
@@ -112,7 +115,7 @@
                     <th>NUMERO DE CEDULA</th>
                     <th>Nombre</th>
                     <th>Estado BANIN</th>
-                    <th style="text-align: center;">Pesto</th>
+                    <th style="text-align: center;">Puesto</th>
                 </tr>
             </thead>
             <tbody>
@@ -143,6 +146,7 @@
             </tbody>
         </table>
     </div>
+
     <?php 
     require '../shareFolder/footer.php';
     ?>

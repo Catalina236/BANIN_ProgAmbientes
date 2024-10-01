@@ -59,7 +59,8 @@ class Trabajo extends Conexion{
             $_SESSION['id_rol']=$rol;
             switch($rol){
                 case '3':
-                    header('Location:../evaluador/moduloConsulta.php');
+                    header('Location:../home/consultarEstadoBanin.php');
+
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');
@@ -125,6 +126,7 @@ class Trabajo extends Conexion{
         }
     }
 
+
     public function obtenerCodigos($cod_vacante) {
         $sql = "SELECT * FROM tipo_formacion 
                 LEFT JOIN vacante ON tipo_formacion.Id_tipoF = vacante.Id_tipoF
@@ -154,4 +156,5 @@ class Trabajo extends Conexion{
     
     
     
+
 }
