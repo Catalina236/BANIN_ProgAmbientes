@@ -10,7 +10,7 @@
     justify-content: right;
     align-items: center;
     background-color: #0056A1;
-    padding: 7px 5%;
+    padding: 10px 5%;
     position: relative; 
     z-index: 1000;
 }
@@ -37,8 +37,7 @@
 }
 
 .menu-principal > li > a:hover {
-    background-color:#5f86a8;
-    border-radius: 0.3rem;
+    background-color:#7b868a;
 }
 
 .actions {
@@ -95,8 +94,7 @@
         position: absolute;
         top: 65px;
         right: 5%;
-        background-color: #3474ada9;
-        backdrop-filter: blur(10px);
+        background-color: #671C34;
         border-radius: 8px;
         width: 250px;
         max-width: 100%;
@@ -164,14 +162,13 @@ footer {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 0 20px;
 }
 
 /* Estilos para el logo */
 .logo_sena {
     flex-shrink: 0;
     margin-right: 20px;
-
 }
 
 .logo {
@@ -204,7 +201,7 @@ footer {
 }
 
 .contBANIN{
-    background-color: #000000;
+    background-color: #0056A1;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -212,7 +209,7 @@ footer {
     width: 2px;
 }
 .banin{
-    color: #000000;
+    color: #0056A1;
 }
 
 /* Media queries para ajustar el diseño responsivo */
@@ -266,7 +263,7 @@ footer {
 
 .indicadorRol {
     position: absolute; 
-    top: 5px; 
+    top: 9px; 
     left: 20px; 
     color: white; 
     font-size: 18px; 

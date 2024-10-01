@@ -1,6 +1,15 @@
 <?php
 require_once '../../app/config.php';
+require_once '../../sql/class.php';
 requireRole(['3']);
+
+$vacante = []; // Inicializamos $vacante como un array vacío para evitar errores si no hay resultados.
+
+if (isset($_GET['cod_vacante'])) {
+    $tipoF = $_GET['cod_vacante'];
+    $result = new Trabajo();
+    $vacante = $result->obtenerCodigos($tipoF);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +62,12 @@ requireRole(['3']);
                         <th>Protección</th>
                     </tr>
                 </thead>
+                <?php if (!empty($vacante)) { // Solo iteramos si $vacante tiene valores ?>
                 <tbody>
+                    <?php foreach($vacante as $row) { ?>
                     <tr>
-                        <td>79314342</td>
-                        <td>MANUEL EDUARDO ALEJO DIAZ</td>
+                        <td><?php echo $row['numero_documento']; ?></td>
+                        <td><?php echo $row['nombres']; ?></td>
                         <td>1</td>
                         <td>95,00</td>
                         <td>Seleccionado</td>
@@ -65,8 +76,15 @@ requireRole(['3']);
                         <td>7-2023-313747</td>
                         <td>7-2023-287082 - NO APROBADA</td>
                     </tr>
-
+                    <?php } ?>
                 </tbody>
+                <?php } else { ?>
+                <tbody>
+                    <tr>
+                        <td colspan="9">No se encontraron resultados.</td>
+                    </tr>
+                </tbody>
+                <?php } ?>
             </table>
         </div>
     </div>
