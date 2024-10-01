@@ -1,0 +1,85 @@
+body{
+    background-color: #f4f4f4;
+}
+.contenedor {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: #333;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centra las tarjetas en el contenedor */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(25.333% - 20px); /* Tres tarjetas por fila en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ajuste para pantallas medianas */
+@media (max-width: 992px) {
+    .card {
+        width: calc(50% - 20px); /* Dos tarjetas por fila en pantallas medianas */
+    }
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 576px) {
+    .card {
+        width: calc(100% - 20px); /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}
+
+.card p {
+    margin: 0 0 10px;
+    color: #555;
+}
+
+.card button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color:#671C34;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #FBAD20;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+

@@ -44,7 +44,7 @@ ob_start();
                 <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == '1'): ?>
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/usuario.php">Gestionar Usuarios</a>
                         <ul class="submenu">
-                        <li><a href="<?php echo BASE_URL; ?>app/administrador/gestionarCandidato.php">Gestionar Candidatos</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>app/home/consultarEstadoBanin.php">Gestionar Candidatos</a></li>
                         <li><a href="<?php echo BASE_URL; ?>app/administrador/actualizarDatosBANIN.php">Actualizar Datos BANIN</a></li>
                         </ul>
                     </li>

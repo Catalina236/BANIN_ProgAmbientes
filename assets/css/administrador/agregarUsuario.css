@@ -1,10 +1,10 @@
-.contenedor {
+/* .contenedor {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 h2 {
     color: #333;
     text-align: center;
@@ -54,8 +54,8 @@ textarea {
 .buttonForms:hover {
     background-color: #45a049;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .contenedor {
         grid-template-columns: 1fr;
     }
-}
+} */

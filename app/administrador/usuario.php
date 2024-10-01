@@ -63,8 +63,7 @@ $datos=$trabajo->ver_usuarios();
                     <th>Id rol</th>
                     <th>Número de documento</th>
                     <th>Tipo de documento</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
+                    <th>Nombre completo</th>
                     <th>Email</th>
                     <th>Teléfono</th>
                     <th>Rol</th>
@@ -78,8 +77,7 @@ $datos=$trabajo->ver_usuarios();
                     <td><?php echo $row['id_rol'];?></td>
                     <td><?php echo $row['numero_documento'];?></td>
                     <td><?php echo $row['tipo_doc'];?></td>
-                    <td><?php echo $row['nombres'];?></td>
-                    <td><?php echo $row['apellidos'];?></td>
+                    <td><?php echo $row['nombre_completo'];?></td>
                     <td><?php echo $row['telefono'];?></td>
                     <td><?php echo $row['email'];?></td>
                     <td><?php echo $row['nombre_rol'];?></td> 
