@@ -1,0 +1,3 @@
+[30-Sep-2024 12:04:42 America/Bogota] PHP Notice:  A session had already been started - ignoring session_start() in /home/cidesafc/public_html/BANIN_CIDE/sql/class.php on line 60
+[30-Sep-2024 12:08:02 America/Bogota] PHP Notice:  A session had already been started - ignoring session_start() in /home/cidesafc/public_html/BANIN_CIDE/sql/class.php on line 60
+[30-Sep-2024 12:09:02 America/Bogota] PHP Notice:  A session had already been started - ignoring session_start() in /home/cidesafc/public_html/BANIN_CIDE/sql/class.php on line 60

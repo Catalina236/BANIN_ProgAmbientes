@@ -15,6 +15,7 @@
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="infoVacante">

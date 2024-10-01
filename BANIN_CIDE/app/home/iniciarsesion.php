@@ -18,14 +18,14 @@ error_reporting(E_ALL);
     <div class="sub_body">
         <?php
             require '../../app/config.php';
-            require '../../app/shareFolder/header.php';
             require '../../app/shareFolder/navbar.php';
         ?>
 
         <div class="contenedor">        
             <div class="imagen-contenedor"></div>
             <div class="formulario">
-                <img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof">
+            <a href="<?php echo BASE_URL; ?>index.php"><img src="../../assets/img/logos/logosena.png" alt="Logo SENA" class="logof"></a>
+                
                 <form class="login-form" action="" method="post">
                 <?php
                     require_once '../../sql/class.php';
