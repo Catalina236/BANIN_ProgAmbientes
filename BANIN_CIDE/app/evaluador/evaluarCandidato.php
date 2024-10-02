@@ -2,7 +2,7 @@
 require_once '../../app/config.php';
 
 $coordinacion = 'Formación para el Trabajo'; 
-requireRole(['3','2']);
+requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -82,31 +82,31 @@ requireRole(['3','2']);
             <!-- Sección de Formación para el Trabajo -->
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
             </div>
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
+                <input type="number" id="experienciaDocente" name="experienciaDocente">
             </div>
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
             </div>
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="poblacionVulnerable">Poblacion Vulnerable:</label>
-                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable" disabled>
+                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
             </div>
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
+                <input type="number" id="certificacion" name="certificacion">
             </div>
             <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="formacionL">Formación Laboral:</label>
-                <input type="number" id="formacionL" name="formacionL" disabled>
+                <input type="number" id="formacionL" name="formacionL">
             </div>
             <div class="formacionTrabajoSection" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
                     <option value="">Selecciona</option>
                     <option value="especializacionPr">Técnico profesional</option>
                     <option value="especializaciontn">Especialización técnica</option>
@@ -122,31 +122,31 @@ requireRole(['3','2']);
             <!-- Educación Formal -->
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
             </div>
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
+                <input type="number" id="experienciaDocente" name="experienciaDocente">
             </div>
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
             </div>
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="poblacionVulnerable">Poblacion Vulnerable:</label>
-                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable" disabled>
+                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
             </div>
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
+                <input type="number" id="certificacion" name="certificacion">
             </div>
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="formacionL">Formación Laboral:</label>
-                <input type="number" id="formacionL" name="formacionL" disabled>
+                <input type="number" id="formacionL" name="formacionL">
             </div>
             <div class="educacionFormalSection" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
                     <option value="">Selecciona</option>
                     <option value="especializacionPr">Técnico profesional</option>
                     <option value="especializaciontn">Especialización técnica</option>
@@ -161,43 +161,43 @@ requireRole(['3','2']);
             <!-- Secciones de SER -->
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnicaSer">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnicaSer" name="experienciaTecnicaSer" disabled>
+                <input type="number" id="experienciaTecnicaSer" name="experienciaTecnicaSer">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaDocenteSer">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocenteSer" name="experienciaDocenteSer" disabled>
+                <input type="number" id="experienciaDocenteSer" name="experienciaDocenteSer">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaInstructorSer">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructorSer" name="experienciaInstructorSer" disabled>
+                <input type="number" id="experienciaInstructorSer" name="experienciaInstructorSer">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaProyecto">Experiencia formación de proyectos:</label>
-                <input type="number" id="experienciaProyecto" name="experienciaProyecto" disabled>
+                <input type="number" id="experienciaProyecto" name="experienciaProyecto">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciacomunidad">Experiencia trabajo con comunidades rurales:</label>
-                <input type="number" id="experienciacomunidad" name="experienciacomunidad" disabled>
+                <input type="number" id="experienciacomunidad" name="experienciacomunidad">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="poblacionVul">Población Vulnerable:</label>
-                <input type="number" id="poblacionVul" name="poblacionVul" disabled>
+                <input type="number" id="poblacionVul" name="poblacionVul">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="arraigo">Arraigo:</label>
-                <input type="number" id="arraigo" name="arraigo" disabled>
+                <input type="number" id="arraigo" name="arraigo">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="certificacionCon">Certificación competencias</label>
-                <input type="number" id="certificacionCon" name="certificacionCon" disabled>
+                <input type="number" id="certificacionCon" name="certificacionCon">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="formacionLaboral">Formación Laboral</label>
-                <input type="number" id="formacionLaboral" name="formacionLaboral" disabled>
+                <input type="number" id="formacionLaboral" name="formacionLaboral">
             </div>
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
                     <option value="">Selecciona</option>
                     <option value="especializaciontn">Especialización técnica</option>
                     <option value="tecnologia">Tecnologo</option>
@@ -211,7 +211,11 @@ requireRole(['3','2']);
 
             <button type="submit">Enviar</button>
         </form>
-    </div>    
+
+    </div>
+
+
+    
     <script src="../../assets/js/ocultarInfo.js"></script>
     <script src="../../assets/js/mensajeEmergente.js"></script>
     <script src="../../assets/js/ventana.js"></script>

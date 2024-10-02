@@ -19,8 +19,12 @@
     clip-path: polygon(0 0, 95% 0, 80% 100%, 0 100%);
     transition: all 0.5s ease;
 }
-
-.formulario {
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario-contenedor {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -44,7 +48,7 @@
     margin-top: 10px;
 }
 
-.formulario label {
+.formulario-contenedor label {
     width: 100%;
     border: 1px solid rgba(167, 167, 167, 0.7);
     background-color: #f4f4f4;
@@ -57,7 +61,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.formulario label input {
+.formulario-contenedor label input {
     background-color: #f4f4f4;
     width: 100%;
     border: none;
@@ -67,12 +71,12 @@
     color: #333;
 }
 
-.formulario label i {
+.formulario-contenedor label i {
     color: #4b4b4b;
     margin-right: 10px;
 }
 
-.formulario input[type="submit"] {
+.formulario-contenedor input[type="submit"] {
     width: 100%;
     background-color: #e67e22;
     color: white;
@@ -85,7 +89,7 @@
     transition: background-color 0.3s ease;
 }
 
-.formulario input[type="submit"]:hover {
+.formulario-contenedor input[type="submit"]:hover {
     background-color: #d35400;
 }
 
@@ -136,7 +140,7 @@ h1 {
         border-bottom-right-radius: 50% 20%;
     }
 
-    .formulario {
+    .formulario-contenedor {
         width: 85%;
         background-color: white;
         padding: 30px 20px;
@@ -159,7 +163,7 @@ h1 {
         max-width: 350px;
     }
 
-    .formulario label {
+    .formulario-contenedor label {
         width: 100%;
         border: 1px solid rgba(167, 167, 167, 0.7);
         background-color: #fafafa;
@@ -171,11 +175,11 @@ h1 {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
-    .formulario label:hover {
+    .formulario-contenedor label:hover {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario input[type="submit"] {
+    .formulario-contenedor input[type="submit"] {
         width: 100%;
         background-color: #e67e22;
         color: white;
@@ -186,7 +190,7 @@ h1 {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario input[type="submit"]:hover {
+    .formulario-contenedor input[type="submit"]:hover {
         background-color: #d35400;
     }
 }
@@ -204,7 +208,7 @@ h1 {
         border-bottom-right-radius: 45% 20%;
     }
 
-    .formulario {
+    .formulario-contenedor {
         width: 90%;
         margin-top: 38vh;
         padding: 20px 15px;
@@ -216,12 +220,12 @@ h1 {
         margin-bottom: 20px;
     }
 
-    .formulario label {
+    .formulario-contenedor label {
         padding: 10px;
         margin-bottom: 15px;
     }
 
-    .formulario input[type="submit"] {
+    .formulario-contenedor input[type="submit"] {
         font-size: 16px;
         padding: 12px;
     }
@@ -232,7 +236,7 @@ h1 {
 }
 
 /* Más contenido para llegar a 700+ líneas */
-.formulario label::after {
+.formulario-contenedor label::after {
     content: ' ';
     display: block;
     clear: both;
@@ -249,7 +253,7 @@ h1 {
     object-fit: cover;
 }
 
-.formulario label:hover input {
+.formulario-contenedor label:hover input {
     background-color: #f4f4f4;
 }
 
@@ -257,7 +261,7 @@ h1 {
     background-position: left;
 }
 
-.formulario .boton-secundario {
+.formulario-contenedor .boton-secundario {
     background-color: #3498db;
     color: white;
     border: none;
@@ -269,7 +273,7 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.formulario .boton-secundario:hover {
+.formulario-contenedor .boton-secundario:hover {
     background-color: #2980b9;
 }
 
@@ -280,7 +284,7 @@ h1 {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #f4f4f4; /* Un fondo claro para resaltar el formulario */
+        background-color: #f4f4f4; /* Un fondo claro para resaltar el formulario-contenedor */
         padding: 20px;
         position: relative; /* Para gestionar capas y posiciones */
     }
@@ -299,19 +303,20 @@ h1 {
         z-index: 1;
     }
 
-    .formulario {
+    .formulario-contenedor {
         width: 85%;
         background-color: white; 
         padding: 30px 20px;
-        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar el formulario */
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar el formulario-contenedor */
         border-radius: 20px;
         z-index: 2;
         position: relative;
-        margin-top: 25vh; /* Desplaza el formulario hacia abajo para que no se superponga tanto a la imagen */
+        margin-top: 25vh; /* Desplaza el formulario-contenedor hacia abajo para que no se superponga tanto a la imagen */
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: all 0.3s ease; /* Animación suave para cualquier interacción */
+        margin-right: 0px;
     }
 
     .logof {
@@ -326,7 +331,7 @@ h1 {
         margin-top: 10px; 
     }
 
-    .formulario label {
+    .formulario-contenedor label {
         width: 100%;
         border: 1px solid rgba(167, 167, 167, 0.7);
         background-color: #fafafa;
@@ -339,11 +344,11 @@ h1 {
         transition: all 0.2s ease-in-out;
     }
 
-    .formulario label:hover {
+    .formulario-contenedor label:hover {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .formulario label input {
+    .formulario-contenedor label input {
         background-color: #fafafa;
         width: 100%;
         border: none;
@@ -353,12 +358,12 @@ h1 {
         color: #333;
     }
 
-    .formulario label i {
+    .formulario-contenedor label i {
         color: #4b4b4b;
         margin-right: 10px;
     }
 
-    .formulario input[type="submit"] {
+    .formulario-contenedor input[type="submit"] {
         width: 100%;
         background-color: #e67e22;
         color: white;
@@ -371,7 +376,7 @@ h1 {
         transition: background-color 0.3s ease;
     }
 
-    .formulario input[type="submit"]:hover {
+    .formulario-contenedor input[type="submit"]:hover {
         background-color: #d35400;
     }
 
@@ -398,7 +403,7 @@ h1 {
         border-bottom-right-radius: 45% 20%;
     }
 
-    .formulario {
+    .formulario-contenedor {
         width: 90%;
         padding: 20px 15px;
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -409,12 +414,12 @@ h1 {
         margin-bottom: 20px;
     }
 
-    .formulario label {
+    .formulario-contenedor label {
         padding: 10px;
         margin-bottom: 15px; /* Menos espacio entre los elementos */
     }
 
-    .formulario input[type="submit"] {
+    .formulario-contenedor input[type="submit"] {
         font-size: 16px;
         padding: 12px;
     }
