@@ -44,12 +44,12 @@ class Trabajo extends Conexion{
         if ($resultado) {
             echo "<script type='text/javascript'>
             alert('Usuario adicionado correctamente...');
-            window.location='usuario.php';
+            window.location='panelControl.php';
             </script>";
         } else {
             echo "<script type='text/javascript'>
             alert('Error en la asignación del registro...');
-            window.location='usuario.php';
+            window.location='panelControl.php';
             </script>";
         }
     }

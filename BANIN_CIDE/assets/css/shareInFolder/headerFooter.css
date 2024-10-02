@@ -175,13 +175,15 @@ footer {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 23px;
 }
 
 .logo_sena {
     flex-shrink: 0;
-    margin-right: 20px;
 }
-
+.espacioCont{
+    padding-left:12px;
+}
 .logo {
     max-height: 100px;
     width: auto;
