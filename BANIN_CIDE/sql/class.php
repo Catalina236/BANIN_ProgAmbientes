@@ -60,6 +60,7 @@ class Trabajo extends Conexion{
             switch($rol){
                 case '3':
                     header('Location:../home/consultarEstadoBanin.php');
+
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');
@@ -124,4 +125,76 @@ class Trabajo extends Conexion{
                 </script>";
         }
     }
+
+
+    public function obtenerCodigos($cod_vacante) {
+        $sql = "SELECT * FROM tipo_formacion 
+                LEFT JOIN vacante ON tipo_formacion.Id_tipoF = vacante.Id_tipoF
+                LEFT JOIN usuario ON usuario.numero_documento = vacante.num_doc_evaluador
+                WHERE usuario.id_rol = 3 AND vacante.cod_vacante = :cod_vacante";
+        
+        $consult = $this->conexion->prepare($sql); 
+        $consult->bindParam(':cod_vacante', $cod_vacante); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function obtenerCodigo() {
+        $sql = "SELECT * FROM vacante";
+        $consult = $this->conexion->prepare($sql); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function obtenerEvaluadores() {
+        $sql = "SELECT numero_documento FROM usuario WHERE id_rol = 3";
+        $consult = $this->conexion->prepare($sql);
+        $consult->execute();
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function actualizarNumDocEvaluador($cod_vacante, $nuevo_num_doc_evaluador) {
+        $sql = "UPDATE vacante SET num_doc_evaluador = :nuevo_num_doc_evaluador WHERE cod_vacante = :cod_vacante";
+        $consult = $this->conexion->prepare($sql);
+        $consult->bindParam(':nuevo_num_doc_evaluador', $nuevo_num_doc_evaluador);
+        $consult->bindParam(':cod_vacante', $cod_vacante);
+        return $consult->execute();
+
+    }public function obtenerNombreEvaluador($num_doc_evaluador) {
+        $sql = "SELECT nombre_completo FROM usuario WHERE numero_documento = :numero_documento";
+        $consult = $this->conexion->prepare($sql);
+        $consult->bindParam(':numero_documento', $num_doc_evaluador);
+        $consult->execute();
+        return $consult->fetchColumn();
+    }
+    public function crearvacante($cod_vacante, $nombre_vacante, $perfil_vacante, $nro_instr_req, $num_doc_candidato, $Id_tipoF) {
+            // Prepara la consulta SQL solo con los campos que están en el formulario
+            $sql = "INSERT INTO vacante (cod_vacante, nombre_vacante, perfil_vacante, nro_instr_req, num_doc_candidato, Id_tipoF, estado_BANIN, num_doc_evaluador)
+                    VALUES (:cod_vacante, :nombreV, :perfil, :numIns, :numCan, :idF, 'Pendiente', NULL)"; 
+    
+            $consult = $this->conexion->prepare($sql);
+    
+            // Asignar los valores a los parámetros del formulario
+            $consult->bindValue(":cod_vacante", $cod_vacante);
+            $consult->bindValue(":nombreV", $nombre_vacante);
+            $consult->bindValue(":perfil", $perfil_vacante);
+            $consult->bindValue(":numIns", $nro_instr_req);
+            $consult->bindValue(":numCan", $num_doc_candidato);
+            $consult->bindValue(":idF", $Id_tipoF);
+    
+            try {
+                $resultado = $consult->execute();
+                if ($resultado) {
+                    echo "<script type='text/javascript'>
+                        alert('Vacante agregada correctamente.');
+                        window.location='vacantes.php';
+                        </script>";
+                } else {
+                    $errorInfo = $consult->errorInfo();
+                    echo "Error en la inserción: " . $errorInfo[2];  // Muestra el error específico de la consulta SQL
+                }
+            } catch (PDOException $e) {
+                echo "Error de PDO: " . $e->getMessage();
+            }
+            
+}
 }

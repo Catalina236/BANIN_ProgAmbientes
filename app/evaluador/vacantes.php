@@ -33,7 +33,7 @@ $datos = $result1->obtenerCodigo();
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="./listaCantidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button>VER..</button></a>
+                    <a href="./listaCandidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button>VER..</button></a>
                 </div>
             <?php } ?>
             </div>
