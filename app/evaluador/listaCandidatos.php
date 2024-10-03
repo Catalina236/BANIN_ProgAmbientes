@@ -1,12 +1,6 @@
 <?php
-require_once '../../app/config.php';
-require_once '../../sql/class.php';
-requireRole(['3','2']);
-if (isset($_GET['cod_vacante'])) {
-    $tipoF=$_GET['cod_vacante'];
-    $result = new Trabajo(); // Crea una instancia de la clase Trabajo
-    $vacante = $result->obtenerCodigos($tipoF); // Usa la instancia correcta
-}
+    require_once '../../app/config.php';
+    requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,6 +15,7 @@ if (isset($_GET['cod_vacante'])) {
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="infoVacante">
@@ -33,21 +28,22 @@ if (isset($_GET['cod_vacante'])) {
             </div>
         </div>
 
-        <?php foreach($vacante as $row){ ?>
-      <div class="info-container" id="infoContainer">
-           <p><strong>Codigo BANIN:</strong> <?php echo $row['cod_vacante']; ?></p>
-            <p><strong>Descripción:</strong> <?php echo $row['nombre_vacante'];?></p> 
-            <p><strong>Codigo Contratación postulación APE:</strong></p>
-            <p><strong>Proyecto / Coordinación:</strong><?php echo $row["Descripcion"]; ?></p>
-            <p><strong>Instructor Evaluador:</strong> <?php echo $row["nombre_completo"]?></p>
-            <p><strong>PROGRAMA DE FORMACION :</strong><?php echo $row['nombre_vacante'];?></p>
+        <div class="info-container" id="infoContainer">
+            <p><strong>Codigo BANIN:</strong> 32926</p>
+            <p><strong>Codigo Contratación postulación APE:</strong> 29913</p>
+            <p><strong>Proyecto / Coordinación:</strong> SER</p>
+            <p><strong>Instructor Evaluador:</strong> Rodríguez Ruíz William Rolando</p>
+            <p><strong>PROGRAMA DE FORMACION :</strong> EMPRENDEDOR EN ALTERNATIVAS AGROPECUARIAS PARA UNA PRODUCCION SOSTENIBLE</p>
         </div>
         <div class="perfilInstructor">
             <h1 id="profileDescription" class="hidden" style="background-color: #f7f7f7;padding: 20px;border-radius: 8px;border: 1px solid #ccc;margin-bottom: 20px;grid-template-columns: 1fr;gap: 10px;">
-            <?php echo $row['perfil_vacante'];?>
+                Opción 1: título de profesional como médico veterinario, médico veterinario y zootecnista, zootecnista. 
+                Opción 2: tecnólogo y/o técnico en producción animal, producción agropecuaria. Experiencia laboral: 
+                experiencia comprobada en producción animal, sanidad animal, agroecología y/o desarrollo rural como mínimo 
+                6 meses en docencia y un año en el área.
             </h1>
         </div>
-        <?php } ?>
+
         <p><strong>Perfil Vacante:</strong> 
             <button class="perfil-btn" type="submit" id="toggleButton">Mostrar</button>
         </p>
@@ -71,7 +67,7 @@ if (isset($_GET['cod_vacante'])) {
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="evaluarCandidato.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +78,7 @@ if (isset($_GET['cod_vacante'])) {
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="evaluarCandidato.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -93,7 +89,7 @@ if (isset($_GET['cod_vacante'])) {
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="evaluarCandidato.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -104,7 +100,7 @@ if (isset($_GET['cod_vacante'])) {
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="evaluarCandidato.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
             </tbody>

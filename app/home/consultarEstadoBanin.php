@@ -42,8 +42,7 @@
                         <th>Nombre</th>
                         <th>Estado BANIN</th>
                         <th>Coordinación Final</th>
-                        <?php if (!isset($_SESSION['id_rol'])):?>
-                        <?php elseif(isset($_SESSION['id_rol']) && $_SESSION['id_rol']=='1'):?>
+                        <?php if(isset($_SESSION['id_rol']) && $_SESSION['id_rol']=='1'):?>
                             <th>Traslado</th>
                             <th>Reclamación</th>
                             <th>Protección</th>
@@ -52,6 +51,7 @@
                             <th>Traslado</th>
                             <th>Reclamación</th>
                             <th>Protección</th>
+                        <?php else:?>
                         <?php endif;?>
                     </tr>
                 </thead>
@@ -61,16 +61,16 @@
                         <td>MANUEL EDUARDO ALEJO DIAZ</td>
                         <td>Seleccionado</td>
                         <td>COMPLEMENTARIA</td>
-                        <?php if (!isset($_SESSION['id_rol'])):?>
-                        <?php elseif(isset($_SESSION['id_rol']) && $_SESSION['id_rol']=='1'):?>
-                        <td>Confirmado En 29331</td>
-                        <td>7-2023-313747</td>
-                        <td>7-2023-287082 - NO APROBADA</td>
-                        <td style="text-align: center;"><a href="../administrador/forms.php"><button class="editar-btn">Editar</button></a></td>
+                        <?php if(isset($_SESSION['id_rol']) && $_SESSION['id_rol']=='1'):?>
+                            <td>Confirmado En 29331</td>
+                            <td>7-2023-313747</td>
+                            <td>7-2023-287082 - NO APROBADA</td>
+                            <td style="text-align: center;"><a href="../administrador/forms.php"><button class="editar-btn">Editar</button></a></td>
                         <?php elseif(isset($_SESSION['id_rol'])=='3' || $_SESSION['id_rol']=='2'):?>
-                        <td>Confirmado En 29331</td>
-                        <td>7-2023-313747</td>
-                        <td>7-2023-287082 - NO APROBADA</td>
+                            <td>Confirmado En 29331</td>
+                            <td>7-2023-313747</td>
+                            <td>7-2023-287082 - NO APROBADA</td>
+                        <?php else:?>
                         <?php endif;?>
                     </tr>
                 </tbody>

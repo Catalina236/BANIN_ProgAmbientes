@@ -7,4 +7,3 @@ if(isset($_GET['numero'])){
     $numero=$_GET['numero'];
     $dato->eliminarUsuario($numero);
 }
-?>

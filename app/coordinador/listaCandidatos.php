@@ -15,6 +15,7 @@ requireRole(['2']);
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
 
     <div class="modalS">
@@ -70,7 +71,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -81,7 +82,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -92,7 +93,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +104,7 @@ requireRole(['2']);
                         <input type="checkbox" name="evaluado1" style="accent-color: #00ac00;">
                     </td>
                     <td style="text-align: center;">
-                        <a href="/dashboard/BANIN_ProgAmbientes/app/evaluador/evaluarCandidato.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
+                        <a href="<?php echo BASE_URL; ?>app/coordinador/calificacion.php"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
             </tbody>
@@ -147,9 +148,11 @@ requireRole(['2']);
         </table>
     </div>
 
-    <?php 
-    require '../shareFolder/footer.php';
-    ?>
+    <footer>
+        <div>
+            <h1 class="tituloFooter">Nosotros</h1>
+        </div>
+    </footer>
     <script src="../../assets/js/ocultarInfo.js"></script>
 </body>
 </html>
