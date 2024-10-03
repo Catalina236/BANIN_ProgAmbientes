@@ -17,43 +17,50 @@
     <?php
         require './app/shareFolder/navbar.php';
     ?>
-<div class="contenedor">
-<div class="slider">
-    <div class="slides">
-        <img src="assets/img/banners/Imagen.jpg" alt="">
-        <img src="assets/img/banners/imagenfondo.jpg" alt="">
-        <img src="assets/img/banners/instructorSENA.jpg" alt="Imagen 3">
+    <div id="loadingOverlay" class="overlay">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+        </div>
     </div>
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
-</div>
-    <section class="boxes">
-    <div class="desc 1">
-        <h2>Descripción del sistema</h2>
-        <p> es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
+    
+    <div class="contenedor">
+        <div class="slider">
+            <div class="slides">
+                <img src="assets/img/banners/Imagen.jpg" alt="">
+                <img src="assets/img/banners/imagenfondo.jpg" alt="">
+                <img src="assets/img/banners/InstructorSENA.jpg" alt="">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <section class="boxes">
+        <div class="desc 1">
+            <h2>Descripción del sistema</h2>
+            <p> es una plataforma diseñada para facilitar la evaluación exhaustiva y objetiva de nuestros instructores. Permite a los evaluadores acceder a perfiles, realizar evaluaciones y generar informes detallados.</p>
+        </div>
+        <div class="desc 2">
+            <h2>Características</h2>
+            <li>Evaluación de competencias pedagógicas</li>
+            <li>Análisis de habilidades técnicas</li>
+            <li>Revisión de experiencia y trayectoria</li>
+            <li>Informes personalizados</li>
+            <li>Seguimiento de progreso</li>
+        </div>
+        <div class="desc 3">
+            <h2>Acceso al Sistema</h2>
+            <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
+            <?php
+            if(!isset($_SESSION['id_rol']) && !isset($_SESSION['numero_documento'])):?>
+                <button><a href="app/home/iniciarsesion.php">Acceder</a></button>
+            <?php else:?>
+            <?php endif;?>
+        </div>
+        </section>
     </div>
-    <div class="desc 2">
-        <h2>Características</h2>
-        <li>Evaluación de competencias pedagógicas</li>
-        <li>Análisis de habilidades técnicas</li>
-        <li>Revisión de experiencia y trayectoria</li>
-        <li>Informes personalizados</li>
-        <li>Seguimiento de progreso</li>
-    </div>
-    <div class="desc 3">
-        <h2>Acceso al Sistema</h2>
-        <p>Si eres un evaluador autorizado, ingresa al sistema utilizando tus credenciales. Si necesitas asistencia o tienes preguntas sobre el proceso de evaluación, contacta a nuestro equipo de soporte.</p>
-        <?php
-        if(!isset($_SESSION['id_rol']) && !isset($_SESSION['numero_documento'])):?>
-            <button><a href="app/home/iniciarsesion.php">Acceder</a></button>
-        <?php else:?>
-        <?php endif;?>
-    </div>
-    </section>
-</div>
-<?php 
-require 'app/shareFolder/footer.php'
-?>
-<script src="assets/JS/slider.js"></script>
+    <?php 
+        require 'app/shareFolder/footer.php'
+    ?>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/animaCarga.js"></script>
 </body>
 </html>

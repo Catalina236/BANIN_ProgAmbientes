@@ -14,6 +14,7 @@ requireRole(['2']);
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
 
     <div class="contenedor">
@@ -131,17 +132,28 @@ requireRole(['2']);
     require '../shareFolder/footer.php';
     ?>
     <script>
+        // Obtener todos los botones que abren el modal
         var btns = document.querySelectorAll(".btnTrasladar");
+
+        // Obtener el modal
         var modal = document.getElementById("modalTraslado");
+
+        // Obtener el elemento <span> que cierra el modal
         var span = document.getElementsByClassName("close")[0];
+
+        // Asignar evento onclick a cada botón
         btns.forEach(function(btn) {
             btn.onclick = function() {
                 modal.style.display = "block";
             };
         });
+
+        // Cuando el usuario hace clic en <span> (x), cerrar el modal
         span.onclick = function() {
             modal.style.display = "none";
         }
+
+        // Cuando el usuario hace clic fuera del modal, cerrarlo
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";

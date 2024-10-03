@@ -21,6 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,55 +79,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
     ?>
-    <div class="contenedor">
-    <div class="container">
-        <h2>VACANTES ASIGNADAS</h2>
-    
-        <button id="mostrarFormulario">+</button>
-        <div id="formulario" style="display: none; margin-top: 20px;">
-            <h3>Agregar Nueva Vacante</h3>
-            <form action="./vacantes.php" method="POST">
-                <label for="codigo">Codigo Vacante:</label>
-                <input type="text" id="codigo" name="codigo" required>
-                
-                <label for="nombre_vacante">Nombre Vacante</label>
-                <input type="text" id="nombre_vacante" name="nombre_vacante" required>
-                
-                <label for="perfil_vacante">Perfil Vacante</label>
-                <input type="text" id="perfil_vacante" name="perfil_vacante" required>
-                
-                <label for="nro_instr_req">Instructores requeridos</label>
-                <input type="number" id="nro_instr_req" name="nro_instr_req" required>
-
-                <label for="num_doc_evaluador">Documento Candidato</label>
-                <input type="text" id="num_doc_evaluador" name="num_doc_evaluador" required>
-                
-                <label for="Id_tipoF">Tipo Formacion:</label>
-                <input type="text" id="Id_tipoF" name="Id_tipoF" required>
-
-                <input type="submit" value="Agregar Vacante">
-                <button type="button" id="cancelarFormulario">Cancelar</button>
-            </form>
-        </div>
-
-        <div class="cards-container">
-        <?php foreach($datos1 as $row){ ?>
-            <div class="card">
-                <p><strong>Código:</strong> <?php echo $row['cod_vacante']; ?></p>
-                <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                <p><strong>Coordinación Final:</strong> Titulada</p>
-                <p><strong>Número de Aspirantes:</strong> 40</p>
-                <p><strong>Evaluados:</strong> 13</p>
-                <p><strong>Por Evaluar:</strong> 27</p>
-                <a href="./asignacionInstructor.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button>Asignar</button></a>
-                <a href="../evaluador/listaCandidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>">
-                    <button>VER..</button>
-                </a>
-            </div>
-        <?php } ?>
+    <div id="loadingOverlay" class="overlay">
+        <div class="spinner-container">
+            <div class="spinner"></div>
         </div>
     </div>
-</div>
+    <div class="contenedor">
+        <div class="container">
+            <h2>VACANTES ASIGNADAS</h2>
+        
+            <button id="mostrarFormulario">+</button>
+            <div id="formulario" style="display: none; margin-top: 20px;">
+                <h3>Agregar Nueva Vacante</h3>
+                <form action="./vacantes.php" method="POST">
+                    <label for="codigo">Codigo Vacante:</label>
+                    <input type="text" id="codigo" name="codigo" required>
+                    
+                    <label for="nombre_vacante">Nombre Vacante</label>
+                    <input type="text" id="nombre_vacante" name="nombre_vacante" required>
+                    
+                    <label for="perfil_vacante">Perfil Vacante</label>
+                    <input type="text" id="perfil_vacante" name="perfil_vacante" required>
+                    
+                    <label for="nro_instr_req">Instructores requeridos</label>
+                    <input type="number" id="nro_instr_req" name="nro_instr_req" required>
+
+                    <label for="num_doc_evaluador">Documento Candidato</label>
+                    <input type="text" id="num_doc_evaluador" name="num_doc_evaluador" required>
+                    
+                    <label for="Id_tipoF">Tipo Formacion:</label>
+                    <input type="text" id="Id_tipoF" name="Id_tipoF" required>
+
+                    <input type="submit" value="Agregar Vacante">
+                    <button type="button" id="cancelarFormulario">Cancelar</button>
+                </form>
+            </div>
+
+            <div class="cards-container">
+            <?php foreach($datos1 as $row){ ?>
+                <div class="card">
+                    <p><strong>Código:</strong> <?php echo $row['cod_vacante']; ?></p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="./asignacionInstructor.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button>Asignar</button></a>
+                    <a href="../evaluador/listaCandidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>">
+                        <button>VER..</button>
+                    </a>
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+    </div>
+    <?php
+        require '../shareFolder/footer.php';
+    ?>
 <script>
     $(document).ready(function() {
         // Muestra u oculta el formulario al hacer clic en el botón
@@ -138,9 +148,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
     });
 </script>
-
-    <?php 
-    require '../shareFolder/footer.php';
-    ?>
+<script src="../../assets/js/animaCarga.js"></script>
 </body>
 </html>

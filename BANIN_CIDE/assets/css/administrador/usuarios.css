@@ -1,16 +1,27 @@
-
 .buscador {
     margin-bottom: 20px;
 }
 
-.buscador h2 {
-    color: #181818;
+.titulo {
+    color: #333;
+}
+
+.subTitulo {
+    font-size: 18px;
+    color: #333;
 }
 
 label {
     font-weight: bold;
     display: block;
     margin-top: 10px;
+}
+
+.infoConsulta {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e7f3fe;
+    border-left: 5px solid #2196f3;
 }
 
 input[type="text"].codigo {
@@ -20,7 +31,6 @@ input[type="text"].codigo {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 
 .filtros {
     display: flex;
@@ -51,61 +61,32 @@ input[type="text"].codigo {
     color: white;
 }
 
-
-@media (max-width: 768px) {
-    .filtro-btn {
-        flex: 1 1 calc(50% - 10px);
-    }
-}
-
-@media (max-width: 480px) {
-    .filtro-btn {
-        flex: 1 1 100%;
-    }
-}
-
-
-.informacionDeconsulta {
-    margin-bottom: 20px;
-}
-
-.informacionDeconsulta p {
-    margin: 5px 0;
-}
-
-.informacionDeconsulta strong {
-    color: #671C34;
-}
-
-
-.tablaGeneradaPorLaConsulta h2 {
-    color: #671C34;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #671C34;
+/* Estilos de botones */
+.editar-btn {
+    background-color: #FFA500;
     color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.editar-btn:hover {
+    background-color: #FFB732;
 }
 
+.eliminar-btn {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.eliminar-btn:hover {
+    background-color: #FF7F7F;
+}
 
 .perfil-btn {
     background-color: #671C34;
@@ -122,106 +103,7 @@ tr:nth-child(even) {
     background-color: #FBAD20;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-
-
-.buscador {
-    margin-bottom: 20px;
-}
-.formBusqueda{
-    display:block;
-}
-.buscador h2 {
-    color: #671C34;
-}
-
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
-
-input[type="text"].codigo{
-    width: 40%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-.informacionDeconsulta {
-    margin-bottom: 20px;
-}
-
-.informacionDeconsulta p {
-    margin: 5px 0;
-}
-
-.informacionDeconsulta strong {
-    color: #671C34;
-}
-
-
-.tablaGeneradaPorLaConsulta h2 {
-    color: #671C34;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #671C34;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-
-.editar-btn {
-    background-color: #FFA500; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.editar-btn:hover {
-    background-color: #FFB732; 
-}
-
-.eliminar-btn {
-    background-color: #FF6347; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.eliminar-btn:hover {
-    background-color: #FF7F7F; 
-}
-
+/* Estilos del modal */
 .modal {
     display: none;
     position: fixed;
@@ -275,4 +157,81 @@ tr:nth-child(even) {
 
 .cancelar-btn:hover {
     background-color: #3d3d3d;
+}
+
+/* Estilos del toggle switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 34px;
+    margin-bottom: 20px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4a6fa5;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #388a7e;
+}
+
+input:checked + .slider:before {
+    transform: translateX(166px);
+}
+
+.slider-text {
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    pointer-events: none;
+}
+
+.slider-text.left {
+    left: 50px;
+}
+
+.slider-text.right {
+    right: -30px;
+}
+
+/* Estilos de vistas */
+#usuariosView {
+    display: block;
+}
+
+#candidatosView {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }

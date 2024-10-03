@@ -21,6 +21,7 @@ if (isset($_GET['cod_vacante'])) {
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="infoVacante">
@@ -32,16 +33,16 @@ if (isset($_GET['cod_vacante'])) {
                 <p><strong>Postulados:</strong> 7</p>
             </div>
         </div>
-
         <?php foreach($vacante as $row){ ?>
-      <div class="info-container" id="infoContainer">
-           <p><strong>Codigo BANIN:</strong> <?php echo $row['cod_vacante']; ?></p>
-            <p><strong>Descripción:</strong> <?php echo $row['nombre_vacante'];?></p> 
-            <p><strong>Codigo Contratación postulación APE:</strong></p>
-            <p><strong>Proyecto / Coordinación:</strong><?php echo $row["Descripcion"]; ?></p>
-            <p><strong>Instructor Evaluador:</strong> <?php echo $row["nombre_completo"]?></p>
-            <p><strong>PROGRAMA DE FORMACION :</strong><?php echo $row['nombre_vacante'];?></p>
+        <div class="info-container" id="infoContainer">
+            <p><strong>Codigo BANIN:</strong> <?php echo $row['cod_vacante']; ?></p>
+                <p><strong>Descripción:</strong> <?php echo $row['nombre_vacante'];?></p> 
+                <p><strong>Codigo Contratación postulación APE:</strong></p>
+                <p><strong>Proyecto / Coordinación:</strong><?php echo $row["Descripcion"]; ?></p>
+                <p><strong>Instructor Evaluador:</strong> <?php echo $row["nombre_completo"]?></p>
+                <p><strong>PROGRAMA DE FORMACION :</strong><?php echo $row['nombre_vacante'];?></p>
         </div>
+        
         <div class="perfilInstructor">
             <h1 id="profileDescription" class="hidden" style="background-color: #f7f7f7;padding: 20px;border-radius: 8px;border: 1px solid #ccc;margin-bottom: 20px;grid-template-columns: 1fr;gap: 10px;">
             <?php echo $row['perfil_vacante'];?>
@@ -52,17 +53,18 @@ if (isset($_GET['cod_vacante'])) {
             <button class="perfil-btn" type="submit" id="toggleButton">Mostrar</button>
         </p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>NUMERO DE CEDULA</th>
-                    <th>Nombre</th>
-                    <th>Estado BANIN</th>
-                    <th style="text-align: center;">Evaluado</th>
-                    <th style="text-align: center;">Evaluar</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="tablaGeneradaPorLaConsulta">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="boerder_left">NUMERO DE CEDULA</th>
+                        <th>Nombre</th>
+                        <th>Estado BANIN</th>
+                        <th style="text-align: center;">Evaluado</th>
+                        <th class="boerder_right" style="text-align: center;">Evaluar</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>51964904</td>
                     <td>MARTHA LILIANA ARANGO GUTIERREZ</td>
@@ -107,45 +109,51 @@ if (isset($_GET['cod_vacante'])) {
                         <a href="evaluarCandidato.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button class="perfil-btn" type="submit">Evaluar</button></a>
                     </td>
                 </tr>
-            </tbody>
-        </table>
-
-        <table class="ranking">
-            <thead>
-                <tr>
-                    <th>NUMERO DE CEDULA</th>
-                    <th>Nombre</th>
-                    <th>Estado BANIN</th>
-                    <th style="text-align: center;">Pesto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>51964904</td>
-                    <td>MARTHA LILIANA ARANGO GUTIERREZ</td>
-                    <td>Si cumple</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>79207422</td>
-                    <td>JOSE ANTONIO CARRILLO CORREA</td>
-                    <td>Si cumple</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>79314342</td>
-                    <td>MANUEL EDUARDO ALEJO DIAZ</td>
-                    <td>Si cumple</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>52294893</td>
-                    <td>LUZ HELENA QUINTANA</td>
-                    <td>Si cumple</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- ----------------------------- -->
+        <!-- ----------------------------- -->
+        <!-- ----------------------------- -->
+        <div class="tablaGeneradaPorLaConsulta">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="boerder_left">NUMERO DE CEDULA</th>
+                        <th>Nombre</th>
+                        <th>Estado BANIN</th>
+                        <th class="boerder_right" style="text-align: center;">Pesto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>51964904</td>
+                        <td>MARTHA LILIANA ARANGO GUTIERREZ</td>
+                        <td>Si cumple</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>79207422</td>
+                        <td>JOSE ANTONIO CARRILLO CORREA</td>
+                        <td>Si cumple</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>79314342</td>
+                        <td>MANUEL EDUARDO ALEJO DIAZ</td>
+                        <td>Si cumple</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>52294893</td>
+                        <td>LUZ HELENA QUINTANA</td>
+                        <td>Si cumple</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <?php 
     require '../shareFolder/footer.php';

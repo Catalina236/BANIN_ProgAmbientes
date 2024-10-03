@@ -1,0 +1,85 @@
+/* Estilos generales para todas las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+.boerder_left{
+    border-top-left-radius: 1rem;
+}
+.boerder_right{
+    border-top-right-radius: 1rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos específicos para las tablas en .tablaGeneradaPorLaConsulta */
+.tablaGeneradaPorLaConsulta {
+    margin: 0px;
+    overflow-x: auto;
+}
+
+.tablaGeneradaPorLaConsulta h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Tabla 1 - Estilo principal */
+.tablaGeneradaPorLaConsulta:first-of-type table {
+    border: 1px solid #671C34;
+}
+
+.tablaGeneradaPorLaConsulta:first-of-type th {
+    background-color: #671C34;
+}
+
+/* Tabla 2 - Estilo alternativo */
+.tablaGeneradaPorLaConsulta:nth-of-type(2) table {
+    border: 1px solid #253f56;
+}
+
+.tablaGeneradaPorLaConsulta:nth-of-type(2) th {
+    background-color: #253f56;
+}
+
+.tablaGeneradaPorLaConsulta:nth-of-type(2) tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+/* Media queries para tablas responsivas */
+@media screen and (max-width: 768px) {
+    .tablaGeneradaPorLaConsulta {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tablaGeneradaPorLaConsulta {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tablaGeneradaPorLaConsulta {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}

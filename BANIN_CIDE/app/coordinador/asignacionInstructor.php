@@ -1,5 +1,5 @@
 <?php
-require_once '../../app/config.php'; 
+require_once '../../app/config.php';
 require_once '../../sql/class.php';
 requireRole(['2']);
 $result1 = new Trabajo();
@@ -22,6 +22,7 @@ if (isset($_POST['ajax']) && $_POST['ajax'] === 'nombre_evaluador') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Instructor</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/links/asignarInstructor.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -29,8 +30,9 @@ if (isset($_POST['ajax']) && $_POST['ajax'] === 'nombre_evaluador') {
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
-    <div class="modalS">
+<div class="modalS">
         <a href="./vacantes.php"><button class="perfil-btn" type="submit" style="margin-top:30px">Regresar</button></a>
     </div>
     <div class="contenedor">
@@ -62,6 +64,14 @@ if (isset($_POST['ajax']) && $_POST['ajax'] === 'nombre_evaluador') {
     require '../shareFolder/footer.php';
     ?>
     <script src="<?php echo BASE_URL; ?>assets/js/asignacionInstructor.js"></script>
+
+    <script>
+        document.querySelectorAll('.filtro-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

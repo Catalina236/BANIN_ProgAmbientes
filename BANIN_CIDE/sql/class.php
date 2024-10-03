@@ -75,8 +75,7 @@ class Trabajo extends Conexion{
             
             switch ($rol) {
                 case '3':
-                    header('Location:../home/consultarEstadoBanin.php');
-
+                    header('Location:../evaluador/vacantes.php');
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');
@@ -157,8 +156,6 @@ class Trabajo extends Conexion{
             </script>";
         }
     }
-
-
     public function obtenerCodigos($cod_vacante) {
         $sql = "SELECT * FROM tipo_formacion 
                 LEFT JOIN vacante ON tipo_formacion.Id_tipoF = vacante.Id_tipoF

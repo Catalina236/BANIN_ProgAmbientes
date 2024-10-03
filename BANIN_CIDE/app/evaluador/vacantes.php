@@ -20,9 +20,15 @@ $datos = $result1->obtenerCodigo();
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
+    <div id="loadingOverlay" class="overlay">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+    </div>
     <div class="contenedor">
-        <div class="container">
+    <div class="container">
             <h2>VACANTES ASIGNADAS</h2>
             <div class="cards-container">
             <?php foreach($datos as $row){ ?>
@@ -42,5 +48,7 @@ $datos = $result1->obtenerCodigo();
     <?php 
     require '../shareFolder/footer.php';
     ?>
+
+    <script src="../../assets/js/animaCarga.js"></script>
 </body>
 </html>
