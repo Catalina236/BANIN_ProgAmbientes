@@ -45,7 +45,7 @@ ob_start();
                     <li><a href="<?php echo BASE_URL; ?>app/administrador/panelControl.php">Panel de control</a></li>
                
                 <?php elseif (isset($_SESSION['id_rol']) && $_SESSION['id_rol']== '2'): ?>
-                    <li><a href="<?php echo BASE_URL;?>app/coordinador/vacantes.php">Asignar evaluador</a></li>
+                    <li><a href="<?php echo BASE_URL;?>app/evaluador/vacantes.php">Asignar evaluador</a></li>
                     <li><a href="<?php echo BASE_URL;?>app/home/consultarEstadoBanin.php">Candidatos</a></li>
                 <?php endif;?>
             </nav>
