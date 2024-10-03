@@ -1,9 +1,6 @@
 <?php
 require_once '../../app/config.php';
-require_once '../../sql/class.php';
 requireRole(['2']);
-$result1 = new Trabajo();
-$datos1 = $result1->obtenerCodigo();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +10,6 @@ $datos1 = $result1->obtenerCodigo();
     <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="icon" href="../../assets/img/logos/logoSena_2.png">
     <link rel="stylesheet" href="../../assets/css/links/vacantes.css">
-    
     <title>BANIN</title>
     <style>
         #mostrarFormulario {
@@ -62,8 +58,10 @@ $datos1 = $result1->obtenerCodigo();
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
+<<<<<<< HEAD
     <div class="container">
         <h2>VACANTES ASIGNADAS</h2>
         
@@ -104,10 +102,81 @@ $datos1 = $result1->obtenerCodigo();
                 <a href="../evaluador/listaCandidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>">
                     <button>VER..</button>
                 </a>
+=======
+        <div class="container">
+            <h2>VACANTES ASIGNADAS</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                    
+                </div>
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                    
+                </div>
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                    
+                </div>
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                </div>
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                </div>
+                <div class="card">
+                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
+                    <p><strong>Coordinación Final:</strong> Titulada</p>
+                    <p><strong>Número de Aspirantes:</strong> 40</p>
+                    <p><strong>Evaluados:</strong> 13</p>
+                    <p><strong>Por Evaluar:</strong> 27</p>
+                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
+                    <a href="asignacionInstructor.php" class="butC"><button>Asignar..</button></a>
+                </div>
+            
+                
+>>>>>>> d1eb4d57ad25d4ef9e20b7ea96a4c7ab1fb77c5b
             </div>
         <?php } ?>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
 <script>
     $(document).ready(function() {
@@ -124,6 +193,9 @@ $datos1 = $result1->obtenerCodigo();
 </script>
 
     <?php 
+=======
+    <?php
+>>>>>>> d1eb4d57ad25d4ef9e20b7ea96a4c7ab1fb77c5b
     require '../shareFolder/footer.php';
     ?>
 </body>

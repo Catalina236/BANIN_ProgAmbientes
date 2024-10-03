@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2024 a las 18:58:36
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.0.28
+-- Tiempo de generación: 26-09-2024 a las 16:52:01
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -90,6 +90,8 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`numero_documento`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `id_rol`) VALUES
+('10736', 'Cédula de ciudadanía', 'alexander', 'romero', 'melquiveru@gmail.com', '3222535433', '3'),
+('1073672380', 'Cédula de ciudadanía', 'melqui alexander', 'romero veru', 'melqui16rv@gmail.com', '3026074008', '2'),
 ('19220321', 'Cédula de ciudadanía', 'Miguel Antonio', 'Morales Sánchez', 'migue2333@gmail.com', '344444444', '1'),
 ('52294893', 'Cédula de ciudadanía', 'Luz Helena', 'Quintana', 'luz67@gmail.com', '33467897890', '1'),
 ('79431471', 'Cédula de ciudadanía', 'Fabio', 'Sánchez', 'fabio89@gmail.com', '3222222222', '2');
@@ -142,8 +144,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`nombre_usuario`, `numero_documento`, `contraseña`) VALUES
+('alexander', '10736', '$2y$16$O774bc3RXbtpfwv/wu1iMuFM7C2FVivbLKpXsn79YbhEp0Su7B89W'),
 ('Fabio Ernesto', '79431471', '$2y$16$t4m85ckYBdlAF3TQUfvQ7OxfEnNyQ5t2IuPkZ5y1Le/Xwp0As5TVy'),
 ('Luz34', '52294893', '$2y$16$pDx4sxIoXRmgg8BPAIsHg.e/ZH6guSQ.c9ZQ8mwpVpfV6Kai8tlAy'),
+('melqui', '1073672380', '$2y$16$hlXMfs1huRiw45eMA760oOGDMgTnZUdw8al/DR9JsZx672qxsIBMG'),
 ('Miguel', '19220321', '$2y$16$jmpSd89/TKjNEBjTPftnR.17vDaETZcEDTMrhm1IkY.lXNYDgKOJ2');
 
 -- --------------------------------------------------------

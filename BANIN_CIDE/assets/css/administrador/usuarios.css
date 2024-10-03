@@ -4,7 +4,7 @@
 }
 
 .buscador h2 {
-    color: #671C34;
+    color: #181818;
 }
 
 label {
@@ -132,7 +132,9 @@ footer {
 .buscador {
     margin-bottom: 20px;
 }
-
+.formBusqueda{
+    display:block;
+}
 .buscador h2 {
     color: #671C34;
 }
@@ -144,7 +146,7 @@ label {
 }
 
 input[type="text"].codigo{
-    width: 100%;
+    width: 40%;
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;

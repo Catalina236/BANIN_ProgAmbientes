@@ -19,9 +19,10 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="logo_sena">
             <a href="<?php echo BASE_URL; ?>index.php"><img class="logo" src="<?php echo BASE_URL; ?>assets/img/logos/logosena.png" alt="SENA logo"></a>
         </div>
-
-        <div class="contBANIN">
-        <span class="banin">BANIN</span>
+        <div class="espacioCont">
+            <div class="contBANIN">
+                <span class="banin">BANIN</span>
+            </div>
         </div>
         
         <div class="ministerio">

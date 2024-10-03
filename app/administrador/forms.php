@@ -12,8 +12,9 @@ requireRole(['1']);
 </head>
 <body>
     <?php
-    require '../../app/shareFolder/header.php';
-    require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/header.php';
+        require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
 
     <div class="contenedor">
@@ -50,7 +51,7 @@ requireRole(['1']);
             </form>
         </div>
     </div>
-    <div id="confirmModal" class="modal">
+    <div id="confirmModal" class="modal">--
         <div class="modal-content">
             <p id="modalMessage"></p>
             <div class="modal-buttons">

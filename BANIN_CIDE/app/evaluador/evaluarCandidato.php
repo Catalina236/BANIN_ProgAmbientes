@@ -96,15 +96,15 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <div class="form-group">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
             </div>
             <div class="form-group">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
+                <input type="number" id="experienciaDocente" name="experienciaDocente">
             </div>
             <div class="form-group">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
             </div>
             <div class="form-group">
                 <label for="poblacionVulnerable">Población Vulnerable:</label>
@@ -112,7 +112,7 @@ if (isset($_GET['cod_vacante'])) {
             </div>
             <div class="form-group">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
+                <input type="number" id="certificacion" name="certificacion">
             </div>
 
             <div class="form-group">
@@ -141,15 +141,15 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <div class="form-group">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
             </div>
             <div class="form-group">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
+                <input type="number" id="experienciaDocente" name="experienciaDocente">
             </div>
             <div class="form-group">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
             </div>
 
             <div class="form-group">
@@ -159,7 +159,7 @@ if (isset($_GET['cod_vacante'])) {
             </div>
             <div class="form-group">
                 <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
+                <input type="number" id="certificacion" name="certificacion">
             </div>
 
             <div class="form-group">
@@ -201,31 +201,31 @@ if (isset($_GET['cod_vacante'])) {
             </div>
             <div class="form-group">
                 <label for="experienciaProyecto">Experiencia formación de proyectos:</label>
-                <input type="number" id="experienciaProyecto" name="experienciaProyecto" disabled>
+                <input type="number" id="experienciaProyecto" name="experienciaProyecto">
             </div>
             <div class="form-group">
                 <label for="experienciacomunidad">Experiencia trabajo con comunidades rurales:</label>
-                <input type="number" id="experienciacomunidad" name="experienciacomunidad" disabled>
+                <input type="number" id="experienciacomunidad" name="experienciacomunidad">
             </div>
             <div class="form-group">
                 <label for="poblacionVul">Población Vulnerable:</label>
-                <input type="number" id="poblacionVul" name="poblacionVul" disabled>
+                <input type="number" id="poblacionVul" name="poblacionVul">
             </div>
             <div class="form-group">
                 <label for="arraigo">Arraigo:</label>
-                <input type="number" id="arraigo" name="arraigo" disabled>
+                <input type="number" id="arraigo" name="arraigo">
             </div>
             <div class="form-group">
                 <label for="certificacionCon">Certificación competencias</label>
-                <input type="number" id="certificacionCon" name="certificacionCon" disabled>
+                <input type="number" id="certificacionCon" name="certificacionCon">
             </div>
             <div class="form-group">
                 <label for="formacionLaboral">Formación Laboral</label>
-                <input type="number" id="formacionLaboral" name="formacionLaboral" disabled>
+                <input type="number" id="formacionLaboral" name="formacionLaboral">
             </div>
             <div class="form-group">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
                     <option value="">Selecciona</option>
                     <option value="especializaciontn">Especialización técnica</option>
                     <option value="tecnologia">Tecnologo</option>
@@ -241,7 +241,11 @@ if (isset($_GET['cod_vacante'])) {
         ?>
             <button type="submit">Enviar</button>
         </form>
-    </div>    
+
+    </div>
+
+
+    
     <script src="../../assets/js/ocultarInfo.js"></script>
     <script src="../../assets/js/mensajeEmergente.js"></script>
     <script src="../../assets/js/ventana.js"></script>
