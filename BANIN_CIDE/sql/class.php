@@ -225,5 +225,31 @@ class Trabajo extends Conexion{
                 echo "Error de PDO: " . $e->getMessage();
             }
             
-}
+    }
+    public function buscar_usuario($termino) {
+        if (empty($termino)) {
+            // Si no hay término de búsqueda, devolver 10 usuarios aleatorios
+            $sql = "SELECT usuario.*, rol.nombre_rol 
+                    FROM usuario 
+                    JOIN rol ON usuario.id_rol = rol.id_rol 
+                    ORDER BY RAND() 
+                    LIMIT 10";
+            $consult = $this->conexion->prepare($sql);
+            $consult->execute();
+        } else {
+            // Si hay término de búsqueda, buscar en varios campos
+            $sql = "SELECT usuario.*, rol.nombre_rol 
+                    FROM usuario 
+                    JOIN rol ON usuario.id_rol = rol.id_rol 
+                    WHERE usuario.numero_documento LIKE :termino 
+                    OR usuario.nombre_completo LIKE :termino 
+                    OR rol.nombre_rol LIKE :termino";
+            $consult = $this->conexion->prepare($sql);
+            $termino = "%$termino%";
+            $consult->bindParam(':termino', $termino, PDO::PARAM_STR);
+            $consult->execute();
+        }
+        
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
