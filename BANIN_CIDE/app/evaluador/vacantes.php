@@ -1,6 +1,9 @@
 <?php
 require_once '../../app/config.php';
+require_once '../../sql/class.php';
 requireRole(['3']);
+$result1 = new Trabajo();
+$datos = $result1->obtenerCodigo();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,116 +22,33 @@ requireRole(['3']);
         require '../../app/shareFolder/navbar.php';
         require '../../app/shareFolder/backButton.php';
     ?>
+    <div id="loadingOverlay" class="overlay">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+    </div>
     <div class="contenedor">
-        <div class="container">
+    <div class="container">
             <h2>VACANTES ASIGNADAS</h2>
             <div class="cards-container">
+            <?php foreach($datos as $row){ ?>
                 <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
+                    <p><strong>Código:</strong> <?php echo $row['cod_vacante']; ?></p>
                     <p><strong>Coordinación Inicial:</strong> Titulada</p>
                     <p><strong>Coordinación Final:</strong> Titulada</p>
                     <p><strong>Número de Aspirantes:</strong> 40</p>
                     <p><strong>Evaluados:</strong> 13</p>
                     <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
+                    <a href="./listaCandidatos.php?cod_vacante=<?php echo $row['cod_vacante']; ?>"><button>VER..</button></a>
                 </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                <div class="card">
-                    <p><strong>Código:</strong> 30294</p>
-                    <p><strong>Coordinación Inicial:</strong> Titulada</p>
-                    <p><strong>Coordinación Final:</strong> Titulada</p>
-                    <p><strong>Número de Aspirantes:</strong> 40</p>
-                    <p><strong>Evaluados:</strong> 13</p>
-                    <p><strong>Por Evaluar:</strong> 27</p>
-                    <a href="listaCandidatos.php" class="butC"><button>VER..</button></a>
-                    
-                </div>
-                
+            <?php } ?>
             </div>
         </div>
     </div>
     <?php 
     require '../shareFolder/footer.php';
     ?>
+
+    <script src="../../assets/js/animaCarga.js"></script>
 </body>
 </html>
