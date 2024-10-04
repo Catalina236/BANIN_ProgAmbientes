@@ -1,3 +1,4 @@
+/*estilo del formulario*/
 .buscador {
     margin-bottom: 20px;
 }
@@ -19,6 +20,9 @@ input[type="text"].codigo{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+
+/*estilo de la sección de información de consulta*/
 .informacionDeconsulta {
     margin-bottom: 20px;
 }

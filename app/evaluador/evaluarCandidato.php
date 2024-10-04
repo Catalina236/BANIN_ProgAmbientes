@@ -1,13 +1,8 @@
 <?php
 require_once '../../app/config.php';
-require_once '../../sql/class.php';
-requireRole(['3','2']);
-if (isset($_GET['cod_vacante'])) {
-    $tipoF=$_GET['cod_vacante'];
-    $result = new Trabajo();
-    $vacante = $result->obtenerCodigos($tipoF);
-}
 
+$coordinacion = 'Formación para el Trabajo'; 
+requireRole(['3','2']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,6 +17,7 @@ if (isset($_GET['cod_vacante'])) {
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <div class="infoVacante">
@@ -33,22 +29,14 @@ if (isset($_GET['cod_vacante'])) {
                 <p><strong>Postulados:</strong> 7</p>
             </div>
         </div>
-        <?php if (!empty($vacante) && is_array($vacante)) { ?>
-        <?php foreach($vacante as $row){?>
-        <tbody>
-            <div class="info-container" id="infoContainer">
-                <p><strong>Codigo BANIN:</strong><?php echo $row['cod_vacante'];?></p>
-                <p><strong>Codigo Contratación postulación APE:</strong> 29913</p>
-                <p><strong>Link APE:</strong> <a href="<?php echo'codigo para optener el link'?>">link</a></p>
-                <p><strong>Proyecto / Coordinación:</strong><?php echo $row['Descripcion'];?></span></p>
-                <p><strong>Instructor Evaluador:</strong> <?php echo $row["nombre_completo"]; ?></p>
-                <p><strong>PROGRAMA DE FORMACION :</strong> <?php echo $row['nombre_vacante'];?></p>
-            </div>
-        </tbody>
-        <?php }?>
-        <?php } else { ?>
-            <p>No vacantes found.</p>
-        <?php } ?>
+        <div class="info-container" id="infoContainer">
+            <p><strong>Codigo BANIN:</strong> 32926</p>
+            <p><strong>Codigo Contratación postulación APE:</strong> 29913</p>
+            <p><strong>Link APE:</strong> <a href="<?php echo'codigo para optener el link'?>">link</a></p>
+            <p><strong>Proyecto / Coordinación:</strong> <span id="coordinacion"><?php echo $coordinacion; ?></span></p>
+            <p><strong>Instructor Evaluador:</strong> Rodríguez Ruíz William Rolando</p>
+            <p><strong>PROGRAMA DE FORMACION :</strong> EMPRENDEDOR EN ALTERNATIVAS AGROPECUARIAS PARA UNA PRODUCCION SOSTENIBLE</p>
+        </div>
         
         <div class="perfilInstructor">
             <div id="profileDescription" class="hidden" style="background-color: #f7f7f7;padding: 20px;border-radius: 8px;border: 1px solid #ccc;margin-bottom: 20px;grid-template-columns: 1fr;gap: 10px;">
@@ -90,142 +78,124 @@ if (isset($_GET['cod_vacante'])) {
 
         <h2>Formulario de Evaluación</h2>
         <form method="post">
-        <?php
-        // Mostrar las secciones dependiendo de la descripción
-        if ($row['Descripcion'] === 'Formación para el trabajo') { 
-        ?>
-            <div class="form-group">
-                <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
-            </div>
-            <div class="form-group">
-                <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
-            </div>
-            <div class="form-group">
-                <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
-            </div>
-            <div class="form-group">
-                <label for="poblacionVulnerable">Población Vulnerable:</label>
-                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
-            </div>
-            <div class="form-group">
-                <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
-            </div>
 
-            <div class="form-group">
-                <label for="formacionL">Formacion laboral:</label>
-                <input type="number" id="formacionL" name="formacionL">
-
-            </div>
-            <div class="form-group">
-            <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect">
-
-                    <option value="">Selecciona</option>
-                    <option value="especializacionPr">Técnico profesional</option>
-                    <option value="especializaciontn">Especialización técnica</option>
-                    <option value="tecnologia">Tecnologo</option>
-                    <option value="especializaciontg">Especialización tecnológica</option>
-                    <option value="profesional">Profesional Universitario</option>
-                    <option value="especializaciontn">Especialización</option>
-                    <option value="maestria">Maestría</option>
-                    <option value="doctorado">Doctorado</option>
-                </select>
-            </div>
-
-            <?php 
-        } elseif ($row['Descripcion'] === 'Educación Formal') { 
-        ?>
-            <div class="form-group">
-                <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
-                <input type="number" id="experienciaTecnica" name="experienciaTecnica" disabled>
-            </div>
-            <div class="form-group">
-                <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
-                <input type="number" id="experienciaDocente" name="experienciaDocente" disabled>
-            </div>
-            <div class="form-group">
-                <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
-                <input type="number" id="experienciaInstructor" name="experienciaInstructor" disabled>
-            </div>
-
-            <div class="form-group">
-                <label for="poblacionVulnerable">Población Vulnerable:</label>
-                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
-
-            </div>
-            <div class="form-group">
-                <label for="certificacion">Certificación competencias:</label>
-                <input type="number" id="certificacion" name="certificacion" disabled>
-            </div>
-
-            <div class="form-group">
-                <label for="formacionL">Formacion laboral:</label>
-                <input type="number" id="formacionL" name="formacionL">
-
-            </div>
-            <div class="form-group">
-            <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect">
-
-                    <option value="">Selecciona</option>
-                    <option value="especializacionPr">Técnico profesional</option>
-                    <option value="especializaciontn">Especialización técnica</option>
-                    <option value="tecnologia">Tecnologo</option>
-                    <option value="especializaciontg">Especialización tecnológica</option>
-                    <option value="profesional">Profesional Universitario</option>
-                    <option value="especializaciontn">Especialización</option>
-                    <option value="maestria">Maestría</option>
-                    <option value="doctorado">Doctorado</option>
-                </select>
-            </div>
-
-            <?php 
-        } elseif ($row['Descripcion'] === 'SER') { 
-        ?>
-            <div class="form-group">
+            <!-- Sección de Formación para el Trabajo -->
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
                 <input type="number" id="experienciaTecnica" name="experienciaTecnica">
             </div>
-            <div class="form-group">
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
                 <input type="number" id="experienciaDocente" name="experienciaDocente">
             </div>
-            <div class="form-group">
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
                 <input type="number" id="experienciaInstructor" name="experienciaInstructor">
-
             </div>
-            <div class="form-group">
-                <label for="experienciaProyecto">Experiencia formación de proyectos:</label>
-                <input type="number" id="experienciaProyecto" name="experienciaProyecto" disabled>
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="poblacionVulnerable">Poblacion Vulnerable:</label>
+                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
             </div>
-            <div class="form-group">
-                <label for="experienciacomunidad">Experiencia trabajo con comunidades rurales:</label>
-                <input type="number" id="experienciacomunidad" name="experienciacomunidad" disabled>
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="certificacion">Certificación competencias:</label>
+                <input type="number" id="certificacion" name="certificacion">
             </div>
-            <div class="form-group">
-                <label for="poblacionVul">Población Vulnerable:</label>
-                <input type="number" id="poblacionVul" name="poblacionVul" disabled>
+            <div id="formacionTrabajoSection" class="form-group" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="formacionL">Formación Laboral:</label>
+                <input type="number" id="formacionL" name="formacionL">
             </div>
-            <div class="form-group">
-                <label for="arraigo">Arraigo:</label>
-                <input type="number" id="arraigo" name="arraigo" disabled>
-            </div>
-            <div class="form-group">
-                <label for="certificacionCon">Certificación competencias</label>
-                <input type="number" id="certificacionCon" name="certificacionCon" disabled>
-            </div>
-            <div class="form-group">
-                <label for="formacionLaboral">Formación Laboral</label>
-                <input type="number" id="formacionLaboral" name="formacionLaboral" disabled>
-            </div>
-            <div class="form-group">
+            <div class="formacionTrabajoSection" style="<?php echo ($coordinacion === 'Formación para el Trabajo') ? 'display:block;' : 'display:none;'; ?>">
             <label for="coordinacionSelect">Nivel de Educacion:</label>
-                <select id="coordinacionSelect" onchange="mostrarSecciones()" disabled>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
+                    <option value="">Selecciona</option>
+                    <option value="especializacionPr">Técnico profesional</option>
+                    <option value="especializaciontn">Especialización técnica</option>
+                    <option value="tecnologia">Tecnologo</option>
+                    <option value="especializaciontg">Especialización tecnológica</option>
+                    <option value="profesional">Profesional Universitario</option>
+                    <option value="especializaciontn">Especialización</option>
+                    <option value="maestria">Maestría</option>
+                    <option value="doctorado">Doctorado</option>
+                </select>
+            </div>
+
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
+                <input type="number" id="experienciaTecnica" name="experienciaTecnica">
+            </div>
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaDocente">Experiencia Docente (Expresada en años):</label>
+                <input type="number" id="experienciaDocente" name="experienciaDocente">
+            </div>
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaInstructor">Experiencia Instructor (Expresada en años):</label>
+                <input type="number" id="experienciaInstructor" name="experienciaInstructor">
+            </div>
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="poblacionVulnerable">Poblacion Vulnerable:</label>
+                <input type="number" id="poblacionVulnerable" name="poblacionVulnerable">
+            </div>
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="certificacion">Certificación competencias:</label>
+                <input type="number" id="certificacion" name="certificacion">
+            </div>
+            <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="formacionL">Formación Laboral:</label>
+                <input type="number" id="formacionL" name="formacionL">
+            </div>
+            <div class="educacionFormalSection" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
+            <label for="coordinacionSelect">Nivel de Educacion:</label>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
+                    <option value="">Selecciona</option>
+                    <option value="especializacionPr">Técnico profesional</option>
+                    <option value="especializaciontn">Especialización técnica</option>
+                    <option value="tecnologia">Tecnologo</option>
+                    <option value="especializaciontg">Especialización tecnológica</option>
+                    <option value="profesional">Profesional Universitario</option>
+                    <option value="especializaciontn">Especialización</option>
+                    <option value="maestria">Maestría/Doctorado</option>
+                </select>
+            </div>
+
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaTecnicaSer">Experiencia Técnica (Expresada en años):</label>
+                <input type="number" id="experienciaTecnicaSer" name="experienciaTecnicaSer">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaDocenteSer">Experiencia Docente (Expresada en años):</label>
+                <input type="number" id="experienciaDocenteSer" name="experienciaDocenteSer">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaInstructorSer">Experiencia Instructor (Expresada en años):</label>
+                <input type="number" id="experienciaInstructorSer" name="experienciaInstructorSer">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciaProyecto">Experiencia formación de proyectos:</label>
+                <input type="number" id="experienciaProyecto" name="experienciaProyecto">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="experienciacomunidad">Experiencia trabajo con comunidades rurales:</label>
+                <input type="number" id="experienciacomunidad" name="experienciacomunidad">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="poblacionVul">Población Vulnerable:</label>
+                <input type="number" id="poblacionVul" name="poblacionVul">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="arraigo">Arraigo:</label>
+                <input type="number" id="arraigo" name="arraigo">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="certificacionCon">Certificación competencias</label>
+                <input type="number" id="certificacionCon" name="certificacionCon">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+                <label for="formacionLaboral">Formación Laboral</label>
+                <input type="number" id="formacionLaboral" name="formacionLaboral">
+            </div>
+            <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
+            <label for="coordinacionSelect">Nivel de Educacion:</label>
+                <select id="coordinacionSelect" onchange="mostrarSecciones()">
                     <option value="">Selecciona</option>
                     <option value="especializaciontn">Especialización técnica</option>
                     <option value="tecnologia">Tecnologo</option>
@@ -236,12 +206,14 @@ if (isset($_GET['cod_vacante'])) {
                     <option value="doctorado">Doctorado</option>
                 </select>
             </div>
-            <?php 
-        }
-        ?>
+
             <button type="submit">Enviar</button>
         </form>
-    </div>    
+
+    </div>
+
+
+    
     <script src="../../assets/js/ocultarInfo.js"></script>
     <script src="../../assets/js/mensajeEmergente.js"></script>
     <script src="../../assets/js/ventana.js"></script>

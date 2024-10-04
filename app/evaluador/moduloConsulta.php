@@ -1,15 +1,6 @@
 <?php
 require_once '../../app/config.php';
-require_once '../../sql/class.php';
 requireRole(['3']);
-
-$vacante = []; // Inicializamos $vacante como un array vacío para evitar errores si no hay resultados.
-
-if (isset($_GET['cod_vacante'])) {
-    $tipoF = $_GET['cod_vacante'];
-    $result = new Trabajo();
-    $vacante = $result->obtenerCodigos($tipoF);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +14,8 @@ if (isset($_GET['cod_vacante'])) {
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
-
     <div class="contenedor">
         <div class="buscador">
             <h2>Buscador</h2>
@@ -45,7 +36,6 @@ if (isset($_GET['cod_vacante'])) {
             <p><strong>Coordinación Inicial:</strong>ARTICULACIÓN</p>
             <p><strong>Programa:</strong>CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS.</p>
         </div>
-
         <div class="tablaGeneradaPorLaConsulta">
             <h2>Resultados de la Consulta</h2>
             <table>
@@ -62,12 +52,10 @@ if (isset($_GET['cod_vacante'])) {
                         <th>Protección</th>
                     </tr>
                 </thead>
-                <?php if (!empty($vacante)) { // Solo iteramos si $vacante tiene valores ?>
                 <tbody>
-                    <?php foreach($vacante as $row) { ?>
                     <tr>
-                        <td><?php echo $row['numero_documento']; ?></td>
-                        <td><?php echo $row['nombres']; ?></td>
+                        <td>79314342</td>
+                        <td>MANUEL EDUARDO ALEJO DIAZ</td>
                         <td>1</td>
                         <td>95,00</td>
                         <td>Seleccionado</td>
@@ -76,15 +64,8 @@ if (isset($_GET['cod_vacante'])) {
                         <td>7-2023-313747</td>
                         <td>7-2023-287082 - NO APROBADA</td>
                     </tr>
-                    <?php } ?>
+
                 </tbody>
-                <?php } else { ?>
-                <tbody>
-                    <tr>
-                        <td colspan="9">No se encontraron resultados.</td>
-                    </tr>
-                </tbody>
-                <?php } ?>
             </table>
         </div>
     </div>

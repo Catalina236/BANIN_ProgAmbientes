@@ -60,6 +60,7 @@ requireRole(['1']);
     <?php
         require '../../app/shareFolder/header.php';
         require '../../app/shareFolder/navbar.php';
+        require '../../app/shareFolder/backButton.php';
     ?>
     <div class="contenedor">
         <h1>Actualizar Datos BANIN</h1>
@@ -77,6 +78,8 @@ requireRole(['1']);
             <p>Nuevas Vacantes desde la última actualización: 5</p>
         </div>
     </div>
+
+
     <?php 
         require '../shareFolder/footer.php';
     ?>
