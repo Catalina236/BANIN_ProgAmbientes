@@ -8,6 +8,7 @@ class Trabajo extends Conexion{
         $this->conexion = new Conexion();
         $this->conexion=$this->conexion->obtenerConexion();
     }
+
      public function crearUsuario($num_doc, $tipo_doc, $nombre_completo, $contraseña, $email, $telefono, $id_rol) {
         $sqlVerificar = "SELECT COUNT(*) FROM usuario WHERE numero_documento = :num";
         $consultVerificar = $this->conexion->prepare($sqlVerificar);
@@ -22,7 +23,9 @@ class Trabajo extends Conexion{
             </script>";
             return;
         }
+    
         $contraseña = hash('sha256', $contraseña);
+    
         $sql = "INSERT INTO usuario (numero_documento, tipo_doc, nombre_completo, contraseña, email, telefono, id_rol)
                 VALUES (:num, :tipo, :nom, :pass, :email, :tel, :id)";
         $consult = $this->conexion->prepare($sql);
@@ -49,6 +52,7 @@ class Trabajo extends Conexion{
     }
     public function iniciarSesion($num_doc, $password) {
         $hashedPassword = hash('sha256', $password);
+        
         $sql = "SELECT * FROM usuario WHERE numero_documento = :nro_doc AND contraseña = :pass";
         $consult = $this->conexion->prepare($sql);
         $consult->bindParam(':nro_doc', $num_doc, PDO::PARAM_STR);
@@ -64,7 +68,7 @@ class Trabajo extends Conexion{
             
             switch ($rol) {
                 case '3':
-                    header('Location:../home/consultarEstadoBanin.php');
+                    header('Location:../evaluador/vacantes.php');
                     break;
                 case '2':
                     header('Location:../coordinador/vacantes.php');
@@ -86,15 +90,17 @@ class Trabajo extends Conexion{
         $result = $consult->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    
     public function ver_un_usuario($numero_doc) {
         $sql = "SELECT usuario.*, rol.nombre_rol FROM usuario JOIN rol ON usuario.id_rol = rol.id_rol WHERE usuario.numero_documento = :numero";
         $consult = $this->conexion->prepare($sql);
         $consult->bindParam(":numero", $numero_doc, PDO::PARAM_STR);
         $consult->execute();
-        $result = $consult->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        $result = $consult->fetch(PDO::FETCH_ASSOC); // Cambiamos a fetch para un solo registro
+        return $result; // Regresamos un solo resultado
     }
-    public function eliminarUsuario($numero)  {
+
+    public function eliminarUsuario($numero){
         $sql="DELETE FROM usuario WHERE numero_documento=:num";
         $consult=$this->conexion->prepare($sql);
         $consult->bindValue(":num",$numero);
@@ -139,4 +145,154 @@ class Trabajo extends Conexion{
             </script>";
         }
     }
+    public function obtenerCodigos($cod_vacante) {
+        $sql = "SELECT * FROM tipo_formacion 
+                LEFT JOIN vacante ON tipo_formacion.Id_tipoF = vacante.Id_tipoF
+                LEFT JOIN usuario ON usuario.numero_documento = vacante.num_doc_evaluador
+                WHERE usuario.id_rol = 3 AND vacante.cod_vacante = :cod_vacante";
+        
+        $consult = $this->conexion->prepare($sql); 
+        $consult->bindParam(':cod_vacante', $cod_vacante); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function obtenerCodigo() {
+        $sql = "SELECT * FROM vacante";
+        $consult = $this->conexion->prepare($sql); 
+        $consult->execute(); 
+        $result1 = $consult->fetchAll(PDO::FETCH_ASSOC); 
+        return $result1;
+    }
+    public function obtenerEvaluadores() {
+        $sql = "SELECT numero_documento FROM usuario WHERE id_rol = 3";
+        $consult = $this->conexion->prepare($sql);
+        $consult->execute();
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function actualizarNumDocEvaluador($cod_vacante, $nuevo_num_doc_evaluador) {
+        $sql = "UPDATE vacante SET num_doc_evaluador = :nuevo_num_doc_evaluador WHERE cod_vacante = :cod_vacante";
+        $consult = $this->conexion->prepare($sql);
+        $consult->bindParam(':nuevo_num_doc_evaluador', $nuevo_num_doc_evaluador);
+        $consult->bindParam(':cod_vacante', $cod_vacante);
+        return $consult->execute();
+
+    }public function obtenerNombreEvaluador($num_doc_evaluador) {
+        $sql = "SELECT nombre_completo FROM usuario WHERE numero_documento = :numero_documento";
+        $consult = $this->conexion->prepare($sql);
+        $consult->bindParam(':numero_documento', $num_doc_evaluador);
+        $consult->execute();
+        return $consult->fetchColumn();
+    }
+    public function crearvacante($cod_vacante, $nombre_vacante, $perfil_vacante, $nro_instr_req, $num_doc_candidato, $Id_tipoF) {
+            // Prepara la consulta SQL solo con los campos que están en el formulario
+        $sql = "INSERT INTO vacante (cod_vacante, nombre_vacante, perfil_vacante, nro_instr_req, num_doc_candidato, Id_tipoF, estado_BANIN, num_doc_evaluador)
+                VALUES (:cod_vacante, :nombreV, :perfil, :numIns, :numCan, :idF, 'Pendiente', NULL)"; 
+
+        $consult = $this->conexion->prepare($sql);
+
+        // Asignar los valores a los parámetros del formulario
+        $consult->bindValue(":cod_vacante", $cod_vacante);
+        $consult->bindValue(":nombreV", $nombre_vacante);
+        $consult->bindValue(":perfil", $perfil_vacante);
+        $consult->bindValue(":numIns", $nro_instr_req);
+        $consult->bindValue(":numCan", $num_doc_candidato);
+        $consult->bindValue(":idF", $Id_tipoF);
+
+        try {
+            $resultado = $consult->execute();
+            if ($resultado) {
+                echo "<script type='text/javascript'>
+                    alert('Vacante agregada correctamente.');
+                    window.location='vacantes.php';
+                    </script>";
+            } else {
+                $errorInfo = $consult->errorInfo();
+                echo "Error en la inserción: " . $errorInfo[2];  // Muestra el error específico de la consulta SQL
+            }
+        } catch (PDOException $e) {
+            echo "Error de PDO: " . $e->getMessage();
+        }
+        
+}
+    public function buscar_usuario($termino) {
+        if (empty($termino)) {
+            $sql = "SELECT usuario.*, rol.nombre_rol 
+                    FROM usuario 
+                    JOIN rol ON usuario.id_rol = rol.id_rol 
+                    ORDER BY RAND() 
+                    LIMIT 10";
+            $consult = $this->conexion->prepare($sql);
+            $consult->execute();
+        } else {
+            // Si hay término de búsqueda, buscar en varios campos
+            $sql = "SELECT usuario.*, rol.nombre_rol 
+                    FROM usuario 
+                    JOIN rol ON usuario.id_rol = rol.id_rol 
+                    WHERE usuario.numero_documento LIKE :termino 
+                    OR usuario.nombre_completo LIKE :termino 
+                    OR rol.nombre_rol LIKE :termino";
+            $consult = $this->conexion->prepare($sql);
+            $termino = "%$termino%";
+            $consult->bindParam(':termino', $termino, PDO::PARAM_STR);
+            $consult->execute();
+        }       
+        return $consult->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function ver_candidatos($paginaActual,$resultados_por_pagina){
+        static $total_registros;
+        if(!isset($total_registros)){
+            $sql_cantidad="SELECT COUNT(*) AS total FROM candidato JOIN coordinacion ON candidato.id_coordinacion=coordinacion.id_coordinacion JOIN traslado ON candidato.numero_documento=traslado.numero_documento";
+            $consult_count=$this->conexion->prepare($sql_cantidad);
+            $consult_count->execute();
+            $total_registros=$consult_count->fetchColumn();
+        }
+            $offset=($paginaActual-1)*$resultados_por_pagina;
+            $sql = "SELECT * FROM candidato JOIN coordinacion ON candidato.id_coordinacion=coordinacion.id_coordinacion JOIN traslado ON candidato.numero_documento=traslado.numero_documento ORDER BY nombre_completo LIMIT :limit OFFSET :offset";
+            $consult = $this->conexion->prepare($sql);
+            $limit=$resultados_por_pagina;
+            $consult->bindParam(':limit',$limit, PDO::PARAM_INT);
+            $consult->bindParam(':offset', $offset, PDO::PARAM_INT);
+            $consult->execute();
+            $result = $consult->fetchAll(PDO::FETCH_ASSOC);
+            $totalPaginas = ceil($total_registros / $resultados_por_pagina);
+
+        return [
+            'resultados' => $result,
+            'totalPaginas' => $totalPaginas,
+            'paginaActual' => $paginaActual
+        ];
+        }
+        public function buscador($busqueda, $paginaActual, $resultados_por_pagina) {
+            static $total_registros;
+        
+            if (!isset($total_registros)) {
+                // Prepara la consulta para contar los registros
+                $sql_cantidad = "SELECT COUNT(*) FROM candidato JOIN coordinacion ON candidato.id_coordinacion = coordinacion.id_coordinacion JOIN traslado ON candidato.numero_documento = traslado.numero_documento WHERE nombre_completo LIKE :busq";
+                
+                $consult_count = $this->conexion->prepare($sql_cantidad);
+                $busqueda = '%' . $busqueda . '%';
+                $consult_count->bindParam(':busq', $busqueda, PDO::PARAM_STR);
+                $consult_count->execute();
+                $total_registros = $consult_count->fetchColumn();
+            }
+        
+            $limit = $resultados_por_pagina;
+            $offset = ($paginaActual - 1) * $limit;
+            $sql = "SELECT * FROM candidato JOIN coordinacion ON candidato.id_coordinacion = coordinacion.id_coordinacion JOIN traslado ON candidato.numero_documento = traslado.numero_documento WHERE nombre_completo LIKE :busq LIMIT :limit OFFSET :offset";
+        
+            $consult = $this->conexion->prepare($sql);
+            $consult->bindParam(':busq', $busqueda, PDO::PARAM_STR);
+            $consult->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $consult->bindParam(':offset', $offset, PDO::PARAM_INT);
+            $consult->execute();
+        
+            $result = $consult->fetchAll(PDO::FETCH_ASSOC);
+            return [
+                'resultados' => $result,
+                'totalRegistros' => $total_registros, // Agrega total_registros para uso posterior
+                'totalPaginas' => ceil($total_registros / $resultados_por_pagina), // Calcula el total de páginas
+                'paginaActual' => $paginaActual
+            ];
+        }
 }

@@ -100,6 +100,5 @@ error_reporting(E_ALL);
             this.classList.toggle('fa-eye-slash');
         });
 </script>
-
 </body>
 </html>

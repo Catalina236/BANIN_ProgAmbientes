@@ -78,8 +78,6 @@ requireRole(['1']);
             <p>Nuevas Vacantes desde la última actualización: 5</p>
         </div>
     </div>
-
-
     <?php 
         require '../shareFolder/footer.php';
     ?>

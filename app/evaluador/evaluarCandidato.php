@@ -2,7 +2,7 @@
 require_once '../../app/config.php';
 
 $coordinacion = 'Formación para el Trabajo'; 
-requireRole(['3','2']);
+requireRole(['3']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -119,6 +119,7 @@ requireRole(['3','2']);
                 </select>
             </div>
 
+            <!-- Educación Formal -->
             <div id="educacionFormalSection" class="form-group" style="<?php echo ($coordinacion === 'Educación Formal') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnica">Experiencia Técnica (Expresada en años):</label>
                 <input type="number" id="experienciaTecnica" name="experienciaTecnica">
@@ -157,6 +158,7 @@ requireRole(['3','2']);
                 </select>
             </div>
 
+            <!-- Secciones de SER -->
             <div class="serSection" style="<?php echo ($coordinacion === 'SER') ? 'display:block;' : 'display:none;'; ?>">
                 <label for="experienciaTecnicaSer">Experiencia Técnica (Expresada en años):</label>
                 <input type="number" id="experienciaTecnicaSer" name="experienciaTecnicaSer">

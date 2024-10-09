@@ -84,7 +84,6 @@ class Trabajo extends Conexion{
                     header('Location: /BANIN_CIDE/app/administrador/panelControl.php');
                     break;
                 default:
-                    // Handle unexpected role
                     echo "<div class='alerta text-center'>Rol no válido.</div>";
             }
         } else {
@@ -248,8 +247,7 @@ class Trabajo extends Conexion{
             $termino = "%$termino%";
             $consult->bindParam(':termino', $termino, PDO::PARAM_STR);
             $consult->execute();
-        }
-        
+        }       
         return $consult->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -14,8 +14,6 @@ if (isset($_POST['Registrar'])) {
     $telefono = $_POST['telefono'];
     $id_rol = $_POST['id_rol'];
     $contraseña = $_POST['contraseña'];
-    
-    // Pasar nombre completo al método
     $dato->crearUsuario($num_doc, $tipo_doc, $nombre_completo, $contraseña, $email, $telefono, $id_rol);
 }
 ?>

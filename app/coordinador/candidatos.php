@@ -1,6 +1,6 @@
 <?php
 require_once '../../app/config.php';
-requireRole(['2']);
+requireRole(['2','1']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,7 +126,6 @@ requireRole(['2']);
                 </form>
             </div>
         </div>
-        
     </div>
     <?php 
     require '../shareFolder/footer.php';

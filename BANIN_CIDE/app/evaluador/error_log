@@ -1,6 +1,0 @@
-[03-Oct-2024 16:27:35 America/Bogota] PHP Notice:  Undefined variable: vacante in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 36
-[03-Oct-2024 16:27:35 America/Bogota] PHP Warning:  Invalid argument supplied for foreach() in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 36
-[03-Oct-2024 16:27:35 America/Bogota] PHP Notice:  Undefined variable: row in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 76
-[03-Oct-2024 16:27:35 America/Bogota] PHP Notice:  Undefined variable: row in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 87
-[03-Oct-2024 16:27:35 America/Bogota] PHP Notice:  Undefined variable: row in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 98
-[03-Oct-2024 16:27:35 America/Bogota] PHP Notice:  Undefined variable: row in /home/cidesafc/public_html/BANIN_CIDE/app/evaluador/listaCandidatos.php on line 109

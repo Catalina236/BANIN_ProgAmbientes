@@ -16,6 +16,7 @@ requireRole(['3']);
         require '../../app/shareFolder/navbar.php';
         require '../../app/shareFolder/backButton.php';
     ?>
+
     <div class="contenedor">
         <div class="buscador">
             <h2>Buscador</h2>
@@ -36,6 +37,7 @@ requireRole(['3']);
             <p><strong>Coordinación Inicial:</strong>ARTICULACIÓN</p>
             <p><strong>Programa:</strong>CONTABILIZACION DE OPERACIONES COMERCIALES Y FINANCIERAS.</p>
         </div>
+
         <div class="tablaGeneradaPorLaConsulta">
             <h2>Resultados de la Consulta</h2>
             <table>
